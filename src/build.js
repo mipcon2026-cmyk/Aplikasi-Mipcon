@@ -33,7 +33,8 @@ ep.adegan.forEach((sc, si) => sc.baris.forEach((b, bi) => {
   lines.push({ no: lines.length + 1, si, bi, text, hint: typeof b === 'string' ? '' : (b.catatan || ''), muncul: b.muncul });
 }));
 const pad = n => String(n).padStart(3, '0');
-fs.writeFileSync(path.join(OUT, 'naskah-rekaman.txt'), [
+fs.mkdirSync(path.join(ROOT, 'naskah'), { recursive: true });
+fs.writeFileSync(path.join(ROOT, 'naskah', `${ep.id}.txt`), [
   `NASKAH REKAMAN — ${ep.judul}`,
   `Total ${lines.length} baris. ${TH.gaya}`,
   '',
@@ -45,7 +46,7 @@ fs.writeFileSync(path.join(OUT, 'naskah-rekaman.txt'), [
   ...lines.map(l => `[${pad(l.no)}] ${l.text}${l.hint ? `\n       (${l.hint})` : ''}`),
   '',
 ].join('\n'));
-console.log(`✓ Naskah: output/${ep.id}/naskah-rekaman.txt (${lines.length} baris)`);
+console.log(`✓ Naskah: naskah/${ep.id}.txt (${lines.length} baris)`);
 if (ONLY === 'naskah') process.exit(0);
 
 // ---------- 2. Rekaman suara ----------

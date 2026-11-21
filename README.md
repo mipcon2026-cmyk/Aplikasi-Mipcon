@@ -17,7 +17,7 @@ Satu file episode (`episodes/*.json`) menghasilkan:
 
 1. **Claude membuat episode**: minta di sesi Claude Code, mis. *"Buatkan ep002 tentang nama-nama hewan"*.
 2. **Cek draft**: `node src/build.js episodes/ep002-....json --draft` (tanpa suara, ada teks bantu di bawah layar).
-3. **Rekam suara** dengan membaca `output/<id>/naskah-rekaman.txt`:
+3. **Rekam suara** dengan membaca `naskah/<id>.txt`:
    - **Cara 1 (termudah):** rekam semua baris dalam satu file, beri jeda ±2 detik antar baris → `rekaman/<id>.m4a`
    - **Cara 2:** satu file per baris → `rekaman/<id>/001.m4a`, `002.m4a`, ...
    - Format apa saja boleh (m4a, mp3, wav, ogg, …). Rekam di ruangan sunyi, HP sejarak ±20 cm.

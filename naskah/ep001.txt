@@ -1,0 +1,53 @@
+NASKAH REKAMAN — Belajar Warna bersama Ciko
+Total 35 baris. Bacalah dengan ceria, pelan, dan jelas (seperti bicara ke anak umur 5 tahun).
+
+CARA 1 (paling mudah): rekam semuanya dalam SATU file, beri jeda ±2 detik di antara setiap baris.
+   Simpan sebagai: rekaman/ep001.m4a
+CARA 2: rekam per baris, simpan dengan nomor barisnya.
+   Contoh: rekaman/ep001/001.m4a, rekaman/ep001/002.m4a, ...
+
+[001] Halo teman-teman! Aku Ciko.
+[002] Hari ini kita belajar warna, dalam bahasa Indonesia dan bahasa Inggris. Yuk!
+[003] Ini apel. Warnanya merah!
+[004] Dalam bahasa Inggris, merah adalah... Red!
+       (Red dibaca: 'red')
+[005] Ini pisang. Warnanya kuning!
+[006] Dalam bahasa Inggris, kuning adalah... Yellow!
+       (Yellow dibaca: 'yélo')
+[007] Ini katak. Warnanya hijau!
+[008] Dalam bahasa Inggris, hijau adalah... Green!
+       (Green dibaca: 'grin')
+[009] Ini mobil. Warnanya biru!
+[010] Dalam bahasa Inggris, biru adalah... Blue!
+       (Blue dibaca: 'blu')
+[011] Ini jeruk. Warnanya oranye!
+[012] Dalam bahasa Inggris, oranye adalah... Orange!
+       (Orange dibaca: 'orenj')
+[013] Ini anggur. Warnanya ungu!
+[014] Dalam bahasa Inggris, ungu adalah... Purple!
+       (Purple dibaca: 'pérpel')
+[015] Ini beruang. Warnanya cokelat!
+[016] Dalam bahasa Inggris, cokelat adalah... Brown!
+       (Brown dibaca: 'braun')
+[017] Ini babi kecil. Warnanya merah muda!
+[018] Dalam bahasa Inggris, merah muda adalah... Pink!
+       (Pink dibaca: 'pink')
+[019] Sekarang kita main tebak-tebakan! Apa warna stroberi?
+[020] Merah! Red! Hebat!
+       (Setelah membaca pertanyaan, beri jeda ±2 detik sebelum jawaban)
+[021] Apa warna wortel?
+[022] Oranye! Orange! Pintar sekali!
+[023] Kalau terong, apa warnanya?
+[024] Ungu! Purple! Kamu hebat!
+[025] Apa warna bunga matahari?
+[026] Kuning! Yellow! Betul sekali!
+[027] Wah, ada balon merah! Ayo kita hitung bersama!
+[028] Satu!
+[029] Dua!
+[030] Tiga!
+[031] Empat!
+[032] Lima!
+[033] Ada lima balon merah! Five red balloons!
+       (Five red balloons dibaca: 'faif red balun')
+[034] Hari ini kita sudah belajar banyak warna. Kamu pintar sekali!
+[035] Sampai jumpa lagi bersama Ciko. Dadah!
