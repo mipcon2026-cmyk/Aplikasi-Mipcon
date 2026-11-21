@@ -1,0 +1,11 @@
+{
+  "name": "ciko-video-anak",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pembuat video edukasi anak otomatis (YouTube video panjang + Shorts)",
+  "scripts": {
+    "draft": "node src/build.js episodes/ep001-warna.json --draft",
+    "build": "node src/build.js episodes/ep001-warna.json"
+  },
+  "dependencies": { "playwright": "^1.49.0" }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "ep001",
+  "judul": "Belajar Warna bersama Ciko",
+  "warna": "#42a5f5",
+  "musik_seed": 7,
+  "adegan": [
+    { "type": "intro", "judul": "Belajar Warna!", "subjudul": "Indonesia & English", "emojis": ["🍎", "🍌", "🐸", "🍇"], "warna": "#ab47bc",
+      "baris": ["Halo teman-teman! Aku Ciko.", "Hari ini kita belajar warna, dalam bahasa Indonesia dan bahasa Inggris. Yuk!"] },
+
+    { "type": "kata", "bab": "Merah - Red", "emoji": "🍎", "id": "Merah", "en": "Red", "warna": "#e53935",
+      "baris": ["Ini apel. Warnanya merah!", { "teks": "Dalam bahasa Inggris, merah adalah... Red!", "catatan": "Red dibaca: 'red'" }] },
+    { "type": "kata", "bab": "Kuning - Yellow", "emoji": "🍌", "id": "Kuning", "en": "Yellow", "warna": "#f9a825",
+      "baris": ["Ini pisang. Warnanya kuning!", { "teks": "Dalam bahasa Inggris, kuning adalah... Yellow!", "catatan": "Yellow dibaca: 'yélo'" }] },
+    { "type": "kata", "bab": "Hijau - Green", "emoji": "🐸", "id": "Hijau", "en": "Green", "warna": "#43a047",
+      "baris": ["Ini katak. Warnanya hijau!", { "teks": "Dalam bahasa Inggris, hijau adalah... Green!", "catatan": "Green dibaca: 'grin'" }] },
+    { "type": "kata", "bab": "Biru - Blue", "emoji": "🚙", "id": "Biru", "en": "Blue", "warna": "#1e88e5",
+      "baris": ["Ini mobil. Warnanya biru!", { "teks": "Dalam bahasa Inggris, biru adalah... Blue!", "catatan": "Blue dibaca: 'blu'" }] },
+    { "type": "kata", "bab": "Oranye - Orange", "emoji": "🍊", "id": "Oranye", "en": "Orange", "warna": "#fb8c00",
+      "baris": ["Ini jeruk. Warnanya oranye!", { "teks": "Dalam bahasa Inggris, oranye adalah... Orange!", "catatan": "Orange dibaca: 'orenj'" }] },
+    { "type": "kata", "bab": "Ungu - Purple", "emoji": "🍇", "id": "Ungu", "en": "Purple", "warna": "#8e24aa",
+      "baris": ["Ini anggur. Warnanya ungu!", { "teks": "Dalam bahasa Inggris, ungu adalah... Purple!", "catatan": "Purple dibaca: 'pérpel'" }] },
+    { "type": "kata", "bab": "Cokelat - Brown", "emoji": "🐻", "id": "Cokelat", "en": "Brown", "warna": "#8d6e63",
+      "baris": ["Ini beruang. Warnanya cokelat!", { "teks": "Dalam bahasa Inggris, cokelat adalah... Brown!", "catatan": "Brown dibaca: 'braun'" }] },
+    { "type": "kata", "bab": "Merah muda - Pink", "emoji": "🐷", "id": "Merah Muda", "en": "Pink", "warna": "#ec407a",
+      "baris": ["Ini babi kecil. Warnanya merah muda!", { "teks": "Dalam bahasa Inggris, merah muda adalah... Pink!", "catatan": "Pink dibaca: 'pink'" }] },
+
+    { "type": "kuis", "bab": "Kuis Tebak Warna", "emoji": "🍓", "tanya": "Apa warna stroberi?", "jawab_id": "Merah", "jawab_en": "Red", "warna": "#e53935",
+      "baris": ["Sekarang kita main tebak-tebakan! Apa warna stroberi?", { "teks": "Merah! Red! Hebat!", "catatan": "Setelah membaca pertanyaan, beri jeda ±2 detik sebelum jawaban" }] },
+    { "type": "kuis", "emoji": "🥕", "tanya": "Apa warna wortel?", "jawab_id": "Oranye", "jawab_en": "Orange", "warna": "#fb8c00",
+      "baris": ["Apa warna wortel?", "Oranye! Orange! Pintar sekali!"] },
+    { "type": "kuis", "emoji": "🍆", "tanya": "Apa warna terong?", "jawab_id": "Ungu", "jawab_en": "Purple", "warna": "#8e24aa",
+      "baris": ["Kalau terong, apa warnanya?", "Ungu! Purple! Kamu hebat!"] },
+    { "type": "kuis", "emoji": "🌻", "tanya": "Apa warna bunga matahari?", "jawab_id": "Kuning", "jawab_en": "Yellow", "warna": "#f9a825",
+      "baris": ["Apa warna bunga matahari?", "Kuning! Yellow! Betul sekali!"] },
+
+    { "type": "hitung", "bab": "Ayo Berhitung", "emoji": "🎈", "jumlah": 5, "judul": "Ayo hitung balon!", "teks_id": "5 Balon Merah", "teks_en": "Five red balloons", "warna": "#e53935",
+      "baris": ["Wah, ada balon merah! Ayo kita hitung bersama!", "Satu!", "Dua!", "Tiga!", "Empat!", "Lima!", { "teks": "Ada lima balon merah! Five red balloons!", "catatan": "Five red balloons dibaca: 'faif red balun'" }] },
+
+    { "type": "outro", "bab": "Sampai Jumpa", "judul": "Sampai jumpa!", "emojis": ["🍎", "🍌", "🐸", "🚙", "🍇"], "warna": "#ab47bc",
+      "baris": ["Hari ini kita sudah belajar banyak warna. Kamu pintar sekali!", "Sampai jumpa lagi bersama Ciko. Dadah!"] }
+  ],
+
+  "shorts": [
+    { "adegan": [1, 2, 3, 4] },
+    { "adegan": [9, 10, 11, 12] }
+  ],
+
+  "thumbnail": { "judul": "Belajar Warna", "emojis": ["🍎", "🍌", "🐸", "🚙"], "label": "Indonesia + English", "warna": "#e53935" },
+
+  "youtube": {
+    "judul": "Belajar Warna Bahasa Indonesia & Inggris 🍎🍌 | Lagu & Kuis Anak Balita bersama Ciko",
+    "deskripsi": "Ayo belajar warna bersama Ciko si anak ayam! 🐤\nDalam video ini anak-anak belajar mengenal 8 warna dalam bahasa Indonesia dan bahasa Inggris: merah (red), kuning (yellow), hijau (green), biru (blue), oranye (orange), ungu (purple), cokelat (brown), dan merah muda (pink). Ada juga kuis tebak warna dan berhitung balon!\n\nCocok untuk anak usia 3–7 tahun, PAUD, dan TK. Tonton bersama si kecil ya, Ayah Bunda!",
+    "hashtag": ["#belajarwarna", "#videoanak", "#belajarbahasainggris"],
+    "tag": ["belajar warna", "belajar warna bahasa inggris", "video edukasi anak", "belajar anak balita", "lagu anak", "kuis anak", "warna dalam bahasa inggris", "belajar paud", "video anak tk", "Ciko"]
+  }
+}

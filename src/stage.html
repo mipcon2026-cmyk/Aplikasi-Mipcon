@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>html,body{margin:0;background:#000}canvas{display:block}</style></head>
+<body>
+<canvas id="c"></canvas>
+<script>
+// Panggung animasi. build.js memanggil setup() sekali, lalu frame(t) untuk tiap frame.
+const cv = document.getElementById('c');
+const ctx = cv.getContext('2d');
+let W, H, VERT, TL, MOUTH, FPS, DRAFT, U;
+const EMOJI = '"Noto Color Emoji"';
+const FONT = 'Fredoka';
+
+window.setup = async (cfg) => {
+  W = cv.width = cfg.width; H = cv.height = cfg.height;
+  VERT = H > W; TL = cfg.timeline; MOUTH = cfg.mouth; FPS = cfg.fps; DRAFT = cfg.draft;
+  U = Math.min(W, H) / 1080; // satuan skala
+  const bin = Uint8Array.from(atob(cfg.fontB64), c => c.charCodeAt(0));
+  const ff = new FontFace(FONT, bin.buffer); await ff.load(); document.fonts.add(ff);
+  ctx.font = `100px ${EMOJI}`; ctx.fillText('🍎', -500, -500); // pancing font emoji
+  await document.fonts.ready;
+};
+
+window.frame = (t, mode) => {
+  draw(t, mode);
+  return cv.toDataURL(mode === 'thumb' ? 'image/png' : 'image/jpeg', 0.9);
+};
+
+// ---------- util ----------
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const ease = x => 1 - Math.pow(1 - clamp(x), 3);
+const back = x => { x = clamp(x); const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const pop = (t, t0, d = 0.5) => t < t0 ? 0 : back((t - t0) / d);
+function hash(n) { const s = Math.sin(n * 127.1) * 43758.5453; return s - Math.floor(s); }
+
+function text(str, x, y, size, fill, opts = {}) {
+  const k = opts.scale ?? 1;
+  if (k <= 0) return;
+  ctx.save();
+  ctx.translate(x, y); ctx.scale(k, k); x = 0; y = 0;
+  ctx.font = `600 ${size}px ${FONT}, ${EMOJI}`;
+  ctx.textAlign = opts.align || 'center'; ctx.textBaseline = 'middle';
+  const maxW = opts.maxW || W * 0.9;
+  const m = ctx.measureText(str).width;
+  if (m > maxW) { size *= maxW / m; ctx.font = `600 ${size}px ${FONT}, ${EMOJI}`; }
+  ctx.lineJoin = 'round';
+  if (opts.stroke !== false) { ctx.lineWidth = size * 0.16; ctx.strokeStyle = opts.strokeColor || '#fff'; ctx.strokeText(str, x, y); }
+  ctx.fillStyle = fill; ctx.fillText(str, x, y);
+  ctx.restore();
+}
+
+function emoji(e, x, y, size, opts = {}) {
+  ctx.save();
+  ctx.translate(x, y); ctx.rotate(opts.rot || 0); ctx.scale(opts.scale ?? 1, opts.scale ?? 1);
+  ctx.font = `${size}px ${EMOJI}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  if (opts.silhouette) {
+    const s = Math.ceil(size * 1.4), oc = new OffscreenCanvas(s, s), o = oc.getContext('2d');
+    o.font = ctx.font; o.textAlign = 'center'; o.textBaseline = 'middle';
+    o.fillText(e, s / 2, s / 2);
+    o.globalCompositeOperation = 'source-in'; o.fillStyle = '#5b6170'; o.fillRect(0, 0, s, s);
+    ctx.drawImage(oc, -s / 2, -s / 2);
+  } else ctx.fillText(e, 0, 0);
+  ctx.restore();
+}
+
+function pill(str, x, y, size, bg, fg = '#fff') {
+  ctx.save();
+  ctx.font = `600 ${size}px ${FONT}`;
+  const w = ctx.measureText(str).width + size * 1.2, h = size * 1.5;
+  ctx.fillStyle = bg; ctx.beginPath(); ctx.roundRect(x - w / 2, y - h / 2, w, h, h / 2); ctx.fill();
+  ctx.fillStyle = fg; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(str, x, y + size * 0.05);
+  ctx.restore();
+}
+
+function star(x, y, r, color, rot = 0) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.fillStyle = color; ctx.beginPath();
+  for (let i = 0; i < 10; i++) { const a = i * Math.PI / 5 - Math.PI / 2, rr = i % 2 ? r * 0.45 : r; ctx.lineTo(Math.cos(a) * rr, Math.sin(a) * rr); }
+  ctx.closePath(); ctx.fill(); ctx.restore();
+}
+
+function burst(x, y, age, color) { // percikan bintang saat jawaban muncul
+  if (age < 0 || age > 1.2) return;
+  const cols = [color, '#ffd54f', '#4fc3f7', '#f06292', '#81c784'];
+  for (let i = 0; i < 14; i++) {
+    const a = i / 14 * Math.PI * 2 + hash(i) * 0.4, d = ease(age / 1.2) * 330 * U * (0.7 + hash(i + 9) * 0.6);
+    ctx.globalAlpha = 1 - clamp((age - 0.6) / 0.6);
+    star(x + Math.cos(a) * d, y + Math.sin(a) * d, (16 + hash(i + 3) * 14) * U, cols[i % cols.length], age * 4 + i);
+  }
+  ctx.globalAlpha = 1;
+}
+
+// ---------- latar ----------
+function background(t, color) {
+  const g = ctx.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, mix(color, '#ffffff', 0.82)); g.addColorStop(1, mix(color, '#ffffff', 0.6));
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  // awan melayang
+  ctx.fillStyle = 'rgba(255,255,255,0.75)';
+  for (let i = 0; i < 5; i++) {
+    const sp = 18 + hash(i) * 22, y = H * (0.08 + hash(i + 4) * 0.35);
+    const x = ((hash(i + 7) * (W + 600) + t * sp * U) % (W + 600)) - 300;
+    cloud(x, y, (60 + hash(i + 2) * 50) * U);
+  }
+  // titik-titik lembut
+  for (let i = 0; i < 24; i++) {
+    ctx.fillStyle = `rgba(255,255,255,${0.25 + hash(i) * 0.3})`;
+    const x = hash(i + 30) * W, y = (hash(i + 50) * H - t * (10 + hash(i) * 20) * U + H * 10) % H;
+    ctx.beginPath(); ctx.arc(x, y, (4 + hash(i + 70) * 8) * U, 0, 7); ctx.fill();
+  }
+  // tanah
+  ctx.fillStyle = mix(color, '#7cc576', 0.75);
+  ctx.beginPath(); ctx.moveTo(0, H);
+  for (let x = 0; x <= W; x += 20) ctx.lineTo(x, H * 0.9 + Math.sin(x / W * 6 + 1) * 14 * U);
+  ctx.lineTo(W, H); ctx.fill();
+}
+function cloud(x, y, r) {
+  ctx.beginPath();
+  ctx.arc(x, y, r, 0, 7); ctx.arc(x + r * 0.9, y + r * 0.1, r * 0.75, 0, 7); ctx.arc(x - r * 0.9, y + r * 0.15, r * 0.65, 0, 7);
+  ctx.fill();
+}
+function mix(a, b, k) {
+  const p = s => [1, 3, 5].map(i => parseInt(s.slice(i, i + 2), 16));
+  const A = p(a), B = p(b);
+  return `rgb(${A.map((v, i) => Math.round(v + (B[i] - v) * k)).join(',')})`;
+}
+
+// ---------- maskot: Ciko si anak ayam ----------
+function ciko(x, y, s, t, mouth, wave = 0) {
+  y += Math.sin(t * 4) * s * 0.025;
+  ctx.save(); ctx.translate(x, y);
+  // kaki
+  ctx.strokeStyle = '#f57c00'; ctx.lineWidth = s * 0.05; ctx.lineCap = 'round';
+  for (const dx of [-0.22, 0.22]) { ctx.beginPath(); ctx.moveTo(dx * s, s * 0.8); ctx.lineTo(dx * s, s * 0.98); ctx.lineTo(dx * s + s * 0.1, s * 0.98); ctx.stroke(); }
+  // sayap
+  for (const side of [-1, 1]) {
+    ctx.save(); ctx.translate(side * s * 0.78, s * 0.15);
+    const flap = side === 1 && wave ? -1.1 + Math.sin(t * 12) * 0.35 : Math.sin(t * 3 + side) * 0.12;
+    ctx.rotate(side * (0.5 + flap * -side));
+    ctx.fillStyle = '#ffc928'; ctx.beginPath(); ctx.ellipse(side * s * 0.12, 0, s * 0.26, s * 0.14, 0, 0, 7); ctx.fill();
+    ctx.restore();
+  }
+  // badan
+  const g = ctx.createRadialGradient(-s * 0.25, -s * 0.3, s * 0.1, 0, 0, s);
+  g.addColorStop(0, '#fff176'); g.addColorStop(1, '#ffca28');
+  ctx.fillStyle = g; ctx.beginPath(); ctx.ellipse(0, 0, s * 0.82, s * 0.85, 0, 0, 7); ctx.fill();
+  ctx.fillStyle = '#fff59d'; ctx.beginPath(); ctx.ellipse(0, s * 0.35, s * 0.5, s * 0.4, 0, 0, 7); ctx.fill();
+  // jambul
+  ctx.fillStyle = '#ffca28';
+  for (const a of [-0.35, 0, 0.35]) { ctx.save(); ctx.translate(0, -s * 0.8); ctx.rotate(a); ctx.beginPath(); ctx.ellipse(0, -s * 0.12, s * 0.07, s * 0.16, 0, 0, 7); ctx.fill(); ctx.restore(); }
+  // mata (berkedip)
+  const blink = (t % 3.3) < 0.13 ? 0.1 : 1;
+  for (const dx of [-0.3, 0.3]) {
+    ctx.fillStyle = '#3e2723'; ctx.beginPath(); ctx.ellipse(dx * s, -s * 0.18, s * 0.1, s * 0.13 * blink, 0, 0, 7); ctx.fill();
+    if (blink === 1) { ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(dx * s + s * 0.035, -s * 0.23, s * 0.035, 0, 7); ctx.fill(); }
+  }
+  // pipi
+  ctx.fillStyle = 'rgba(255,128,128,0.55)';
+  for (const dx of [-0.52, 0.52]) { ctx.beginPath(); ctx.ellipse(dx * s, 0, s * 0.1, s * 0.065, 0, 0, 7); ctx.fill(); }
+  // paruh (membuka sesuai suara)
+  const open = s * 0.16 * clamp(mouth);
+  ctx.fillStyle = '#ff8f00';
+  ctx.beginPath(); ctx.moveTo(-s * 0.13, s * 0.02); ctx.lineTo(s * 0.13, s * 0.02); ctx.lineTo(0, s * 0.14); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = '#e65100';
+  ctx.beginPath(); ctx.moveTo(-s * 0.11, s * 0.04 + open * 0.3); ctx.lineTo(s * 0.11, s * 0.04 + open * 0.3); ctx.lineTo(0, s * 0.12 + open); ctx.closePath(); ctx.fill();
+  ctx.restore();
+}
+
+// ---------- adegan ----------
+function lineIdxAt(sc, t) { let k = -1; sc.lines.forEach((l, i) => { if (t >= l.start) k = i; }); return k; }
+
+const SCENES = {
+  intro(sc, t, L) {
+    const lt = t - sc.start;
+    text(sc.judul, L.cx, L.titleY, 150 * U, sc.warna, { maxW: L.textW, scale: pop(lt, 0.2) });
+    ctx.save(); ctx.globalAlpha = ease((lt - 0.8) / 0.5);
+    if (sc.subjudul) pill(sc.subjudul, L.cx, L.titleY + 140 * U, 50 * U, sc.warna);
+    ctx.restore();
+    (sc.emojis || []).forEach((e, i, a) => {
+      const n = a.length, x = L.cx + (i - (n - 1) / 2) * 190 * U, sp = pop(lt, 1 + i * 0.15);
+      emoji(e, x, L.mainY + 120 * U + Math.sin(t * 3 + i) * 12 * U, 140 * U, { scale: sp });
+    });
+    L.wave = true;
+  },
+
+  kata(sc, t, L) {
+    const lt = t - sc.start, cue1 = sc.lines[1] ? sc.lines[1].start : sc.start + (sc.end - sc.start) * 0.5;
+    const s = pop(lt, 0.15, 0.6);
+    emoji(sc.emoji, L.cx, L.mainY + Math.sin(t * 2.5) * 14 * U, 330 * U, { scale: s, rot: Math.sin(t * 2) * 0.05 });
+    const a = pop(t, sc.lines[0]?.start ?? sc.start + 0.6);
+    if (a > 0) text(sc.id, L.cx, L.wordY, 150 * U, sc.warna, { maxW: L.textW });
+    const b = pop(t, cue1);
+    if (b > 0) { ctx.save(); ctx.translate(L.cx, L.wordY + 140 * U); ctx.scale(b, b); pill('🇬🇧 ' + sc.en, 0, 0, 64 * U, sc.warna); ctx.restore(); }
+    burst(L.cx, L.mainY, t - cue1, sc.warna);
+  },
+
+  kuis(sc, t, L) {
+    const lt = t - sc.start;
+    const reveal = sc.lines[1] ? sc.lines[1].start : sc.end - 1.5;
+    text(sc.tanya, L.cx, L.titleY, 90 * U, '#37474f', { maxW: L.textW, scale: pop(lt, 0.1) });
+    const shown = t >= reveal, sp = shown ? pop(t, reveal, 0.5) : pop(lt, 0.3);
+    emoji(sc.emoji, L.cx, L.mainY + Math.sin(t * 2.5) * 12 * U, 300 * U, { scale: sp, silhouette: !shown });
+    if (!shown) {
+      for (let i = 0; i < 3; i++) text('?', L.cx + (i - 1) * 230 * U, L.mainY - 170 * U + Math.sin(t * 5 + i * 2) * 16 * U, 90 * U, sc.warna, { scale: pop(lt, 0.6 + i * 0.1) });
+      const left = reveal - t; // hitung mundur 3-2-1
+      if (left <= 3 && left > 0 && sc.lines[1]) {
+        const n = Math.ceil(left), f = n - left;
+        ctx.save(); ctx.globalAlpha = 1 - f * 0.3;
+        text(String(n), L.cx, L.wordY + 60 * U, (170 - f * 50) * U, sc.warna);
+        ctx.restore();
+      }
+    } else {
+      text(sc.jawab_id, L.cx, L.wordY, 140 * U, sc.warna, { maxW: L.textW, scale: pop(t, reveal + 0.1) });
+      const b = pop(t, reveal + 0.5);
+      if (b > 0 && sc.jawab_en) { ctx.save(); ctx.translate(L.cx, L.wordY + 135 * U); ctx.scale(b, b); pill('🇬🇧 ' + sc.jawab_en, 0, 0, 60 * U, sc.warna); ctx.restore(); }
+      burst(L.cx, L.mainY, t - reveal, sc.warna);
+    }
+  },
+
+  hitung(sc, t, L) {
+    const lt = t - sc.start, n = sc.jumlah;
+    // baris 0 = ajakan, baris 1..n = angka, baris terakhir = kesimpulan
+    let shown = 0; for (let i = 1; i <= n; i++) if (sc.lines[i] && t >= sc.lines[i].start) shown = i;
+    const cols = VERT ? Math.min(n, 3) : Math.min(n, 5), rows = Math.ceil(n / cols), sz = (VERT ? 230 : 190) * U;
+    for (let i = 0; i < n; i++) {
+      const r = Math.floor(i / cols), c = i % cols, inRow = Math.min(cols, n - r * cols);
+      const x = L.cx + (c - (inRow - 1) / 2) * sz * 1.1, y = L.mainY + (r - (rows - 1) / 2) * sz * 1.05;
+      if (i < shown) emoji(sc.emoji, x, y + Math.sin(t * 3 + i) * 8 * U, sz * 0.85, { scale: pop(t, sc.lines[i + 1].start) });
+      else { ctx.strokeStyle = 'rgba(0,0,0,0.15)'; ctx.setLineDash([12 * U, 10 * U]); ctx.lineWidth = 5 * U; ctx.beginPath(); ctx.arc(x, y, sz * 0.38, 0, 7); ctx.stroke(); ctx.setLineDash([]); }
+    }
+    if (shown > 0) {
+      const k = pop(t, sc.lines[shown].start, 0.35);
+      ctx.save(); ctx.translate(L.cx, L.titleY); ctx.scale(k, k);
+      text(String(shown), 0, 0, 170 * U, sc.warna); ctx.restore();
+    } else text(sc.judul || 'Ayo hitung!', L.cx, L.titleY, 100 * U, sc.warna, { scale: pop(lt, 0.1), maxW: L.textW });
+    const last = sc.lines[n + 1];
+    if (last && t >= last.start) {
+      text(sc.teks_id, L.cx, L.wordY + 40 * U, 100 * U, sc.warna, { maxW: L.textW, scale: pop(t, last.start) });
+      const b = pop(t, last.start + 0.5);
+      if (b > 0 && sc.teks_en) { ctx.save(); ctx.translate(L.cx, L.wordY + 160 * U); ctx.scale(b, b); pill('🇬🇧 ' + sc.teks_en, 0, 0, 56 * U, sc.warna); ctx.restore(); }
+      burst(L.cx, L.mainY, t - last.start, sc.warna);
+    }
+  },
+
+  outro(sc, t, L) {
+    const lt = t - sc.start;
+    text(sc.judul || 'Sampai jumpa!', L.cx, L.titleY, 140 * U, sc.warna, { scale: pop(lt, 0.2), maxW: L.textW });
+    (sc.emojis || []).forEach((e, i, a) => emoji(e, L.cx + (i - (a.length - 1) / 2) * 170 * U, L.wordY + Math.sin(t * 3 + i) * 12 * U, 120 * U, { scale: pop(lt, 0.5 + i * 0.12) }));
+    for (let i = 0; i < 9; i++) star(L.cx + Math.cos(i * 0.7 + t) * 380 * U, L.mainY + Math.sin(i * 1.3 + t * 1.2) * 180 * U, (24 + hash(i) * 20) * U, ['#ffd54f', '#f06292', '#4fc3f7'][i % 3], t * 2 + i);
+    L.wave = true;
+  },
+};
+
+function layout(sc) {
+  return VERT
+    ? { cx: W / 2, titleY: H * 0.15, mainY: H * 0.38, wordY: H * 0.58, textW: W * 0.88, mascot: [W / 2, H * 0.8, 170 * U] }
+    : { cx: W * 0.58, titleY: H * 0.16, mainY: H * 0.45, wordY: H * 0.73, textW: W * 0.72, mascot: [W * 0.14, H * 0.7, 150 * U] };
+}
+
+function draw(t, mode) {
+  const sc = TL.scenes.find(s => t >= s.start && t < s.end) || TL.scenes[TL.scenes.length - 1];
+  background(t, sc.warna);
+  const L = layout(sc);
+  if (mode === 'thumb') return thumb(sc, t, L);
+  SCENES[sc.type](sc, t, L);
+  const fi = Math.min(MOUTH.length - 1, Math.round(t * FPS));
+  ciko(...L.mascot, t, MOUTH[fi] || 0, L.wave);
+  if (DRAFT) { // teks bantu saat draft
+    const k = lineIdxAt(sc, t), ln = sc.lines[k];
+    if (ln && t < ln.end + 0.3) { ctx.fillStyle = 'rgba(0,0,0,0.55)'; ctx.fillRect(0, H - 70 * U, W, 70 * U); text(ln.text, W / 2, H - 35 * U, 34 * U, '#fff', { stroke: false, maxW: W * 0.95 }); }
+  }
+  const fadeIn = clamp((t - sc.start) / 0.25); // transisi antar adegan
+  if (fadeIn < 1) { ctx.fillStyle = `rgba(255,255,255,${1 - fadeIn})`; ctx.fillRect(0, 0, W, H); }
+}
+
+function thumb(sc, t, L) {
+  const th = TL.thumbnail;
+  const g = ctx.createRadialGradient(W * 0.6, H * 0.5, 50, W * 0.6, H * 0.5, W * 0.8);
+  g.addColorStop(0, '#fffde7'); g.addColorStop(0.5, '#ffe082'); g.addColorStop(1, '#ffb74d');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  for (let i = 0; i < 16; i++) star(hash(i) * W, hash(i + 40) * H, (10 + hash(i + 5) * 18) * U, 'rgba(255,255,255,0.8)', i);
+  text(th.judul, W * 0.6, H * 0.2, 170 * U, th.warna, { maxW: W * 0.75, strokeColor: '#fff' });
+  th.emojis.forEach((e, i, a) => emoji(e, W * 0.6 + (i - (a.length - 1) / 2) * 230 * U, H * 0.55 + (i % 2 ? -30 : 30) * U, 210 * U, { rot: (i % 2 ? 0.12 : -0.12) }));
+  if (th.label) pill(th.label, W * 0.6, H * 0.85, 70 * U, th.warna);
+  ciko(W * 0.15, H * 0.62, 200 * U, 0.3, 0.8, true);
+}
+</script>
+</body>
+</html>
