@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { execFileSync } = require('child_process');
 
 const URL = 'https://texttospeech.googleapis.com/v1/text:synthesize';
 const DEFAULT = { nama: 'id-ID-Chirp3-HD-Charon', kecepatan: 1.0 };
@@ -11,15 +12,14 @@ async function synth(text, suara, file) {
   const voice = { ...DEFAULT, ...suara };
   const audioConfig = { audioEncoding: 'LINEAR16', sampleRateHertz: 48000 };
   if (voice.kecepatan !== 1) audioConfig.speakingRate = voice.kecepatan;
+  const body = JSON.stringify({ input: { text }, voice: { languageCode: 'id-ID', name: voice.nama }, audioConfig });
   for (let attempt = 1; ; attempt++) {
-    const res = await fetch(URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'X-Goog-Api-Key': process.env.GOOGLE_TTS_API_KEY || 'disuntik-proxy' },
-      body: JSON.stringify({ input: { text }, voice: { languageCode: 'id-ID', name: voice.nama }, audioConfig }),
-    });
-    if (res.ok) { fs.writeFileSync(file, Buffer.from((await res.json()).audioContent, 'base64')); return; }
-    const msg = (await res.text()).slice(0, 300);
-    if (attempt >= 4 || res.status < 500 && res.status !== 429) throw new Error(`Google TTS ${res.status}: ${msg}`);
+    // curl dipakai (bukan fetch) karena mengikuti proxy sesi yang menyisipkan key.
+    const out = execFileSync('curl', ['-s', '-w', '\n%{http_code}', '-X', 'POST', URL, '-H', 'Content-Type: application/json',
+      '-H', `X-Goog-Api-Key: ${process.env.GOOGLE_TTS_API_KEY || 'disuntik-proxy'}`, '--data-binary', '@-'], { input: body, maxBuffer: 1 << 28 }).toString();
+    const cut = out.lastIndexOf('\n'), status = +out.slice(cut + 1), txt = out.slice(0, cut);
+    if (status === 200) { fs.writeFileSync(file, Buffer.from(JSON.parse(txt).audioContent, 'base64')); return; }
+    if (attempt >= 4 || status < 500 && status !== 429) throw new Error(`Google TTS ${status}: ${txt.slice(0, 300)}`);
     await new Promise(r => setTimeout(r, 2000 * attempt));
   }
 }
