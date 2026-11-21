@@ -37,7 +37,7 @@ Kompilasi: `node src/compile.js <nama> k001 k002 …`
 - **Gaya bahasa santai/ngobrol** khas anak muda Indonesia di `baris` (dibacakan): "udah", "nggak", "aja", "gimana",
   "kayak", "banget", "ngatur", "yuk". Tetap sopan, tanpa kata kasar, tanpa singkatan tulisan (bukan "gk", "yg").
   Teks di layar (judul, items, catatan) boleh lebih rapi/baku. Sapaan "kamu". Untuk pekerja/UMKM Indonesia. Contoh angka konkret & dekat dengan kehidupan sehari-hari.
-- Target **900–1.100 kata** di semua `baris` (≈8–9 menit setelah direkam), 15–22 adegan, dibagi 4–6 bab.
+- Target **1.200–1.400 kata** di semua `baris` (suara AI membaca ±175 kata/menit → ≈8,5–10 menit; wajib ≥ 8 menit agar bisa iklan tengah), 15–22 adegan, dibagi 4–6 bab.
 - Di `baris` (dibacakan): angka **ditulis dengan kata** ("dua setengah juta rupiah"). Di visual: angka (`2500000`, "Rp2,5 jt").
 - Semua perhitungan harus benar. Hitung dengan Python jika perlu (bunga majemuk, cicilan, dll.).
 - Imbal hasil/inflasi = **asumsi ilustrasi**, beri `catatan_kecil` "Ilustrasi, bukan jaminan…".
