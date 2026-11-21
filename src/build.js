@@ -99,7 +99,7 @@ function timeline(sceneIdx) {
     if (src.type === 'hitung' && sc.lines[src.jumlah + 1]) effects.push({ t: sc.lines[src.jumlah + 1].start, kind: 'ding' });
     scenes.push(sc);
   }
-  return { scenes, clips, effects, total: t, thumbnail: ep.thumbnail };
+  return { scenes, clips, effects, total: t, thumbnail: [].concat(ep.thumbnail)[0] };
 }
 
 // ---------- 4. Render ----------
@@ -144,22 +144,27 @@ function metadata(tl) {
   const m = ep.youtube;
   fs.writeFileSync(path.join(OUT, 'metadata-youtube.txt'), [
     'JUDUL:', m.judul, '',
+    ...(m.judul_alternatif ? ['JUDUL ALTERNATIF (untuk uji judul / ganti jika views sepi setelah 7 hari):', ...m.judul_alternatif.map(j => '- ' + j), ''] : []),
     'DESKRIPSI:', m.deskripsi, '', ...(chapters.length ? ['Bab:', ...chapters, ''] : []), (m.hashtag || []).join(' '), '',
     'TAG:', (m.tag || []).join(', '), '',
+    ...(m.komentar_sematan ? ['KOMENTAR SEMATAN (posting & pin setelah upload):', m.komentar_sematan, ''] : []),
+    ...(m.playlist ? ['PLAYLIST:', m.playlist, ''] : []),
     'PENGATURAN WAJIB SAAT UPLOAD:',
     ...(TH.musik === 'ceria'
       ? ['- Audiens: "Ya, konten ini dibuat untuk anak-anak"', '- Konten yang diubah/sintetis: "Tidak" (animasi kartun & suara asli Anda tidak perlu label ini)']
       : ['- Audiens: "Tidak, konten ini tidak dibuat untuk anak-anak"', '- Konten yang diubah/sintetis: "Tidak" (animasi grafik & suara asli Anda tidak perlu label ini)',
          '- Pastikan semua angka di video sudah Anda cek ulang sebelum upload']),
     '- Kategori: Pendidikan (Education)',
-    '- Thumbnail: thumbnail.png',
+    `- Thumbnail: thumbnail.png${[].concat(ep.thumbnail).length > 1 ? ' (+ varian lain: pakai fitur "Uji & bandingkan" di YouTube Studio)' : ''}`,
+    '- Layar akhir (end screen): tambahkan "Video terbaru" + tombol subscribe di 20 detik terakhir',
+    '- Shorts: di setiap Shorts, tautkan "Video terkait" ke video panjang episode ini',
     '',
   ].join('\n'));
 }
 
 (async () => {
   try {
-    const all = ep.adegan.map((_, i) => i);
+    const all = ep.adegan.map((_, i) => i).filter(i => !ep.adegan[i].hanya_shorts);
     const tl = timeline(all);
     const [W, H] = DRAFT ? [960, 540] : [1920, 1080];
     if (!ONLY || ONLY === 'video') { await render(tl, W, H, path.join(OUT, `${ep.id}${DRAFT ? '-draft' : ''}.mp4`), 'Video panjang'); metadata(tl); }
@@ -169,10 +174,14 @@ function metadata(tl) {
       await render(stl, H, W, path.join(OUT, `${ep.id}-shorts-${i + 1}${DRAFT ? '-draft' : ''}.mp4`), `Shorts ${i + 1}`);
     }
     if (!ONLY || ONLY === 'thumbnail') {
-      const page = await stage(1280, 720, tl, [0]);
-      const url = await page.evaluate(() => window.frame(1, 'thumb'));
-      fs.writeFileSync(path.join(OUT, 'thumbnail.png'), Buffer.from(url.split(',')[1], 'base64'));
-      console.log(`✓ Thumbnail: output/${ep.id}/thumbnail.png`);
+      for (const [i, th] of [].concat(ep.thumbnail).entries()) { // beberapa varian untuk uji A/B
+        const page = await stage(1280, 720, { ...tl, thumbnail: th }, [0]);
+        const url = await page.evaluate(() => window.frame(1, 'thumb'));
+        const name = i ? `thumbnail-${i + 1}.png` : 'thumbnail.png';
+        fs.writeFileSync(path.join(OUT, name), Buffer.from(url.split(',')[1], 'base64'));
+        await page.close();
+        console.log(`✓ Thumbnail: output/${ep.id}/${name}`);
+      }
     }
   } catch (e) { console.error('✗', e.message); process.exitCode = 1; }
   finally { if (browser) await browser.close(); }

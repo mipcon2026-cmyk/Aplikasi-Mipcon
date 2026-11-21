@@ -42,14 +42,33 @@ Kompilasi: `node src/compile.js <nama> k001 k002 …`
 - Adegan `penutup` terakhir wajib punya `catatan_kecil` disclaimer edukasi. Deskripsi YouTube wajib memuat disclaimer.
 - Buka dengan `hook` yang menyentuh masalah penonton dalam 10 detik pertama.
 
+## Aturan pertumbuhan channel (wajib di setiap episode)
+1. **30 detik pertama** (≤ 70 kata): adegan 0 = `hook` berisi masalah spesifik penonton + angka. Adegan 1 = janji
+   manfaat/daftar isi, plus satu "rasa penasaran" yang baru terjawab di akhir ("di akhir ada satu kesalahan yang…").
+   Tanpa salam pembuka/perkenalan channel. Jangan minta like/subscribe di awal.
+2. **Retensi**: visual berganti paling lama tiap ±20 detik (adegan baru atau item baru muncul). Tiap 2–3 menit sisipkan
+   `hook`/`angka` yang mengejutkan sebagai penyegar.
+3. **Judul** `youtube.judul`: ≤ 60 karakter, kata kunci yang dicari orang di depan, ada angka/situasi spesifik, wajib
+   sesuai isi (tanpa clickbait palsu). Tambah `judul_alternatif`: 2 judul dengan sudut berbeda (penasaran vs manfaat).
+4. **Thumbnail**: `thumbnail` berupa array **2 varian** untuk uji A/B. Maks 2 baris × 4 kata, jangan mengulang judul
+   persis, 1 emoji besar, warna kontras (`red`/`gold` = masalah, `green` = solusi).
+5. **Shorts**: 3 per episode, masing-masing 30–60 detik. Setiap Shorts diawali adegan `hook` khusus dengan
+   `"hanya_shorts": true` (1 kalimat tanya ≤ 12 kata, tidak tampil di video panjang), lalu 1–2 adegan isi.
+6. **Akhir video**: adegan `penutup` diberi `"jeda_akhir": 18` (ruang layar akhir/end screen). Baris terakhir mengajak
+   menonton video berikutnya + subscribe, singkat.
+7. `youtube.komentar_sematan`: 1 pertanyaan yang memancing penonton menjawab di komentar.
+   `youtube.playlist`: nama playlist sesuai pilar (mis. "Atur Gaji & Budget", "Utang & Cicilan", "Bisnis & UMKM").
+   150 karakter pertama `deskripsi` memuat kata kunci utama + manfaat.
+
 ## Skema episode (tema keuangan)
 ```json
 {
   "id": "k002", "tema": "keuangan", "channel": "Hitung Cuan", "judul": "…", "musik_seed": 12,
   "adegan": [ { "type": "…", "bab": "Nama bab (opsional, membuat chapter YouTube)", "warna": "green", "baris": [ … ] } ],
   "shorts": [ { "adegan": [0, 3, 4] } ],
-  "thumbnail": { "baris": ["TEKS 1", { "teks": "TEKS 2", "warna": "gold" }], "sorot": "LABEL", "emojis": ["💳"], "warna": "red" },
-  "youtube": { "judul": "…", "deskripsi": "…", "hashtag": ["#…"], "tag": ["…"] }
+  "thumbnail": [ { "baris": ["TEKS 1", { "teks": "TEKS 2", "warna": "gold" }], "sorot": "LABEL", "emojis": ["💳"], "warna": "red" }, { …varian 2… } ],
+  "youtube": { "judul": "…", "judul_alternatif": ["…", "…"], "deskripsi": "…", "hashtag": ["#…"], "tag": ["…"],
+               "komentar_sematan": "…?", "playlist": "…" }
 }
 ```
 - `baris`: string, atau `{ "teks": "...", "muncul": n, "catatan": "petunjuk baca" }`.
@@ -71,4 +90,4 @@ Kompilasi: `node src/compile.js <nama> k001 k002 …`
 | `banding` | `judul`, `kiri/kanan: {judul, ikon, warna}`, `items: [{kiri, kanan}]` (maks 4, teks pendek) |
 | `penutup` | `judul`, `items`: string checklist (maks 5) |
 
-Shorts: 1–3 potongan dari adegan yang berdiri sendiri (mis. hook + grafik), masing-masing ≤ 60–90 detik.
+Adegan dengan `"hanya_shorts": true` tetap masuk naskah rekaman, tapi hanya dipakai di Shorts. Letakkan di akhir array `adegan`.
