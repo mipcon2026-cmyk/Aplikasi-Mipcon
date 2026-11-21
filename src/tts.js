@@ -6,7 +6,7 @@ const crypto = require('crypto');
 const { execFileSync } = require('child_process');
 
 const URL = 'https://texttospeech.googleapis.com/v1/text:synthesize';
-const DEFAULT = { nama: 'id-ID-Chirp3-HD-Charon', kecepatan: 1.0 };
+const DEFAULT = { nama: 'id-ID-Chirp3-HD-Umbriel', kecepatan: 1.0 };
 
 async function synth(text, suara, file) {
   const voice = { ...DEFAULT, ...suara };

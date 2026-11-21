@@ -6,9 +6,9 @@ CARA 1 (paling mudah): rekam semuanya dalam SATU file, beri jeda ±2 detik di an
 CARA 2: rekam per baris, simpan dengan nomor barisnya.
    Contoh: rekaman/k001/001.m4a, rekaman/k001/002.m4a, ...
 
-[001] Gaji lima juta, tapi baru tanggal dua puluh, saldo sudah tinggal sedikit?
-[002] Tenang, kamu tidak sendirian. Banyak sekali orang mengalami hal yang sama.
-[003] Dan kabar baiknya, masalahnya sering kali bukan di besar kecilnya gaji, tapi di cara kita mengaturnya.
+[001] Gaji lima juta, tapi baru tanggal dua puluh, saldo udah tinggal dikit?
+[002] Tenang, kamu nggak sendirian. Banyak banget orang mengalami hal yang sama.
+[003] Dan kabar baiknya, masalahnya sering kali bukan di besar kecilnya gaji, tapi di cara kita ngaturnya.
 [004] Di video ini, kita akan bahas rumus sederhana bernama lima puluh, tiga puluh, dua puluh.
 [005] Lalu kita praktikkan langsung dengan simulasi gaji lima juta rupiah.
 [006] Setelah itu kita hitung dana darurat,
@@ -21,9 +21,9 @@ CARA 2: rekam per baris, simpan dengan nomor barisnya.
 [013] Dan dua puluh persen untuk tabungan dan investasi. Ini adalah uang untuk dirimu di masa depan.
 [014] Kalau gaji kamu lima juta rupiah, maka dua setengah juta untuk kebutuhan,
 [015] satu setengah juta untuk keinginan,
-[016] dan satu juta rupiah untuk tabungan dan investasi. Sekarang, mari kita lihat apakah angka ini masuk akal.
+[016] dan satu juta rupiah untuk tabungan dan investasi. Sekarang, yuk kita lihat apakah angka ini masuk akal.
 [017] Bagian kedua. Simulasi gaji lima juta.
-[018] Kita mulai dari pos kebutuhan, dua setengah juta rupiah. Contohnya seperti ini.
+[018] Kita mulai dari pos kebutuhan, dua setengah juta rupiah. Contohnya kayak gini.
 [019] Sewa kos satu juta dua ratus ribu.
 [020] Makan sekitar tiga puluh ribu per hari, jadi sembilan ratus ribu sebulan.
 [021] Transportasi tiga ratus ribu.
@@ -34,43 +34,43 @@ CARA 2: rekam per baris, simpan dengan nomor barisnya.
 [026] lima ratus ribu untuk belanja online,
 [027] empat ratus ribu untuk hiburan akhir pekan,
 [028] dan seratus ribu untuk langganan streaming.
-[029] Kuncinya: kalau jatah keinginan bulan ini sudah habis, berhenti. Jangan ambil dari pos lain, apalagi dari paylater.
+[029] Kuncinya: kalau jatah keinginan bulan ini udah habis, berhenti. Jangan ambil dari pos lain, apalagi dari paylater.
 [030] Dan yang paling penting, pos tabungan dan investasi: satu juta rupiah setiap bulan.
 [031] Prinsipnya: bayar dirimu sendiri dulu, baru bayar yang lain.
-[032] Caranya, sisihkan tabungan di hari gajian. Jangan menunggu sisa di akhir bulan, karena biasanya tidak akan ada sisa.
-[033] Simpan di rekening yang terpisah dari rekening harian, supaya tidak tergoda dipakai.
-[034] Lebih bagus lagi, atur transfer otomatis setiap tanggal gajian. Jadi kamu tidak perlu mengandalkan niat.
+[032] Caranya, sisihkan tabungan di hari gajian. Jangan menunggu sisa di akhir bulan, karena biasanya nggak akan ada sisa.
+[033] Simpan di rekening yang terpisah dari rekening harian, supaya nggak tergoda dipakai.
+[034] Lebih bagus lagi, atur transfer otomatis setiap tanggal gajian. Jadi kamu nggak perlu mengandalkan niat.
 [035] Bagian ketiga. Sebelum berinvestasi, siapkan dulu dana darurat.
 [036] Dana darurat adalah uang cadangan untuk kejadian tak terduga. Misalnya sakit, kendaraan rusak, atau kehilangan pekerjaan.
 [037] Patokan yang umum dipakai dihitung dari pengeluaran wajib per bulan. Di simulasi kita, dua setengah juta.
 [038] Kalau masih lajang, targetkan minimal tiga kali lipatnya, yaitu tujuh setengah juta rupiah.
-[039] Kalau sudah berkeluarga, targetkan enam kali lipat, yaitu lima belas juta rupiah.
+[039] Kalau udah berkeluarga, targetkan enam kali lipat, yaitu lima belas juta rupiah.
 [040] Dengan menabung satu juta per bulan, dana darurat tujuh setengah juta akan terkumpul dalam sekitar delapan bulan.
-[041] Simpan di tempat yang aman dan mudah dicairkan kapan saja, misalnya rekening tabungan terpisah, atau reksa dana pasar uang.
+[041] Simpan di tempat yang aman dan mudah dicairkan kapan aja, misalnya rekening tabungan terpisah, atau reksa dana pasar uang.
 [042] Bagian keempat. Setelah dana darurat aman, apa yang terjadi kalau satu juta per bulan itu terus disisihkan selama sepuluh tahun?
-[043] Kalau satu juta per bulan hanya disimpan biasa tanpa bunga, setelah sepuluh tahun terkumpul seratus dua puluh juta rupiah.
+[043] Kalau satu juta per bulan cuma disimpan biasa tanpa bunga, setelah sepuluh tahun terkumpul seratus dua puluh juta rupiah.
 [044] Tapi kalau diinvestasikan dengan ilustrasi imbal hasil lima persen per tahun, hasilnya sekitar seratus lima puluh lima juta rupiah.
 [045] Perhatikan garisnya. Di awal hampir sama, tapi semakin lama jaraknya semakin lebar. Inilah yang disebut bunga berbunga.
 [046] Selisihnya sekitar tiga puluh lima juta rupiah.
-[047] Padahal modalnya sama-sama seratus dua puluh juta. Bedanya hanya satu: uangnya ikut bekerja, atau diam saja.
-[048] Satu catatan penting. Angka lima persen ini hanya ilustrasi, bukan jaminan. Investasi selalu punya risiko, jadi pilih produk yang terdaftar dan diawasi OJK, dan pelajari dulu sebelum membeli.
-[049] Lalu kenapa tidak disimpan biasa saja? Karena ada inflasi, yaitu harga barang yang terus naik.
-[050] Kalau inflasi rata-rata tiga persen per tahun, uang seratus dua puluh juta sepuluh tahun lagi, daya belinya kira-kira hanya setara delapan puluh sembilan juta rupiah hari ini.
-[051] Artinya, uang yang diam saja pelan-pelan kehilangan nilainya.
+[047] Padahal modalnya sama-sama seratus dua puluh juta. Bedanya cuma satu: uangnya ikut bekerja, atau diam aja.
+[048] Satu catatan penting. Angka lima persen ini cuma ilustrasi, bukan jaminan. Investasi selalu punya risiko, jadi pilih produk yang terdaftar dan diawasi OJK, dan pelajari dulu sebelum beli.
+[049] Lalu kenapa nggak disimpan biasa aja? Karena ada inflasi, yaitu harga barang yang terus naik.
+[050] Kalau inflasi rata-rata tiga persen per tahun, uang seratus dua puluh juta sepuluh tahun lagi, daya belinya kira-kira cuma setara delapan puluh sembilan juta rupiah hari ini.
+[051] Artinya, uang yang diam aja pelan-pelan kehilangan nilainya.
 [052] Bagian terakhir. Empat kebiasaan yang diam-diam bikin gaji cepat habis.
 [053] Pertama, menabung dari sisa gaji. Ganti dengan menabung di awal, tepat saat gajian.
 [054] Kedua, gaji naik, gaya hidup ikut naik. Coba balik: setiap gaji naik, naikkan juga porsi tabunganmu.
 [055] Ketiga, paylater dan cicilan untuk barang konsumtif. Pegangan yang umum dipakai: total cicilan jangan lebih dari tiga puluh persen gaji.
-[056] Keempat, tidak pernah mencatat pengeluaran. Padahal, yang tidak dicatat, tidak bisa dikendalikan. Cukup lima menit setiap malam.
-[057] Lalu bagaimana kalau gajimu di bawah lima juta, dan lima puluh persen tidak cukup untuk kebutuhan?
-[058] Tidak apa-apa. Ubah porsinya, misalnya tujuh puluh, dua puluh, sepuluh. Atau mulai dari lima persen dulu.
-[059] Angka persisnya tidak terlalu penting. Yang paling penting adalah kebiasaannya: rutin, setiap bulan, tanpa kecuali.
+[056] Keempat, nggak pernah mencatat pengeluaran. Padahal, yang nggak dicatat, nggak bisa dikendalikan. Cukup lima menit setiap malam.
+[057] Lalu gimana kalau gajimu di bawah lima juta, dan lima puluh persen nggak cukup untuk kebutuhan?
+[058] Nggak apa-apa. Ubah porsinya, misalnya tujuh puluh, dua puluh, sepuluh. Atau mulai dari lima persen dulu.
+[059] Angka persisnya nggak terlalu penting. Yang paling penting adalah kebiasaannya: rutin, setiap bulan, tanpa kecuali.
 [060] Kita ringkas. Satu, bagi gajimu menjadi lima puluh, tiga puluh, dua puluh.
 [061] Dua, sisihkan tabungan di hari gajian.
 [062] Tiga, bangun dana darurat tiga sampai enam bulan pengeluaran.
 [063] Empat, investasi rutin di produk yang terdaftar dan diawasi OJK.
 [064] Dan lima, hindari utang untuk barang konsumtif.
-[065] Kalau video ini bermanfaat, bagikan ke temanmu yang gajinya selalu habis. Lalu tonton video berikutnya di layar, dan subscribe supaya tidak ketinggalan.
+[065] Kalau video ini bermanfaat, bagikan ke temanmu yang gajinya selalu habis. Lalu tonton video berikutnya di layar, dan subscribe supaya nggak ketinggalan.
 [066] Gaji lima juta selalu habis? Coba rumus ini.
 [067] Satu juta per bulan selama sepuluh tahun, jadi berapa?
 [068] Empat kebiasaan ini diam-diam bikin gajimu cepat habis.

@@ -1,6 +1,6 @@
 # CLAUDE.md: Pabrik Video YouTube
 
-Sistem pembuat video YouTube otomatis. Channel utama: **edukasi keuangan & bisnis** (bahasa Indonesia), suara diisi pemilik channel.
+Sistem pembuat video YouTube otomatis. Channel utama: **edukasi keuangan & bisnis** (bahasa Indonesia), narasi **suara AI Google TTS** (`id-ID-Chirp3-HD-Umbriel`).
 Satu file `episodes/<id>-<slug>.json` → video panjang 1080p, Shorts vertikal, thumbnail, naskah rekaman, metadata YouTube.
 
 - Cabang kerja: `claude/youtube-monetisasi-konten-anak-b8orje` (commit & push ke sini).
@@ -25,15 +25,18 @@ Satu file `episodes/<id>-<slug>.json` → video panjang 1080p, Shorts vertikal, 
 7. Laporkan singkat: judul final, durasi perkiraan, jumlah baris naskah.
 
 ## Tugas B: "Render final <id>"
-Rekaman pemilik ada di `rekaman/<id>.m4a` (satu file, jeda ±2 dtk antar baris) atau `rekaman/<id>/001.m4a, 002.m4a, …`.
-Jalankan `node src/build.js episodes/<file>.json` (tanpa `--draft`). Jika muncul error jumlah kalimat tidak cocok,
-laporkan angkanya ke pemilik. Kirim `output/<id>/<id>.mp4`, Shorts, `thumbnail.png`, `metadata-youtube.txt` ke pemilik.
-Video tidak di-commit (terlalu besar).
+Jalankan `node src/build.js episodes/<file>.json --ai` (tanpa `--draft`). Suara AI dibuat lewat Google TTS; key disuntikkan
+proxy environment "Aplikasi-Mipcon" (header X-Goog-Api-Key ke texttospeech.googleapis.com). Rekaman manusia di
+`rekaman/<id>.m4a` atau `rekaman/<id>/001.m4a…` otomatis diutamakan jika ada.
+Lalu kirim ke pemilik (SendUserFile, display attach): `output/<id>/<id>.mp4`, semua `<id>-shorts-*.mp4`,
+`thumbnail*.png`, `metadata-youtube.txt`. Video tidak di-commit (terlalu besar). Ubah status rencana menjadi `video siap`.
 
 Kompilasi: `node src/compile.js <nama> k001 k002 …`
 
 ## Aturan konten keuangan
-- Bahasa santai, jelas, untuk pekerja/UMKM Indonesia. Sapaan "kamu". Contoh angka konkret & dekat dengan kehidupan sehari-hari.
+- **Gaya bahasa santai/ngobrol** khas anak muda Indonesia di `baris` (dibacakan): "udah", "nggak", "aja", "gimana",
+  "kayak", "banget", "ngatur", "yuk". Tetap sopan, tanpa kata kasar, tanpa singkatan tulisan (bukan "gk", "yg").
+  Teks di layar (judul, items, catatan) boleh lebih rapi/baku. Sapaan "kamu". Untuk pekerja/UMKM Indonesia. Contoh angka konkret & dekat dengan kehidupan sehari-hari.
 - Target **900–1.100 kata** di semua `baris` (≈8–9 menit setelah direkam), 15–22 adegan, dibagi 4–6 bab.
 - Di `baris` (dibacakan): angka **ditulis dengan kata** ("dua setengah juta rupiah"). Di visual: angka (`2500000`, "Rp2,5 jt").
 - Semua perhitungan harus benar. Hitung dengan Python jika perlu (bunga majemuk, cicilan, dll.).

@@ -19,12 +19,12 @@
       ],
       "baris": [
         {
-          "teks": "Gaji lima juta, tapi baru tanggal dua puluh, saldo sudah tinggal sedikit?",
+          "teks": "Gaji lima juta, tapi baru tanggal dua puluh, saldo udah tinggal dikit?",
           "muncul": 2
         },
-        "Tenang, kamu tidak sendirian. Banyak sekali orang mengalami hal yang sama.",
+        "Tenang, kamu nggak sendirian. Banyak banget orang mengalami hal yang sama.",
         {
-          "teks": "Dan kabar baiknya, masalahnya sering kali bukan di besar kecilnya gaji, tapi di cara kita mengaturnya.",
+          "teks": "Dan kabar baiknya, masalahnya sering kali bukan di besar kecilnya gaji, tapi di cara kita ngaturnya.",
           "muncul": 3
         }
       ]
@@ -161,7 +161,7 @@
           "muncul": 2
         },
         {
-          "teks": "dan satu juta rupiah untuk tabungan dan investasi. Sekarang, mari kita lihat apakah angka ini masuk akal.",
+          "teks": "dan satu juta rupiah untuk tabungan dan investasi. Sekarang, yuk kita lihat apakah angka ini masuk akal.",
           "muncul": 3
         }
       ]
@@ -210,7 +210,7 @@
         "nilai": 2500000
       },
       "baris": [
-        "Kita mulai dari pos kebutuhan, dua setengah juta rupiah. Contohnya seperti ini.",
+        "Kita mulai dari pos kebutuhan, dua setengah juta rupiah. Contohnya kayak gini.",
         {
           "teks": "Sewa kos satu juta dua ratus ribu.",
           "muncul": 1
@@ -288,7 +288,7 @@
           "muncul": 4
         },
         {
-          "teks": "Kuncinya: kalau jatah keinginan bulan ini sudah habis, berhenti. Jangan ambil dari pos lain, apalagi dari paylater.",
+          "teks": "Kuncinya: kalau jatah keinginan bulan ini udah habis, berhenti. Jangan ambil dari pos lain, apalagi dari paylater.",
           "muncul": 5
         }
       ]
@@ -328,15 +328,15 @@
       ],
       "baris": [
         {
-          "teks": "Caranya, sisihkan tabungan di hari gajian. Jangan menunggu sisa di akhir bulan, karena biasanya tidak akan ada sisa.",
+          "teks": "Caranya, sisihkan tabungan di hari gajian. Jangan menunggu sisa di akhir bulan, karena biasanya nggak akan ada sisa.",
           "muncul": 1
         },
         {
-          "teks": "Simpan di rekening yang terpisah dari rekening harian, supaya tidak tergoda dipakai.",
+          "teks": "Simpan di rekening yang terpisah dari rekening harian, supaya nggak tergoda dipakai.",
           "muncul": 2
         },
         {
-          "teks": "Lebih bagus lagi, atur transfer otomatis setiap tanggal gajian. Jadi kamu tidak perlu mengandalkan niat.",
+          "teks": "Lebih bagus lagi, atur transfer otomatis setiap tanggal gajian. Jadi kamu nggak perlu mengandalkan niat.",
           "muncul": 3
         }
       ]
@@ -384,7 +384,7 @@
           "muncul": 2
         },
         {
-          "teks": "Kalau sudah berkeluarga, targetkan enam kali lipat, yaitu lima belas juta rupiah.",
+          "teks": "Kalau udah berkeluarga, targetkan enam kali lipat, yaitu lima belas juta rupiah.",
           "muncul": 3
         }
       ]
@@ -398,7 +398,7 @@
       "baris": [
         "Dengan menabung satu juta per bulan, dana darurat tujuh setengah juta akan terkumpul dalam sekitar delapan bulan.",
         {
-          "teks": "Simpan di tempat yang aman dan mudah dicairkan kapan saja, misalnya rekening tabungan terpisah, atau reksa dana pasar uang.",
+          "teks": "Simpan di tempat yang aman dan mudah dicairkan kapan aja, misalnya rekening tabungan terpisah, atau reksa dana pasar uang.",
           "muncul": 2
         }
       ]
@@ -472,7 +472,7 @@
       ],
       "baris": [
         {
-          "teks": "Kalau satu juta per bulan hanya disimpan biasa tanpa bunga, setelah sepuluh tahun terkumpul seratus dua puluh juta rupiah.",
+          "teks": "Kalau satu juta per bulan cuma disimpan biasa tanpa bunga, setelah sepuluh tahun terkumpul seratus dua puluh juta rupiah.",
           "muncul": 1
         },
         {
@@ -493,10 +493,10 @@
       "baris": [
         "Selisihnya sekitar tiga puluh lima juta rupiah.",
         {
-          "teks": "Padahal modalnya sama-sama seratus dua puluh juta. Bedanya hanya satu: uangnya ikut bekerja, atau diam saja.",
+          "teks": "Padahal modalnya sama-sama seratus dua puluh juta. Bedanya cuma satu: uangnya ikut bekerja, atau diam aja.",
           "muncul": 2
         },
-        "Satu catatan penting. Angka lima persen ini hanya ilustrasi, bukan jaminan. Investasi selalu punya risiko, jadi pilih produk yang terdaftar dan diawasi OJK, dan pelajari dulu sebelum membeli."
+        "Satu catatan penting. Angka lima persen ini cuma ilustrasi, bukan jaminan. Investasi selalu punya risiko, jadi pilih produk yang terdaftar dan diawasi OJK, dan pelajari dulu sebelum beli."
       ]
     },
     {
@@ -507,10 +507,10 @@
       "warna": "red",
       "catatan": "Uang yang diam saja pelan-pelan kehilangan nilainya.",
       "baris": [
-        "Lalu kenapa tidak disimpan biasa saja? Karena ada inflasi, yaitu harga barang yang terus naik.",
-        "Kalau inflasi rata-rata tiga persen per tahun, uang seratus dua puluh juta sepuluh tahun lagi, daya belinya kira-kira hanya setara delapan puluh sembilan juta rupiah hari ini.",
+        "Lalu kenapa nggak disimpan biasa aja? Karena ada inflasi, yaitu harga barang yang terus naik.",
+        "Kalau inflasi rata-rata tiga persen per tahun, uang seratus dua puluh juta sepuluh tahun lagi, daya belinya kira-kira cuma setara delapan puluh sembilan juta rupiah hari ini.",
         {
-          "teks": "Artinya, uang yang diam saja pelan-pelan kehilangan nilainya.",
+          "teks": "Artinya, uang yang diam aja pelan-pelan kehilangan nilainya.",
           "muncul": 2
         }
       ]
@@ -572,7 +572,7 @@
           "muncul": 3
         },
         {
-          "teks": "Keempat, tidak pernah mencatat pengeluaran. Padahal, yang tidak dicatat, tidak bisa dikendalikan. Cukup lima menit setiap malam.",
+          "teks": "Keempat, nggak pernah mencatat pengeluaran. Padahal, yang nggak dicatat, nggak bisa dikendalikan. Cukup lima menit setiap malam.",
           "muncul": 4
         }
       ]
@@ -594,15 +594,15 @@
       ],
       "baris": [
         {
-          "teks": "Lalu bagaimana kalau gajimu di bawah lima juta, dan lima puluh persen tidak cukup untuk kebutuhan?",
+          "teks": "Lalu gimana kalau gajimu di bawah lima juta, dan lima puluh persen nggak cukup untuk kebutuhan?",
           "muncul": 1
         },
         {
-          "teks": "Tidak apa-apa. Ubah porsinya, misalnya tujuh puluh, dua puluh, sepuluh. Atau mulai dari lima persen dulu.",
+          "teks": "Nggak apa-apa. Ubah porsinya, misalnya tujuh puluh, dua puluh, sepuluh. Atau mulai dari lima persen dulu.",
           "muncul": 2
         },
         {
-          "teks": "Angka persisnya tidak terlalu penting. Yang paling penting adalah kebiasaannya: rutin, setiap bulan, tanpa kecuali.",
+          "teks": "Angka persisnya nggak terlalu penting. Yang paling penting adalah kebiasaannya: rutin, setiap bulan, tanpa kecuali.",
           "muncul": 3
         }
       ]
@@ -641,7 +641,7 @@
           "teks": "Dan lima, hindari utang untuk barang konsumtif.",
           "muncul": 5
         },
-        "Kalau video ini bermanfaat, bagikan ke temanmu yang gajinya selalu habis. Lalu tonton video berikutnya di layar, dan subscribe supaya tidak ketinggalan."
+        "Kalau video ini bermanfaat, bagikan ke temanmu yang gajinya selalu habis. Lalu tonton video berikutnya di layar, dan subscribe supaya nggak ketinggalan."
       ],
       "jeda_akhir": 18
     },
