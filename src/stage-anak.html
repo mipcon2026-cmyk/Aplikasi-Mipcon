@@ -15,8 +15,10 @@ window.setup = async (cfg) => {
   W = cv.width = cfg.width; H = cv.height = cfg.height;
   VERT = H > W; TL = cfg.timeline; MOUTH = cfg.mouth; FPS = cfg.fps; DRAFT = cfg.draft;
   U = Math.min(W, H) / 1080; // satuan skala
-  const bin = Uint8Array.from(atob(cfg.fontB64), c => c.charCodeAt(0));
-  const ff = new FontFace(FONT, bin.buffer); await ff.load(); document.fonts.add(ff);
+  for (const f of cfg.fonts) {
+    const bin = Uint8Array.from(atob(f.b64), c => c.charCodeAt(0));
+    const ff = new FontFace(f.family, bin.buffer, { weight: f.weight }); await ff.load(); document.fonts.add(ff);
+  }
   ctx.font = `100px ${EMOJI}`; ctx.fillText('🍎', -500, -500); // pancing font emoji
   await document.fonts.ready;
 };
@@ -52,7 +54,7 @@ function text(str, x, y, size, fill, opts = {}) {
 function emoji(e, x, y, size, opts = {}) {
   ctx.save();
   ctx.translate(x, y); ctx.rotate(opts.rot || 0); ctx.scale(opts.scale ?? 1, opts.scale ?? 1);
-  ctx.font = `${size}px ${EMOJI}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.font = `${size}px ${EMOJI}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = '#000';
   if (opts.silhouette) {
     const s = Math.ceil(size * 1.4), oc = new OffscreenCanvas(s, s), o = oc.getContext('2d');
     o.font = ctx.font; o.textAlign = 'center'; o.textBaseline = 'middle';

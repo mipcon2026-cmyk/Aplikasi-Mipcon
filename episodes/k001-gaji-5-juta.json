@@ -1,0 +1,233 @@
+{
+  "id": "k001",
+  "tema": "keuangan",
+  "channel": "Hitung Cuan",
+  "judul": "Gaji 5 Juta Selalu Habis? Atur Pakai Rumus 50/30/20",
+  "musik_seed": 11,
+  "adegan": [
+    { "type": "hook", "warna": "gold", "ikon": "💸",
+      "items": ["Gaji 5 juta,", "tanggal 20 sudah habis?", { "teks": "Masalahnya bukan di gaji.", "warna": "gold" }],
+      "baris": [
+        { "teks": "Gaji lima juta, tapi baru tanggal dua puluh, saldo sudah tinggal sedikit?", "muncul": 2 },
+        "Tenang, kamu tidak sendirian. Banyak sekali orang mengalami hal yang sama.",
+        { "teks": "Dan kabar baiknya, masalahnya sering kali bukan di besar kecilnya gaji, tapi di cara kita mengaturnya.", "muncul": 3 }
+      ] },
+
+    { "type": "poin", "judul": "Yang akan kita bahas", "warna": "blue",
+      "items": [
+        { "ikon": "🧮", "teks": "Rumus 50/30/20" },
+        { "ikon": "📋", "teks": "Simulasi gaji Rp5 juta" },
+        { "ikon": "🛟", "teks": "Dana darurat" },
+        { "ikon": "📈", "teks": "Kekuatan investasi rutin" },
+        { "ikon": "⚠️", "teks": "4 kebiasaan yang bikin gaji cepat habis" }
+      ],
+      "baris": [
+        { "teks": "Di video ini, kita akan bahas rumus sederhana bernama lima puluh, tiga puluh, dua puluh.", "muncul": 1 },
+        { "teks": "Lalu kita praktikkan langsung dengan simulasi gaji lima juta rupiah.", "muncul": 2 },
+        { "teks": "Setelah itu kita hitung dana darurat,", "muncul": 3 },
+        { "teks": "melihat seberapa besar pengaruh investasi rutin dalam sepuluh tahun,", "muncul": 4 },
+        { "teks": "dan terakhir, empat kebiasaan yang diam-diam bikin gaji cepat habis. Tonton sampai akhir, ya.", "muncul": 5 }
+      ] },
+
+    { "type": "judul", "bab": "Rumus 50/30/20", "nomor": "BAGIAN 1", "judul_besar": "Kenalan dengan rumus 50/30/20", "ikon": "🧮", "warna": "blue",
+      "baris": ["Bagian pertama. Kenalan dulu dengan rumus lima puluh, tiga puluh, dua puluh."] },
+
+    { "type": "donut", "judul": "Bagi gaji jadi 3 pos", "tengah": "Gaji", "warna": "blue",
+      "items": [
+        { "label": "Kebutuhan", "nilai": 50, "warna": "blue", "sub": "Wajib dibayar" },
+        { "label": "Keinginan", "nilai": 30, "warna": "purple", "sub": "Boleh, asal terkendali" },
+        { "label": "Tabungan & investasi", "nilai": 20, "warna": "green", "sub": "Untuk masa depan" }
+      ],
+      "baris": [
+        "Idenya sederhana. Setiap kali gajian, bagi gaji kamu menjadi tiga pos.",
+        { "teks": "Lima puluh persen untuk kebutuhan. Ini semua yang wajib dibayar supaya hidup tetap berjalan: tempat tinggal, makan, transportasi, dan tagihan.", "muncul": 1 },
+        { "teks": "Tiga puluh persen untuk keinginan. Nongkrong, belanja, hiburan. Boleh, asal ada batasnya.", "muncul": 2 },
+        { "teks": "Dan dua puluh persen untuk tabungan dan investasi. Ini adalah uang untuk dirimu di masa depan.", "muncul": 3 }
+      ] },
+
+    { "type": "rumus", "judul": "Kalau gajinya Rp5.000.000", "warna": "green",
+      "items": [
+        { "teks": "Rp5.000.000 × 50%", "hasil": "Rp2.500.000", "warna": "blue" },
+        { "teks": "Rp5.000.000 × 30%", "hasil": "Rp1.500.000", "warna": "purple" },
+        { "teks": "Rp5.000.000 × 20%", "hasil": "Rp1.000.000", "warna": "green" }
+      ],
+      "baris": [
+        { "teks": "Kalau gaji kamu lima juta rupiah, maka dua setengah juta untuk kebutuhan,", "muncul": 1 },
+        { "teks": "satu setengah juta untuk keinginan,", "muncul": 2 },
+        { "teks": "dan satu juta rupiah untuk tabungan dan investasi. Sekarang, mari kita lihat apakah angka ini masuk akal.", "muncul": 3 }
+      ] },
+
+    { "type": "judul", "bab": "Simulasi Gaji 5 Juta", "nomor": "BAGIAN 2", "judul_besar": "Simulasi gaji Rp5 juta", "ikon": "📋", "warna": "purple",
+      "baris": ["Bagian kedua. Simulasi gaji lima juta."] },
+
+    { "type": "poin", "judul": "Kebutuhan — Rp2.500.000", "format": "rp", "warna": "blue",
+      "catatan_kecil": "Contoh ilustrasi. Sesuaikan dengan kota dan kondisi kamu.",
+      "items": [
+        { "ikon": "🏠", "teks": "Sewa kos", "nilai": 1200000 },
+        { "ikon": "🍜", "teks": "Makan (± Rp30 ribu/hari)", "nilai": 900000 },
+        { "ikon": "🛵", "teks": "Transportasi", "nilai": 300000 },
+        { "ikon": "📱", "teks": "Pulsa & internet", "nilai": 100000 }
+      ],
+      "total": { "teks": "Total kebutuhan", "nilai": 2500000 },
+      "baris": [
+        "Kita mulai dari pos kebutuhan, dua setengah juta rupiah. Contohnya seperti ini.",
+        { "teks": "Sewa kos satu juta dua ratus ribu.", "muncul": 1 },
+        { "teks": "Makan sekitar tiga puluh ribu per hari, jadi sembilan ratus ribu sebulan.", "muncul": 2 },
+        { "teks": "Transportasi tiga ratus ribu.", "muncul": 3 },
+        { "teks": "Pulsa dan internet seratus ribu.", "muncul": 4 },
+        { "teks": "Totalnya pas, dua setengah juta. Tentu angka ini berbeda di setiap kota. Kalau kebutuhanmu lebih besar, ambil dari pos keinginan, jangan dari pos tabungan.", "muncul": 5 }
+      ] },
+
+    { "type": "poin", "judul": "Keinginan — Rp1.500.000", "format": "rp", "warna": "purple",
+      "items": [
+        { "ikon": "☕", "teks": "Nongkrong & jajan", "nilai": 500000, "warna": "purple" },
+        { "ikon": "🛍️", "teks": "Belanja online", "nilai": 500000, "warna": "purple" },
+        { "ikon": "🎬", "teks": "Hiburan akhir pekan", "nilai": 400000, "warna": "purple" },
+        { "ikon": "📺", "teks": "Langganan streaming", "nilai": 100000, "warna": "purple" }
+      ],
+      "total": { "teks": "Total keinginan", "nilai": 1500000, "warna": "purple" },
+      "baris": [
+        "Lalu pos keinginan, satu setengah juta rupiah.",
+        { "teks": "Lima ratus ribu untuk nongkrong dan jajan,", "muncul": 1 },
+        { "teks": "lima ratus ribu untuk belanja online,", "muncul": 2 },
+        { "teks": "empat ratus ribu untuk hiburan akhir pekan,", "muncul": 3 },
+        { "teks": "dan seratus ribu untuk langganan streaming.", "muncul": 4 },
+        { "teks": "Kuncinya: kalau jatah keinginan bulan ini sudah habis, berhenti. Jangan ambil dari pos lain, apalagi dari paylater.", "muncul": 5 }
+      ] },
+
+    { "type": "angka", "label": "Tabungan & investasi setiap bulan", "nilai": 1000000, "format": "rp", "warna": "green",
+      "catatan": "Bayar dirimu sendiri dulu, baru bayar yang lain.",
+      "baris": [
+        "Dan yang paling penting, pos tabungan dan investasi: satu juta rupiah setiap bulan.",
+        { "teks": "Prinsipnya: bayar dirimu sendiri dulu, baru bayar yang lain.", "muncul": 2 }
+      ] },
+
+    { "type": "poin", "judul": "Supaya tabungan tidak bocor", "warna": "green",
+      "items": [
+        { "ikon": "📅", "teks": "Sisihkan di hari gajian, bukan dari sisa" },
+        { "ikon": "🏦", "teks": "Pakai rekening terpisah" },
+        { "ikon": "🔁", "teks": "Atur transfer otomatis (autodebet)" }
+      ],
+      "baris": [
+        { "teks": "Caranya, sisihkan tabungan di hari gajian. Jangan menunggu sisa di akhir bulan, karena biasanya tidak akan ada sisa.", "muncul": 1 },
+        { "teks": "Simpan di rekening yang terpisah dari rekening harian, supaya tidak tergoda dipakai.", "muncul": 2 },
+        { "teks": "Lebih bagus lagi, atur transfer otomatis setiap tanggal gajian. Jadi kamu tidak perlu mengandalkan niat.", "muncul": 3 }
+      ] },
+
+    { "type": "judul", "bab": "Dana Darurat", "nomor": "BAGIAN 3", "judul_besar": "Dana darurat dulu, baru investasi", "ikon": "🛟", "warna": "gold",
+      "baris": ["Bagian ketiga. Sebelum berinvestasi, siapkan dulu dana darurat."] },
+
+    { "type": "rumus", "judul": "Berapa dana darurat yang ideal?", "warna": "gold",
+      "items": [
+        { "teks": "Pengeluaran wajib per bulan", "hasil": "Rp2.500.000", "warna": "blue" },
+        { "teks": "× 3 bulan (masih lajang)", "hasil": "Rp7.500.000", "warna": "gold" },
+        { "teks": "× 6 bulan (sudah berkeluarga)", "hasil": "Rp15.000.000", "warna": "gold" }
+      ],
+      "baris": [
+        "Dana darurat adalah uang cadangan untuk kejadian tak terduga. Misalnya sakit, kendaraan rusak, atau kehilangan pekerjaan.",
+        { "teks": "Patokan yang umum dipakai dihitung dari pengeluaran wajib per bulan. Di simulasi kita, dua setengah juta.", "muncul": 1 },
+        { "teks": "Kalau masih lajang, targetkan minimal tiga kali lipatnya, yaitu tujuh setengah juta rupiah.", "muncul": 2 },
+        { "teks": "Kalau sudah berkeluarga, targetkan enam kali lipat, yaitu lima belas juta rupiah.", "muncul": 3 }
+      ] },
+
+    { "type": "angka", "label": "Menabung Rp1 juta/bulan, dana darurat Rp7,5 juta terkumpul dalam", "nilai": "± 8 bulan", "warna": "gold",
+      "catatan": "Simpan di tempat yang aman & mudah dicairkan, misalnya tabungan terpisah atau reksa dana pasar uang.",
+      "baris": [
+        "Dengan menabung satu juta per bulan, dana darurat tujuh setengah juta akan terkumpul dalam sekitar delapan bulan.",
+        { "teks": "Simpan di tempat yang aman dan mudah dicairkan kapan saja, misalnya rekening tabungan terpisah, atau reksa dana pasar uang.", "muncul": 2 }
+      ] },
+
+    { "type": "judul", "bab": "Kekuatan Investasi Rutin", "nomor": "BAGIAN 4", "judul_besar": "Rp1 juta per bulan selama 10 tahun", "ikon": "📈", "warna": "green",
+      "baris": ["Bagian keempat. Setelah dana darurat aman, apa yang terjadi kalau satu juta per bulan itu terus disisihkan selama sepuluh tahun?"] },
+
+    { "type": "garis", "judul": "Rp1 juta/bulan selama 10 tahun", "format": "jt", "maks": 160000000, "warna": "green",
+      "catatan_kecil": "Ilustrasi dengan asumsi imbal hasil 5% per tahun, bukan jaminan. Nilai investasi bisa naik atau turun.",
+      "x": ["Th 0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "Th 10"],
+      "items": [
+        { "label": "Ditabung biasa (tanpa bunga)", "warna": "#94a3b8", "data": [0, 12000000, 24000000, 36000000, 48000000, 60000000, 72000000, 84000000, 96000000, 108000000, 120000000] },
+        { "label": "Diinvestasikan (ilustrasi 5%/tahun)", "warna": "green", "data": [0, 12278855, 25185921, 38753336, 53014885, 68006083, 83764259, 100328653, 117740512, 136043196, 155282279] }
+      ],
+      "baris": [
+        { "teks": "Kalau satu juta per bulan hanya disimpan biasa tanpa bunga, setelah sepuluh tahun terkumpul seratus dua puluh juta rupiah.", "muncul": 1 },
+        { "teks": "Tapi kalau diinvestasikan dengan ilustrasi imbal hasil lima persen per tahun, hasilnya sekitar seratus lima puluh lima juta rupiah.", "muncul": 2 },
+        "Perhatikan garisnya. Di awal hampir sama, tapi semakin lama jaraknya semakin lebar. Inilah yang disebut bunga berbunga."
+      ] },
+
+    { "type": "angka", "label": "Selisihnya dalam 10 tahun", "nilai": 35282279, "format": "jt", "warna": "green",
+      "catatan": "Modal sama-sama Rp120 juta. Bedanya hanya: uangnya ikut bekerja atau tidak.",
+      "catatan_kecil": "Ilustrasi, bukan jaminan hasil. Pilih produk investasi yang terdaftar dan diawasi OJK.",
+      "baris": [
+        "Selisihnya sekitar tiga puluh lima juta rupiah.",
+        { "teks": "Padahal modalnya sama-sama seratus dua puluh juta. Bedanya hanya satu: uangnya ikut bekerja, atau diam saja.", "muncul": 2 },
+        "Satu catatan penting. Angka lima persen ini hanya ilustrasi, bukan jaminan. Investasi selalu punya risiko, jadi pilih produk yang terdaftar dan diawasi OJK, dan pelajari dulu sebelum membeli."
+      ] },
+
+    { "type": "angka", "label": "Rp120 juta 10 tahun lagi, kalau inflasi rata-rata 3%/tahun, daya belinya setara hari ini", "nilai": 89290000, "format": "jt", "warna": "red",
+      "catatan": "Uang yang diam saja pelan-pelan kehilangan nilainya.",
+      "baris": [
+        "Lalu kenapa tidak disimpan biasa saja? Karena ada inflasi, yaitu harga barang yang terus naik.",
+        "Kalau inflasi rata-rata tiga persen per tahun, uang seratus dua puluh juta sepuluh tahun lagi, daya belinya kira-kira hanya setara delapan puluh sembilan juta rupiah hari ini.",
+        { "teks": "Artinya, uang yang diam saja pelan-pelan kehilangan nilainya.", "muncul": 2 }
+      ] },
+
+    { "type": "judul", "bab": "4 Kebiasaan Boros", "nomor": "BAGIAN 5", "judul_besar": "4 kebiasaan yang bikin gaji cepat habis", "ikon": "⚠️", "warna": "red",
+      "baris": ["Bagian terakhir. Empat kebiasaan yang diam-diam bikin gaji cepat habis."] },
+
+    { "type": "banding", "judul": "Ganti kebiasaannya", "warna": "red",
+      "kiri": { "judul": "Bikin boros", "ikon": "❌", "warna": "red" },
+      "kanan": { "judul": "Lebih sehat", "ikon": "✅", "warna": "green" },
+      "items": [
+        { "kiri": "Menabung dari sisa gaji", "kanan": "Menabung di awal, saat gajian" },
+        { "kiri": "Gaji naik, gaya hidup ikut naik", "kanan": "Gaji naik, porsi tabungan ikut naik" },
+        { "kiri": "Paylater & cicilan untuk barang konsumtif", "kanan": "Total cicilan maksimal 30% gaji" },
+        { "kiri": "Tidak pernah mencatat pengeluaran", "kanan": "Catat pengeluaran setiap hari" }
+      ],
+      "baris": [
+        { "teks": "Pertama, menabung dari sisa gaji. Ganti dengan menabung di awal, tepat saat gajian.", "muncul": 1 },
+        { "teks": "Kedua, gaji naik, gaya hidup ikut naik. Coba balik: setiap gaji naik, naikkan juga porsi tabunganmu.", "muncul": 2 },
+        { "teks": "Ketiga, paylater dan cicilan untuk barang konsumtif. Pegangan yang umum dipakai: total cicilan jangan lebih dari tiga puluh persen gaji.", "muncul": 3 },
+        { "teks": "Keempat, tidak pernah mencatat pengeluaran. Padahal, yang tidak dicatat, tidak bisa dikendalikan. Cukup lima menit setiap malam.", "muncul": 4 }
+      ] },
+
+    { "type": "hook", "warna": "purple", "ikon": "🤔",
+      "items": ["Gaji di bawah 5 juta?", { "teks": "Mulai dari 10%, atau 5%.", "warna": "purple" }, { "teks": "Yang penting rutin.", "warna": "green" }],
+      "baris": [
+        { "teks": "Lalu bagaimana kalau gajimu di bawah lima juta, dan lima puluh persen tidak cukup untuk kebutuhan?", "muncul": 1 },
+        { "teks": "Tidak apa-apa. Ubah porsinya, misalnya tujuh puluh, dua puluh, sepuluh. Atau mulai dari lima persen dulu.", "muncul": 2 },
+        { "teks": "Angka persisnya tidak terlalu penting. Yang paling penting adalah kebiasaannya: rutin, setiap bulan, tanpa kecuali.", "muncul": 3 }
+      ] },
+
+    { "type": "penutup", "bab": "Ringkasan", "judul": "Ringkasan", "warna": "green",
+      "catatan_kecil": "Konten edukasi, bukan ajakan membeli produk investasi tertentu.",
+      "items": [
+        "Bagi gaji: 50% kebutuhan, 30% keinginan, 20% tabungan",
+        "Sisihkan tabungan di hari gajian",
+        "Bangun dana darurat 3–6 bulan pengeluaran",
+        "Investasi rutin di produk yang diawasi OJK",
+        "Hindari utang untuk barang konsumtif"
+      ],
+      "baris": [
+        { "teks": "Kita ringkas. Satu, bagi gajimu menjadi lima puluh, tiga puluh, dua puluh.", "muncul": 1 },
+        { "teks": "Dua, sisihkan tabungan di hari gajian.", "muncul": 2 },
+        { "teks": "Tiga, bangun dana darurat tiga sampai enam bulan pengeluaran.", "muncul": 3 },
+        { "teks": "Empat, investasi rutin di produk yang terdaftar dan diawasi OJK.", "muncul": 4 },
+        { "teks": "Dan lima, hindari utang untuk barang konsumtif.", "muncul": 5 },
+        "Kalau video ini bermanfaat, simpan dan bagikan ke temanmu yang gajinya selalu habis sebelum akhir bulan. Sampai jumpa di video berikutnya."
+      ] }
+  ],
+
+  "shorts": [
+    { "adegan": [0, 3, 4] },
+    { "adegan": [14, 15] },
+    { "adegan": [18] }
+  ],
+
+  "thumbnail": { "baris": ["GAJI 5 JUTA", { "teks": "SELALU HABIS?", "warna": "gold" }], "sorot": "RUMUS 50/30/20", "emojis": ["💸"], "warna": "green" },
+
+  "youtube": {
+    "judul": "Gaji 5 Juta Selalu Habis? Coba Rumus 50/30/20 (Simulasi Lengkap)",
+    "deskripsi": "Gaji 5 juta tapi tanggal 20 sudah habis? Di video ini kita praktikkan rumus 50/30/20 dengan simulasi lengkap: pembagian kebutuhan, keinginan, dan tabungan; cara menghitung dana darurat; ilustrasi investasi rutin Rp1 juta per bulan selama 10 tahun; dan 4 kebiasaan yang bikin gaji cepat habis.\n\nDisclaimer: Video ini adalah konten edukasi keuangan, bukan ajakan untuk membeli produk investasi tertentu. Angka imbal hasil hanya ilustrasi dan bukan jaminan. Selalu pilih produk yang terdaftar dan diawasi OJK.",
+    "hashtag": ["#keuangan", "#mengaturgaji", "#financialplanning"],
+    "tag": ["cara mengatur gaji", "rumus 50 30 20", "gaji 5 juta", "mengatur keuangan", "dana darurat", "investasi untuk pemula", "tips menabung", "keuangan pribadi", "financial planning indonesia", "gaji habis sebelum akhir bulan"]
+  }
+}

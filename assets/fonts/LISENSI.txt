@@ -1,0 +1,3 @@
+Font di folder ini berlisensi SIL Open Font License 1.1 (boleh dipakai komersial, termasuk di video):
+- Fredoka (fredoka-600.woff2) — teks lengkap lisensi: OFL-Fredoka.txt
+- Inter (inter-*.otf) — https://github.com/rsms/inter

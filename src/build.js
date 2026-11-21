@@ -14,6 +14,13 @@ const DRAFT = args.includes('--draft');
 const ONLY = (args.find(a => a.startsWith('--hanya=')) || '').split('=')[1];
 const ep = JSON.parse(fs.readFileSync(epFile, 'utf8'));
 const OUT = path.join(ROOT, 'output', ep.id);
+const THEMES = {
+  anak: { stage: 'stage-anak.html', fonts: [['Fredoka', 'fredoka-600.woff2', 600]], musik: 'ceria', lead: 0.7, gap: 0.7, tail: 1.1,
+    gaya: 'Bacalah dengan ceria, pelan, dan jelas (seperti bicara ke anak umur 5 tahun).' },
+  keuangan: { stage: 'stage-keuangan.html', fonts: [['Inter', 'inter-bold.otf', 700], ['Inter', 'inter-black.otf', 900]], musik: 'tenang', lead: 0.5, gap: 0.45, tail: 0.9,
+    gaya: 'Bacalah dengan santai, yakin, dan jelas — seperti menjelaskan ke teman sambil ngopi. Tempo sedang, jangan terburu-buru.' },
+};
+const TH = THEMES[ep.tema || 'anak'];
 fs.mkdirSync(OUT, { recursive: true });
 const FPS = DRAFT ? 24 : 30;
 const AUDIO_EXT = ['m4a', 'mp3', 'wav', 'ogg', 'aac', 'webm', 'opus', 'flac', '3gp', 'amr'];
@@ -23,12 +30,12 @@ const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2,
 const lines = [];
 ep.adegan.forEach((sc, si) => sc.baris.forEach((b, bi) => {
   const text = typeof b === 'string' ? b : b.teks;
-  lines.push({ no: lines.length + 1, si, bi, text, hint: typeof b === 'string' ? '' : (b.catatan || '') });
+  lines.push({ no: lines.length + 1, si, bi, text, hint: typeof b === 'string' ? '' : (b.catatan || ''), muncul: b.muncul });
 }));
 const pad = n => String(n).padStart(3, '0');
 fs.writeFileSync(path.join(OUT, 'naskah-rekaman.txt'), [
   `NASKAH REKAMAN — ${ep.judul}`,
-  `Total ${lines.length} baris. Bacalah dengan ceria, pelan, dan jelas (seperti bicara ke anak umur 5 tahun).`,
+  `Total ${lines.length} baris. ${TH.gaya}`,
   '',
   'CARA 1 (paling mudah): rekam semuanya dalam SATU file, beri jeda ±2 detik di antara setiap baris.',
   `   Simpan sebagai: rekaman/${ep.id}.m4a`,
@@ -68,17 +75,20 @@ function timeline(sceneIdx) {
   let t = 0;
   for (const si of sceneIdx) {
     const src = ep.adegan[si], sc = { ...src, warna: src.warna || ep.warna, start: t, lines: [] };
-    t += 0.7;
+    t += TH.lead;
     lines.filter(l => l.si === si).forEach((l, k) => {
-      if (k > 0) t += src.type === 'kuis' && k === 1 ? 3.6 : src.type === 'hitung' ? 0.35 : 0.7; // jeda; kuis = hitung mundur
-      sc.lines.push({ start: t, end: t + l.dur, text: l.text });
+      if (k > 0) t += src.type === 'kuis' && k === 1 ? 3.6 : src.type === 'hitung' ? 0.35 : TH.gap; // jeda; kuis = hitung mundur
+      sc.lines.push({ start: t, end: t + l.dur, text: l.text, muncul: l.muncul });
       if (l.pcm) clips.push({ start: t, pcm: l.pcm });
       t += l.dur;
     });
-    t += src.type === 'kuis' || src.type === 'hitung' ? 1.6 : 1.1;
+    t += src.type === 'kuis' || src.type === 'hitung' ? 1.6 : (src.jeda_akhir ?? TH.tail);
     sc.end = t;
     // efek suara pada momen penting
-    effects.push({ t: sc.start + 0.2, kind: 'pop' });
+    if (TH.musik === 'tenang') {
+      effects.push({ t: sc.start + 0.05, kind: 'whoosh' });
+      sc.lines.forEach(l => l.muncul && effects.push({ t: l.start, kind: 'tick' }));
+    } else effects.push({ t: sc.start + 0.2, kind: 'pop' });
     if (src.type === 'kata' && sc.lines[1]) effects.push({ t: sc.lines[1].start, kind: 'ding' });
     if (src.type === 'kuis' && sc.lines[1]) {
       for (let i = 1; i <= 3; i++) effects.push({ t: sc.lines[1].start - i, kind: 'tick' });
@@ -95,7 +105,7 @@ function timeline(sceneIdx) {
 let browser;
 async function render(tl, w, h, outFile, label) {
   const frames = Math.ceil(tl.total * FPS);
-  const { pcm, voice: v } = A.mixdown(tl.total, tl.clips, tl.effects, ep.musik_seed || 7);
+  const { pcm, voice: v } = A.mixdown(tl.total, tl.clips, tl.effects, ep.musik_seed || 7, TH.musik);
   const wav = outFile.replace(/\.mp4$/, '.tmp.wav');
   A.writeWav(wav, pcm);
   const mouth = v.some(x => x !== 0) ? A.mouthTrack(v, FPS, frames)
@@ -120,9 +130,9 @@ async function render(tl, w, h, outFile, label) {
 async function stage(w, h, tl, mouth) {
   browser ||= await chromium.launch();
   const page = await browser.newPage({ viewport: { width: w, height: h } });
-  await page.goto('file://' + path.join(__dirname, 'stage.html'));
-  const fontB64 = fs.readFileSync(path.join(ROOT, 'assets/fonts/fredoka-600.woff2')).toString('base64');
-  await page.evaluate(cfg => window.setup(cfg), { width: w, height: h, timeline: { ...tl, clips: undefined }, mouth, fps: FPS, draft: DRAFT, fontB64 });
+  await page.goto('file://' + path.join(__dirname, TH.stage));
+  const fonts = TH.fonts.map(([family, file, weight]) => ({ family, weight: String(weight), b64: fs.readFileSync(path.join(ROOT, 'assets/fonts', file)).toString('base64') }));
+  await page.evaluate(cfg => window.setup(cfg), { width: w, height: h, timeline: { ...tl, clips: undefined }, mouth, fps: FPS, draft: DRAFT, fonts, info: { channel: ep.channel || '', total: tl.total } });
   return page;
 }
 
@@ -136,8 +146,10 @@ function metadata(tl) {
     'DESKRIPSI:', m.deskripsi, '', ...(chapters.length ? ['Bab:', ...chapters, ''] : []), (m.hashtag || []).join(' '), '',
     'TAG:', (m.tag || []).join(', '), '',
     'PENGATURAN WAJIB SAAT UPLOAD:',
-    '- Audiens: "Ya, konten ini dibuat untuk anak-anak"',
-    '- Konten yang diubah/sintetis: "Tidak" (animasi kartun & suara asli Anda tidak perlu label ini)',
+    ...(TH.musik === 'ceria'
+      ? ['- Audiens: "Ya, konten ini dibuat untuk anak-anak"', '- Konten yang diubah/sintetis: "Tidak" (animasi kartun & suara asli Anda tidak perlu label ini)']
+      : ['- Audiens: "Tidak, konten ini tidak dibuat untuk anak-anak"', '- Konten yang diubah/sintetis: "Tidak" (animasi grafik & suara asli Anda tidak perlu label ini)',
+         '- Pastikan semua angka di video sudah Anda cek ulang sebelum upload']),
     '- Kategori: Pendidikan (Education)',
     '- Thumbnail: thumbnail.png',
     '',
@@ -152,7 +164,7 @@ function metadata(tl) {
     if (!ONLY || ONLY === 'video') { await render(tl, W, H, path.join(OUT, `${ep.id}${DRAFT ? '-draft' : ''}.mp4`), 'Video panjang'); metadata(tl); }
     if ((!ONLY || ONLY === 'shorts') && ep.shorts) for (const [i, sh] of ep.shorts.entries()) {
       const stl = timeline(sh.adegan);
-      if (stl.total > 60) console.log(`! Shorts ${i + 1} berdurasi ${fmt(stl.total)} (>60 dtk), kurangi adegannya.`);
+      if (stl.total > 180) console.log(`! Shorts ${i + 1} berdurasi ${fmt(stl.total)}; batas Shorts 3 menit, kurangi adegannya.`);
       await render(stl, H, W, path.join(OUT, `${ep.id}-shorts-${i + 1}${DRAFT ? '-draft' : ''}.mp4`), `Shorts ${i + 1}`);
     }
     if (!ONLY || ONLY === 'thumbnail') {

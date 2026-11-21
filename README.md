@@ -1,6 +1,10 @@
-# Ciko — Pabrik Video Edukasi Anak 🐤
+# Pabrik Video YouTube Otomatis
 
-Sistem otomatis untuk membuat video YouTube edukatif anak (4–10 tahun) dengan maskot **Ciko si anak ayam**.
+Dua tema tersedia (pilih lewat field `"tema"` di file episode):
+
+- **`keuangan`**: motion graphics edukasi keuangan & bisnis (grafik, angka, perhitungan). Contoh: `episodes/k001-gaji-5-juta.json`
+- **`anak`** (bawaan): video edukasi anak dengan maskot **Ciko si anak ayam**. Contoh: `episodes/ep001-warna.json`
+
 Satu file episode (`episodes/*.json`) menghasilkan:
 
 - **Video panjang** 1920×1080 (untuk monetisasi utama)
@@ -19,7 +23,9 @@ Satu file episode (`episodes/*.json`) menghasilkan:
    - Format apa saja boleh (m4a, mp3, wav, ogg, …). Rekam di ruangan sunyi, HP sejarak ±20 cm.
 4. **Render final**: `node src/build.js episodes/<file>.json`
    - Suara otomatis dibersihkan dari noise, disamakan volumenya, musik mengecil saat Anda bicara, dan paruh Ciko bergerak mengikuti suara.
-5. **Upload** ke YouTube dengan isi `metadata-youtube.txt`. **Wajib** pilih *"Ya, dibuat untuk anak-anak"*.
+5. **Upload** ke YouTube dengan isi `metadata-youtube.txt` (pengaturan audiens sudah tertulis di sana sesuai tema).
+
+> Konten keuangan: cek ulang semua angka sebelum upload, dan jangan pernah mempromosikan produk yang tidak terdaftar di OJK.
 
 Kompilasi (video 15–30 menit, bagus untuk jam tayang):
 ```
@@ -28,7 +34,26 @@ node src/compile.js kompilasi-01 ep001 ep002 ep003
 
 Opsi: `--hanya=naskah|video|shorts|thumbnail` untuk membuat satu bagian saja.
 
-## Jenis adegan
+## Jenis adegan — tema keuangan
+
+Setiap baris naskah boleh diberi `"muncul": n`, artinya saat baris itu dibaca, item ke-1 sampai ke-n tampil di layar.
+
+| type | Fungsi |
+|---|---|
+| `hook` | Kalimat besar pembuka/penegas (`items`: teks) |
+| `judul` | Kartu bab: `nomor`, `judul_besar`, `ikon` |
+| `poin` | Daftar ikon + teks + nilai Rp, opsional `total` |
+| `donut` | Diagram lingkaran porsi (mis. 50/30/20) |
+| `batang` | Grafik batang |
+| `garis` | Grafik garis (mis. pertumbuhan investasi), `x` + `items[].data` |
+| `angka` | Angka besar yang menghitung naik + `catatan` |
+| `rumus` | Langkah perhitungan: `teks` → `hasil` |
+| `banding` | Dua kolom: kebiasaan buruk vs baik |
+| `penutup` | Ringkasan dengan tanda centang |
+
+Field umum: `bab` (bab YouTube + label di pojok), `warna` (`green`, `gold`, `blue`, `red`, `purple` atau kode hex), `catatan_kecil` (disclaimer kecil di bawah layar).
+
+## Jenis adegan — tema anak
 
 | type | Fungsi | Baris rekaman |
 |---|---|---|
