@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Pakai: node src/build.js episodes/ep001-warna.json [--draft] [--hanya=naskah|video|shorts|thumbnail]
+// Pakai: node src/build.js episodes/ep001-warna.json [--draft] [--ai] [--hanya=naskah|video|shorts|thumbnail]
 const fs = require('fs');
 const path = require('path');
 const { spawn } = require('child_process');
@@ -11,6 +11,7 @@ const args = process.argv.slice(2);
 const epFile = args.find(a => !a.startsWith('--'));
 if (!epFile) { console.log('Pakai: node src/build.js episodes/<file>.json [--draft] [--hanya=naskah|video|shorts|thumbnail]'); process.exit(1); }
 const DRAFT = args.includes('--draft');
+const AI = args.includes('--ai'); // pakai suara AI Google jika tidak ada rekaman manusia
 const ONLY = (args.find(a => a.startsWith('--hanya=')) || '').split('=')[1];
 const ep = JSON.parse(fs.readFileSync(epFile, 'utf8'));
 const OUT = path.join(ROOT, 'output', ep.id);
@@ -50,7 +51,7 @@ console.log(`✓ Naskah: naskah/${ep.id}.txt (${lines.length} baris)`);
 if (ONLY === 'naskah') process.exit(0);
 
 // ---------- 2. Rekaman suara ----------
-function loadVoice() {
+async function loadVoice() {
   const dir = path.join(ROOT, 'rekaman', ep.id);
   const single = AUDIO_EXT.map(e => path.join(ROOT, 'rekaman', `${ep.id}.${e}`)).find(fs.existsSync);
   if (single) {
@@ -64,11 +65,12 @@ function loadVoice() {
     if (f) { l.pcm = A.normalize(A.trim(A.decode(f))); n++; }
   }
   if (n && n < lines.length) console.log(`! Hanya ${n}/${lines.length} baris yang ada rekamannya; sisanya diam.`);
-  return n ? `${n} file` : null;
+  if (n) return `${n} file`;
+  if (!AI) return null;
+  const files = await require('./tts').voiceLines(lines, ep.suara, path.join(OUT, 'tts'));
+  files.forEach((f, i) => { lines[i].pcm = A.normalize(A.trim(A.decode(f))); });
+  return `AI (${(ep.suara && ep.suara.nama) || require('./tts').DEFAULT.nama})`;
 }
-const voice = loadVoice();
-console.log(voice ? `✓ Suara: ${voice}` : '! Belum ada rekaman suara — video dibuat dengan musik saja (bagus untuk cek animasi).');
-for (const l of lines) l.dur = l.pcm ? l.pcm.length / A.SR : Math.max(1.2, l.text.split(/\s+/).length * 0.42 + 0.4);
 
 // ---------- 3. Linimasa ----------
 function timeline(sceneIdx) {
@@ -164,6 +166,9 @@ function metadata(tl) {
 
 (async () => {
   try {
+    const voice = await loadVoice();
+    console.log(voice ? `✓ Suara: ${voice}` : '! Belum ada rekaman suara — video dibuat dengan musik saja (tambahkan --ai untuk suara AI).');
+    for (const l of lines) l.dur = l.pcm ? l.pcm.length / A.SR : Math.max(1.2, l.text.split(/\s+/).length * 0.42 + 0.4);
     const all = ep.adegan.map((_, i) => i).filter(i => !ep.adegan[i].hanya_shorts);
     const tl = timeline(all);
     const [W, H] = DRAFT ? [960, 540] : [1920, 1080];
