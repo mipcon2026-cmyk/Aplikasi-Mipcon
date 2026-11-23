@@ -151,6 +151,7 @@ function metadata(tl) {
     'TAG:', (m.tag || []).join(', '), '',
     ...(m.komentar_sematan ? ['KOMENTAR SEMATAN (posting & pin setelah upload):', m.komentar_sematan, ''] : []),
     ...(m.playlist ? ['PLAYLIST:', m.playlist, ''] : []),
+    ...((ep.shorts || []).some(x => x.judul) ? ['JUDUL SHORTS:', ...ep.shorts.map((x, i) => `- Shorts ${i + 1}: ${x.judul || '-'}`), ''] : []),
     'PENGATURAN WAJIB SAAT UPLOAD:',
     ...(TH.musik === 'ceria'
       ? ['- Audiens: "Ya, konten ini dibuat untuk anak-anak"', '- Konten yang diubah/sintetis: "Tidak" (animasi kartun & suara asli Anda tidak perlu label ini)']

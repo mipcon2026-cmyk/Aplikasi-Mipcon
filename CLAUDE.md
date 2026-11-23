@@ -55,7 +55,7 @@ Kompilasi: `node src/compile.js <nama> k001 k002 …`
    sesuai isi (tanpa clickbait palsu). Tambah `judul_alternatif`: 2 judul dengan sudut berbeda (penasaran vs manfaat).
 4. **Thumbnail**: `thumbnail` berupa array **2 varian** untuk uji A/B. Maks 2 baris × 4 kata, jangan mengulang judul
    persis, 1 emoji besar, warna kontras (`red`/`gold` = masalah, `green` = solusi).
-5. **Shorts**: 3 per episode, masing-masing 30–60 detik. Setiap Shorts diawali adegan `hook` khusus dengan
+5. **Shorts**: 3 per episode, masing-masing 30–60 detik, tiap entri `shorts` punya `"judul"` (≤ 60 karakter, diakhiri `#shorts`). Setiap Shorts diawali adegan `hook` khusus dengan
    `"hanya_shorts": true` (1 kalimat tanya ≤ 12 kata, tidak tampil di video panjang), lalu 1–2 adegan isi.
 6. **Akhir video**: adegan `penutup` diberi `"jeda_akhir": 18` (ruang layar akhir/end screen). Baris terakhir mengajak
    menonton video berikutnya + subscribe, singkat.
