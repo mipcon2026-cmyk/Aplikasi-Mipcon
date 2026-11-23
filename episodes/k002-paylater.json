@@ -1,0 +1,750 @@
+{
+  "id": "k002",
+  "tema": "keuangan",
+  "channel": "Hitung Dulu",
+  "judul": "Paylater: Cara Kerja & Bunga Sebenarnya",
+  "musik_seed": 27,
+  "adegan": [
+    {
+      "type": "hook",
+      "warna": "red",
+      "ikon": "🛒",
+      "items": [
+        "Belanja Rp1 juta pakai paylater,",
+        "cicilan cuma Rp114 ribu?",
+        {
+          "teks": "Totalnya bisa Rp1,37 juta.",
+          "warna": "red"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Belanja satu juta pakai paylater, cicilannya cuma seratus empat belas ribu sebulan. Ringan banget, kan?",
+          "muncul": 2
+        },
+        {
+          "teks": "Tapi sampai lunas, totalnya bisa satu juta tiga ratus tujuh puluh ribu rupiah. Kok bisa?",
+          "muncul": 3
+        }
+      ]
+    },
+    {
+      "type": "poin",
+      "judul": "Yang akan kita bahas",
+      "warna": "blue",
+      "items": [
+        {
+          "ikon": "⚙️",
+          "teks": "Cara kerja paylater"
+        },
+        {
+          "ikon": "🧮",
+          "teks": "Simulasi Rp1 juta: 3, 6, 12 bulan"
+        },
+        {
+          "ikon": "⏰",
+          "teks": "Denda & cicilan bertumpuk"
+        },
+        {
+          "ikon": "✅",
+          "teks": "Kapan boleh, kapan bahaya"
+        },
+        {
+          "ikon": "❓",
+          "teks": "1 kesalahan kecil yang paling mahal"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Kita bongkar cara kerjanya,",
+          "muncul": 1
+        },
+        {
+          "teks": "simulasi tenor tiga, enam, dan dua belas bulan,",
+          "muncul": 2
+        },
+        {
+          "teks": "efek denda dan cicilan numpuk,",
+          "muncul": 3
+        },
+        {
+          "teks": "lalu kapan boleh, kapan bahaya.",
+          "muncul": 4
+        },
+        {
+          "teks": "Dan di akhir, ada satu kesalahan kecil yang efeknya bisa kebawa bertahun-tahun.",
+          "muncul": 5
+        }
+      ]
+    },
+    {
+      "type": "judul",
+      "bab": "Cara kerja paylater",
+      "nomor": "BAGIAN 1",
+      "judul_besar": "Paylater itu sebenarnya apa?",
+      "ikon": "⚙️",
+      "warna": "blue",
+      "baris": [
+        "Bagian pertama. Paylater itu sebenarnya apa, sih?"
+      ]
+    },
+    {
+      "type": "poin",
+      "judul": "Alur paylater",
+      "warna": "blue",
+      "items": [
+        {
+          "ikon": "🎫",
+          "teks": "Dapat limit kredit"
+        },
+        {
+          "ikon": "🛍️",
+          "teks": "Belanja sekarang, uang belum keluar"
+        },
+        {
+          "ikon": "🧾",
+          "teks": "Tagihan datang bulan depan"
+        },
+        {
+          "ikon": "📆",
+          "teks": "Lunas sekali atau dicicil"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Paylater itu pada dasarnya pinjaman. Bedanya, prosesnya cepat banget dan nempel langsung di tempat kamu belanja. Pertama, kamu dikasih limit kredit, misalnya dua juta rupiah.",
+          "muncul": 1
+        },
+        {
+          "teks": "Kamu belanja sekarang, tapi uangmu belum keluar sama sekali. Yang bayar duluan adalah penyedia paylater.",
+          "muncul": 2
+        },
+        {
+          "teks": "Bulan depan, tagihannya datang.",
+          "muncul": 3
+        },
+        {
+          "teks": "Kamu bisa lunasi sekaligus, atau pilih dicicil tiga, enam, sampai dua belas bulan. Nah, di pilihan cicilan inilah biayanya mulai muncul.",
+          "muncul": 4
+        },
+        "Karena ini pinjaman, pastikan penyedianya terdaftar dan diawasi OJK. Kalau nggak terdaftar, risikonya jauh lebih besar, mulai dari bunga liar sampai penagihan yang nggak wajar.",
+        "Satu hal lagi: karena prosesnya cuma satu klik, belanja pakai paylater sering terasa kayak nggak keluar uang. Padahal uangnya tetap keluar, cuma pindah ke bulan depan, plus biaya tambahan."
+      ]
+    },
+    {
+      "type": "poin",
+      "judul": "Biaya yang sering tidak terlihat",
+      "warna": "gold",
+      "catatan_kecil": "Jenis dan besaran biaya berbeda tiap penyedia. Cek di syarat & ketentuan.",
+      "items": [
+        {
+          "ikon": "📈",
+          "teks": "Bunga cicilan per bulan"
+        },
+        {
+          "ikon": "🧾",
+          "teks": "Biaya layanan / admin"
+        },
+        {
+          "ikon": "⏰",
+          "teks": "Denda keterlambatan"
+        },
+        {
+          "ikon": "🏷️",
+          "teks": "Harga promo yang berubah"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Biaya paylater biasanya ada di empat tempat. Pertama, bunga cicilan, yang sering ditulis per bulan, jadi kelihatan kecil.",
+          "muncul": 1
+        },
+        {
+          "teks": "Kedua, biaya layanan atau biaya admin per transaksi.",
+          "muncul": 2
+        },
+        {
+          "teks": "Ketiga, denda kalau kamu telat bayar.",
+          "muncul": 3
+        },
+        {
+          "teks": "Dan keempat, yang sering kelewat: kadang harga promo atau diskon cuma berlaku untuk metode bayar tertentu. Jadi harga barangnya sendiri bisa beda.",
+          "muncul": 4
+        },
+        "Besarnya beda-beda di tiap penyedia, jadi biasakan baca rincian biaya sebelum klik setuju. Sekarang, yuk kita hitung pakai contoh nyata."
+      ]
+    },
+    {
+      "type": "judul",
+      "bab": "Simulasi belanja Rp1 juta",
+      "nomor": "BAGIAN 2",
+      "judul_besar": "Simulasi belanja Rp1 juta",
+      "ikon": "🧮",
+      "warna": "gold",
+      "baris": [
+        "Bagian kedua. Simulasi belanja satu juta rupiah."
+      ]
+    },
+    {
+      "type": "rumus",
+      "judul": "Cicilan 12 bulan (ilustrasi)",
+      "warna": "gold",
+      "catatan_kecil": "Ilustrasi: bunga flat 3%/bulan + biaya layanan 1%. Bukan tarif penyedia tertentu.",
+      "items": [
+        {
+          "teks": "Harga barang",
+          "hasil": "Rp1.000.000"
+        },
+        {
+          "teks": "Bunga 3% × 12 bulan",
+          "hasil": "Rp360.000",
+          "warna": "red"
+        },
+        {
+          "teks": "Biaya layanan 1%",
+          "hasil": "Rp10.000",
+          "warna": "red"
+        },
+        {
+          "teks": "Total dibayar",
+          "hasil": "Rp1.370.000",
+          "warna": "gold"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Misalnya kamu beli HP seharga satu juta rupiah. Kita pakai angka ilustrasi ya, bukan tarif penyedia tertentu.",
+          "muncul": 1
+        },
+        {
+          "teks": "Bunganya tiga persen per bulan, dihitung flat dari harga awal. Tiga persen dari satu juta itu tiga puluh ribu. Dikali dua belas bulan, jadi tiga ratus enam puluh ribu rupiah.",
+          "muncul": 2
+        },
+        {
+          "teks": "Ditambah biaya layanan satu persen, sepuluh ribu rupiah.",
+          "muncul": 3
+        },
+        {
+          "teks": "Totalnya satu juta tiga ratus tujuh puluh ribu rupiah. Dibagi dua belas, cicilannya sekitar seratus empat belas ribu per bulan. Kecil per bulannya, tapi kamu bayar tiga ratus tujuh puluh ribu lebih mahal.",
+          "muncul": 4
+        }
+      ]
+    },
+    {
+      "type": "batang",
+      "judul": "Total bayar belanja Rp1 juta",
+      "format": "rp",
+      "warna": "gold",
+      "maks": 1500000,
+      "catatan_kecil": "Ilustrasi: bunga flat 3%/bulan + biaya layanan 1%.",
+      "items": [
+        {
+          "label": "Bayar tunai",
+          "nilai": 1000000,
+          "warna": "green"
+        },
+        {
+          "label": "Cicil 3 bulan",
+          "nilai": 1100000,
+          "warna": "gold"
+        },
+        {
+          "label": "Cicil 6 bulan",
+          "nilai": 1190000,
+          "warna": "gold"
+        },
+        {
+          "label": "Cicil 12 bulan",
+          "nilai": 1370000,
+          "warna": "red"
+        }
+      ],
+      "baris": [
+        "Sekarang kita bandingkan semua tenornya. Kalau bayar tunai, ya satu juta rupiah.",
+        "Cicil tiga bulan, totalnya satu juta seratus ribu.",
+        "Cicil enam bulan, satu juta seratus sembilan puluh ribu.",
+        "Cicil dua belas bulan, satu juta tiga ratus tujuh puluh ribu. Makin panjang tenornya, makin besar total yang kamu bayar."
+      ]
+    },
+    {
+      "type": "poin",
+      "judul": "Cicilan per bulan vs biaya tambahan",
+      "format": "rp",
+      "warna": "blue",
+      "items": [
+        {
+          "ikon": "3️⃣",
+          "teks": "3 bulan: Rp366.667/bln",
+          "nilai": 100000,
+          "warna": "green"
+        },
+        {
+          "ikon": "6️⃣",
+          "teks": "6 bulan: Rp198.333/bln",
+          "nilai": 190000,
+          "warna": "gold"
+        },
+        {
+          "ikon": "🔟",
+          "teks": "12 bulan: Rp114.167/bln",
+          "nilai": 370000,
+          "warna": "red"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Ini jebakan yang paling sering. Tenor tiga bulan cicilannya sekitar tiga ratus enam puluh enam ribu sebulan, dengan biaya tambahan seratus ribu rupiah.",
+          "muncul": 1
+        },
+        {
+          "teks": "Enam bulan, cicilannya turun jadi sekitar seratus sembilan puluh delapan ribu, tapi biaya tambahannya naik jadi seratus sembilan puluh ribu.",
+          "muncul": 2
+        },
+        {
+          "teks": "Dua belas bulan, cicilannya paling ringan, tapi biaya tambahannya paling besar, tiga ratus tujuh puluh ribu.",
+          "muncul": 3
+        },
+        "Jadi, cicilan yang terasa ringan itu sebenarnya cuma dibagi lebih lama. Yang kamu bayar ke penyedia justru makin banyak."
+      ]
+    },
+    {
+      "type": "angka",
+      "label": "Bunga flat 3%/bulan setara bunga efektif sekitar",
+      "nilai": "±62% / tahun",
+      "warna": "red",
+      "catatan": "Karena bunga dihitung dari harga awal, padahal utangmu terus berkurang.",
+      "catatan_kecil": "Ilustrasi tenor 12 bulan, termasuk biaya layanan 1%. Perhitungan sederhana (5,2% × 12).",
+      "baris": [
+        "Sekarang angka yang bikin kaget. Bunga flat tiga persen sebulan itu kalau dihitung dengan cara yang adil, setara bunga efektif sekitar lima persen per bulan, atau lebih dari enam puluh persen setahun.",
+        {
+          "teks": "Kenapa bisa? Karena bunga flat selalu dihitung dari harga awal, satu juta rupiah. Padahal tiap bulan utangmu makin kecil, tapi bunganya tetap tiga puluh ribu. Jadi jangan cuma lihat angka bunga per bulan, lihat total bayarnya.",
+          "muncul": 2
+        }
+      ]
+    },
+    {
+      "type": "judul",
+      "bab": "Denda & cicilan bertumpuk",
+      "nomor": "BAGIAN 3",
+      "judul_besar": "Denda & cicilan bertumpuk",
+      "ikon": "⏰",
+      "warna": "red",
+      "baris": [
+        "Bagian ketiga. Denda dan cicilan yang bertumpuk."
+      ]
+    },
+    {
+      "type": "angka",
+      "label": "Total bayar kalau telat 3 kali",
+      "nilai": 1520000,
+      "format": "rp",
+      "warna": "red",
+      "catatan": "Rp1.370.000 + denda 3 × Rp50.000",
+      "catatan_kecil": "Ilustrasi denda Rp50.000 per keterlambatan. Aturan denda berbeda tiap penyedia.",
+      "baris": [
+        "Lanjut ke contoh tadi, tenor dua belas bulan. Anggap denda keterlambatannya lima puluh ribu rupiah tiap kali telat. Ini juga angka ilustrasi.",
+        {
+          "teks": "Kalau setahun kamu telat tiga kali, ada tambahan seratus lima puluh ribu. Total bayarnya jadi satu juta lima ratus dua puluh ribu rupiah. Barang satu juta, bayarnya satu setengah juta lebih.",
+          "muncul": 2
+        },
+        "Dan yang lebih mahal dari dendanya itu, catatan telat bayarnya. Ini kita bahas di akhir."
+      ]
+    },
+    {
+      "type": "batang",
+      "judul": "Cicilan paylater bertumpuk",
+      "format": "rp",
+      "warna": "gold",
+      "maks": 400000,
+      "items": [
+        {
+          "label": "Sepatu",
+          "nilai": 114167,
+          "warna": "gold"
+        },
+        {
+          "label": "Headset",
+          "nilai": 198333,
+          "warna": "gold"
+        },
+        {
+          "label": "HP",
+          "nilai": 366667,
+          "warna": "red"
+        },
+        {
+          "label": "Tiket konser",
+          "nilai": 250000,
+          "warna": "purple"
+        }
+      ],
+      "baris": [
+        "Masalah berikutnya, cicilan numpuk. Bulan ini beli sepatu, cicilannya seratus empat belas ribu.",
+        "Bulan depan headset, seratus sembilan puluh delapan ribu.",
+        "Lalu HP dengan tenor pendek, tiga ratus enam puluh enam ribu.",
+        "Terus tiket konser, dua ratus lima puluh ribu. Satu-satu kelihatan kecil, kan?"
+      ]
+    },
+    {
+      "type": "donut",
+      "judul": "Gaji Rp5 juta, cicilan paylater",
+      "tengah": "Rp5 jt",
+      "warna": "red",
+      "items": [
+        {
+          "label": "Cicilan paylater",
+          "nilai": 929167,
+          "warna": "red",
+          "sub": "±19%"
+        },
+        {
+          "label": "Sisa gaji",
+          "nilai": 4070833,
+          "warna": "green",
+          "sub": "±81%"
+        }
+      ],
+      "baris": [
+        "Kalau dijumlah, totalnya sekitar sembilan ratus dua puluh sembilan ribu rupiah per bulan. Dengan gaji lima juta, itu hampir sembilan belas persen gajimu, habis cuma buat barang yang udah kamu pakai.",
+        "Patokan umum, total semua cicilan sebaiknya nggak lebih dari tiga puluh persen gaji. Dan khusus cicilan barang konsumtif, makin kecil makin aman. Soalnya kalau ada kebutuhan mendadak, ruang gerakmu udah keburu sempit, dan godaan buat gali lubang tutup lubang makin besar.",
+        "Belum lagi kalau di bulan yang sama ada biaya tak terduga, misalnya motor rusak atau ada keluarga yang sakit. Uang yang harusnya buat itu udah terkunci di cicilan."
+      ]
+    },
+    {
+      "type": "judul",
+      "bab": "Kapan boleh, kapan bahaya",
+      "nomor": "BAGIAN 4",
+      "judul_besar": "Kapan boleh, kapan bahaya",
+      "ikon": "🚦",
+      "warna": "green",
+      "baris": [
+        "Bagian keempat. Jadi paylater itu boleh nggak, sih? Jawabannya: tergantung kapan dan buat apa."
+      ]
+    },
+    {
+      "type": "banding",
+      "judul": "Paylater: aman vs bahaya",
+      "kiri": {
+        "judul": "Masih aman",
+        "ikon": "✅",
+        "warna": "green"
+      },
+      "kanan": {
+        "judul": "Mulai bahaya",
+        "ikon": "🚨",
+        "warna": "red"
+      },
+      "items": [
+        {
+          "kiri": "Uangnya sudah ada",
+          "kanan": "Uangnya belum ada"
+        },
+        {
+          "kiri": "Bayar bulan depan, 0% bunga",
+          "kanan": "Pilih tenor terpanjang"
+        },
+        {
+          "kiri": "Untuk kebutuhan",
+          "kanan": "Untuk gaya hidup"
+        },
+        {
+          "kiri": "Satu tagihan, tercatat rapi",
+          "kanan": "Banyak aplikasi sekaligus"
+        }
+      ],
+      "baris": [
+        "Masih aman kalau uangnya sebenarnya udah ada, kamu cuma butuh fleksibilitas waktu. Bahaya kalau uangnya belum ada, dan kamu berharap gaji bulan depan pasti cukup.",
+        "Aman kalau kamu pakai opsi bayar bulan depan yang benar-benar tanpa bunga, lalu langsung lunas. Bahaya kalau kamu otomatis pilih tenor terpanjang biar cicilannya kelihatan kecil.",
+        "Aman kalau buat kebutuhan yang memang harus dibeli. Bahaya kalau buat ikut tren atau gaya hidup.",
+        "Dan aman kalau tagihannya satu dan tercatat rapi. Bahaya kalau kamu punya beberapa aplikasi paylater sekaligus dan udah nggak hafal totalnya."
+      ]
+    },
+    {
+      "type": "rumus",
+      "judul": "Alternatif: tabung dulu, baru beli",
+      "warna": "green",
+      "catatan_kecil": "Ilustrasi sederhana, belum termasuk bunga tabungan.",
+      "items": [
+        {
+          "teks": "Tabung Rp250.000 × 4 bulan",
+          "hasil": "Rp1.000.000",
+          "warna": "green"
+        },
+        {
+          "teks": "Cicil 12 bulan",
+          "hasil": "Rp1.370.000",
+          "warna": "red"
+        },
+        {
+          "teks": "Selisih yang tetap di dompetmu",
+          "hasil": "Rp370.000",
+          "warna": "green"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Coba bandingkan dengan cara lama yang membosankan, tapi ampuh: nabung dulu. Kalau kamu sisihkan dua ratus lima puluh ribu sebulan, dalam empat bulan udah terkumpul satu juta rupiah.",
+          "muncul": 1
+        },
+        {
+          "teks": "Bandingkan dengan cicil dua belas bulan, total bayarnya satu juta tiga ratus tujuh puluh ribu, dan kamu terikat cicilan setahun penuh.",
+          "muncul": 2
+        },
+        {
+          "teks": "Selisihnya tiga ratus tujuh puluh ribu rupiah, uang yang tetap ada di dompetmu. Memang kamu harus nunggu empat bulan, tapi sering kali, setelah nunggu, kamu malah sadar barangnya nggak terlalu penting. Itu penghematan juga.",
+          "muncul": 3
+        }
+      ]
+    },
+    {
+      "type": "poin",
+      "judul": "4 pertanyaan sebelum klik paylater",
+      "warna": "green",
+      "items": [
+        {
+          "ikon": "💵",
+          "teks": "Kalau bayar tunai hari ini, uangnya ada?"
+        },
+        {
+          "ikon": "🧮",
+          "teks": "Total bayar sampai lunas berapa?"
+        },
+        {
+          "ikon": "📊",
+          "teks": "Semua cicilan masih ≤ 30% gaji?"
+        },
+        {
+          "ikon": "⏳",
+          "teks": "Masih ingin setelah tunggu 24 jam?"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Sebelum klik paylater, tanya empat hal ini. Satu, kalau harus bayar tunai hari ini, uangnya ada nggak? Kalau nggak ada, itu tanda bahaya.",
+          "muncul": 1
+        },
+        {
+          "teks": "Dua, total yang harus dibayar sampai lunas berapa? Bukan cicilan per bulannya, tapi totalnya.",
+          "muncul": 2
+        },
+        {
+          "teks": "Tiga, kalau ditambah cicilan ini, semua cicilanmu masih di bawah tiga puluh persen gaji?",
+          "muncul": 3
+        },
+        {
+          "teks": "Empat, kalau ditunda dua puluh empat jam, kamu masih pengin? Banyak belanja impulsif hilang sendiri setelah ditunda sehari.",
+          "muncul": 4
+        },
+        "Kalau keempat jawabannya aman, silakan pakai dengan tenang. Tapi kalau satu aja jawabannya ragu, mending tahan dulu. Barangnya biasanya masih ada minggu depan, sedangkan cicilan pasti datang tiap bulan."
+      ]
+    },
+    {
+      "type": "hook",
+      "bab": "Kesalahan paling mahal",
+      "warna": "red",
+      "ikon": "📉",
+      "items": [
+        "Telat bayar Rp114 ribu",
+        {
+          "teks": "tercatat di SLIK OJK",
+          "warna": "red"
+        },
+        "bisa ganjal pengajuan KPR"
+      ],
+      "baris": [
+        {
+          "teks": "Nah, ini kesalahan kecil yang dijanjikan di awal: menganggap enteng telat bayar paylater karena nominalnya kecil. Padahal cuma seratus empat belas ribu, misalnya.",
+          "muncul": 1
+        },
+        {
+          "teks": "Masalahnya, riwayat pembayaran paylater dari penyedia yang diawasi OJK bisa tercatat di SLIK, yaitu sistem informasi riwayat kredit yang dicek bank sebelum memberi pinjaman.",
+          "muncul": 2
+        },
+        {
+          "teks": "Jadi suatu hari nanti, waktu kamu mau ajukan KPR atau kredit usaha, catatan telat bayar itu bisa ikut dipertimbangkan dan bikin pengajuanmu lebih sulit. Dendanya cuma puluhan ribu, tapi dampaknya bisa bertahun-tahun.",
+          "muncul": 3
+        },
+        "Jadi, kalau pakai paylater, pasang pengingat atau bayar otomatis, dan jangan pernah ambil cicilan yang kamu nggak yakin bisa bayar tepat waktu."
+      ]
+    },
+    {
+      "type": "penutup",
+      "bab": "Ringkasan",
+      "judul": "Ringkasan",
+      "warna": "green",
+      "jeda_akhir": 18,
+      "catatan_kecil": "Konten edukasi, bukan ajakan menggunakan produk keuangan tertentu. Angka bunga & denda hanya ilustrasi.",
+      "items": [
+        "Paylater = pinjaman, pilih yang diawasi OJK",
+        "Lihat total bayar, bukan cicilan per bulan",
+        "Tenor panjang = biaya makin besar",
+        "Semua cicilan maks 30% gaji",
+        "Jangan pernah telat bayar"
+      ],
+      "baris": [
+        {
+          "teks": "Kita ringkas. Satu, paylater itu pinjaman, jadi pakai yang terdaftar dan diawasi OJK.",
+          "muncul": 1
+        },
+        {
+          "teks": "Dua, selalu lihat total bayar, bukan cicilan per bulan.",
+          "muncul": 2
+        },
+        {
+          "teks": "Tiga, makin panjang tenornya, makin besar biayanya.",
+          "muncul": 3
+        },
+        {
+          "teks": "Empat, jaga total semua cicilan maksimal tiga puluh persen gaji.",
+          "muncul": 4
+        },
+        {
+          "teks": "Dan lima, jangan pernah telat bayar, karena catatannya bisa kebawa lama.",
+          "muncul": 5
+        },
+        "Kalau kamu pengin tahu cara belanja promo akhir tahun tanpa nyesel, tonton video berikutnya, dan subscribe biar nggak ketinggalan.",
+        "Ingat, apa pun keputusan keuanganmu, hitung dulu."
+      ]
+    },
+    {
+      "type": "hook",
+      "hanya_shorts": true,
+      "warna": "gold",
+      "ikon": "🛒",
+      "items": [
+        {
+          "teks": "Belanja Rp1 juta pakai paylater,",
+          "warna": "gold"
+        },
+        "totalnya berapa?"
+      ],
+      "baris": [
+        {
+          "teks": "Belanja satu juta pakai paylater, total bayarnya berapa sih?",
+          "muncul": 2
+        }
+      ]
+    },
+    {
+      "type": "hook",
+      "hanya_shorts": true,
+      "warna": "red",
+      "ikon": "📚",
+      "items": [
+        "Cicilan kecil-kecil,",
+        {
+          "teks": "kok gaji habis?",
+          "warna": "red"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Cicilan paylater kecil-kecil, kok gajimu tetap habis?",
+          "muncul": 2
+        }
+      ]
+    },
+    {
+      "type": "hook",
+      "hanya_shorts": true,
+      "warna": "red",
+      "ikon": "📉",
+      "items": [
+        "Telat bayar paylater",
+        {
+          "teks": "cuma sekali?",
+          "warna": "red"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Telat bayar paylater sekali aja, emang bahaya?",
+          "muncul": 2
+        }
+      ]
+    }
+  ],
+  "shorts": [
+    {
+      "adegan": [
+        20,
+        6,
+        7
+      ],
+      "judul": "Belanja Rp1 Juta Pakai Paylater, Total Bayarnya? #shorts"
+    },
+    {
+      "adegan": [
+        21,
+        12,
+        13
+      ],
+      "judul": "Cicilan Paylater Kecil, Kok Gaji Habis? #shorts"
+    },
+    {
+      "adegan": [
+        22,
+        18
+      ],
+      "judul": "Telat Bayar Paylater Sekali, Bahaya? #shorts"
+    }
+  ],
+  "thumbnail": [
+    {
+      "baris": [
+        "CICIL RP114 RIBU",
+        {
+          "teks": "BAYAR RP1,37 JT?",
+          "warna": "gold"
+        }
+      ],
+      "sorot": "BUNGA PAYLATER",
+      "emojis": [
+        "💳"
+      ],
+      "warna": "red"
+    },
+    {
+      "baris": [
+        "PAYLATER AMAN?",
+        {
+          "teks": "HITUNG DULU",
+          "warna": "green"
+        }
+      ],
+      "sorot": "SIMULASI 3/6/12 BULAN",
+      "emojis": [
+        "🧮"
+      ],
+      "warna": "green"
+    }
+  ],
+  "youtube": {
+    "judul": "Paylater: Bunga Sebenarnya Kalau Belanja Rp1 Juta",
+    "judul_alternatif": [
+      "Cicilan Paylater Cuma Rp114 Ribu, Kok Bayar Rp1,37 Juta?",
+      "Cara Kerja Paylater: Kapan Aman, Kapan Bahaya"
+    ],
+    "deskripsi": "Paylater dan bunga sebenarnya: simulasi belanja Rp1 juta dicicil 3, 6, dan 12 bulan, biaya layanan, denda, dan kapan paylater aman dipakai.\n\nCicilan paylater terasa ringan, tapi berapa total yang sebenarnya kamu bayar? Di video ini kita bahas cara kerja paylater, biaya yang sering tidak terlihat, simulasi total bayar untuk tenor 3, 6, dan 12 bulan, kenapa bunga flat terasa kecil padahal setara bunga efektif yang jauh lebih besar, efek denda dan cicilan bertumpuk, 4 pertanyaan sebelum klik paylater, serta satu kesalahan kecil yang bisa berdampak ke riwayat kredit (SLIK OJK).\n\nDisclaimer: Video ini adalah konten edukasi keuangan, bukan ajakan menggunakan produk keuangan tertentu. Angka bunga, biaya layanan, dan denda hanya ilustrasi; besaran sebenarnya berbeda tiap penyedia. Selalu gunakan layanan yang terdaftar dan diawasi OJK, dan baca syarat & ketentuan sebelum setuju.",
+    "hashtag": [
+      "#paylater",
+      "#keuangan",
+      "#cicilan"
+    ],
+    "tag": [
+      "paylater",
+      "bunga paylater",
+      "cara kerja paylater",
+      "cicilan paylater",
+      "simulasi paylater",
+      "denda paylater",
+      "SLIK OJK",
+      "bunga flat vs efektif",
+      "utang konsumtif",
+      "keuangan pribadi",
+      "mengatur gaji"
+    ],
+    "komentar_sematan": "Jujur, sekarang kamu punya berapa cicilan paylater yang masih jalan? 0, 1, atau lebih dari 2? Tulis di komentar 👇",
+    "playlist": "Utang & Cicilan"
+  }
+}
