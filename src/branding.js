@@ -28,6 +28,19 @@ async function render(w, h, kind, name, handle, fonts) {
     for (const dy of [0, 80]) { x.beginPath(); x.roundRect(w / 2 - bw / 2, h * .66 + dy, bw, bh, r); x.fill(); }
     return c.toDataURL('image/png');
   }
+  if (kind === 'fbcover') { // sampul Facebook 1640x624; teks di tengah agar aman saat terpotong di HP
+    const cy = h * .45;
+    x.strokeStyle = '#22c55e'; x.lineWidth = 8; x.lineJoin = 'round';
+    x.beginPath(); [[30, 560], [110, 500], [190, 520], [270, 430], [340, 380]].forEach(([a, b], i) => i ? x.lineTo(a, b) : x.moveTo(a, b)); x.stroke();
+    x.beginPath(); [[1300, 300], [1380, 260], [1450, 275], [1530, 180], [1610, 110]].forEach(([a, b], i) => i ? x.lineTo(a, b) : x.moveTo(a, b)); x.stroke();
+    x.font = '120px "Noto Color Emoji"'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = '#000';
+    x.fillText('🧮', 230, 200); x.fillText('📈', 1420, 450);
+    t(name, w / 2, cy - 50, 120, '#f8fafc');
+    x.fillStyle = '#22c55e'; x.fillRect(w / 2 - 55, cy + 20, 110, 10);
+    t('Atur uang pakai hitungan, bukan perasaan.', w / 2, cy + 85, 42, '#cbd5e1', 700);
+    t('Video lengkap di YouTube ' + handle, w / 2, cy + 150, 34, '#22c55e', 700);
+    return c.toDataURL('image/png');
+  }
   // banner: konten penting di area aman tengah 1546x423
   const cy = h / 2;
   // grafik naik di kiri & kanan (hanya terlihat di TV/desktop lebar)
@@ -47,7 +60,7 @@ async function render(w, h, kind, name, handle, fonts) {
   const b = await chromium.launch(), p = await b.newPage();
   await p.setContent(page);
   const fonts = [['700', font('inter-bold.otf')], ['900', font('inter-black.otf')]];
-  for (const [kind, w, h] of [['logo', 800, 800], ['banner', 2560, 1440]]) {
+  for (const [kind, w, h] of [['logo', 800, 800], ['banner', 2560, 1440], ['fbcover', 1640, 624]]) {
     const url = await p.evaluate(a => render(...a), [w, h, kind, name, handle, fonts]);
     fs.writeFileSync(path.join(OUT, `${kind}.png`), Buffer.from(url.split(',')[1], 'base64'));
     console.log(`✓ output/branding/${kind}.png`);
