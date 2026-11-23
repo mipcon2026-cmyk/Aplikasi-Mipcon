@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Pakai: node src/build.js episodes/ep001-warna.json [--draft] [--ai] [--hanya=naskah|video|shorts|thumbnail]
+// Pakai: node src/build.js episodes/ep001-warna.json [--draft] [--ai] [--hanya=naskah|video|shorts|thumbnail|kartu]
 const fs = require('fs');
 const path = require('path');
 const { spawn } = require('child_process');
@@ -9,7 +9,7 @@ const A = require('./audio');
 const ROOT = path.join(__dirname, '..');
 const args = process.argv.slice(2);
 const epFile = args.find(a => !a.startsWith('--'));
-if (!epFile) { console.log('Pakai: node src/build.js episodes/<file>.json [--draft] [--hanya=naskah|video|shorts|thumbnail]'); process.exit(1); }
+if (!epFile) { console.log('Pakai: node src/build.js episodes/<file>.json [--draft] [--hanya=naskah|video|shorts|thumbnail|kartu]'); process.exit(1); }
 const DRAFT = args.includes('--draft');
 const AI = args.includes('--ai'); // pakai suara AI Google jika tidak ada rekaman manusia
 const ONLY = (args.find(a => a.startsWith('--hanya=')) || '').split('=')[1];
@@ -218,7 +218,10 @@ function metadata(tl) {
     const all = ep.adegan.map((_, i) => i).filter(i => !ep.adegan[i].hanya_shorts);
     const tl = timeline(all);
     const [W, H] = DRAFT ? [960, 540] : [1920, 1080];
-    if (!ONLY || ONLY === 'video') { await render(tl, W, H, path.join(OUT, `${ep.id}${DRAFT ? '-draft' : ''}.mp4`), 'Video panjang'); metadata(tl); }
+    if (!ONLY || ONLY === 'video' || ONLY === 'kartu') {
+      if (ONLY !== 'kartu') await render(tl, W, H, path.join(OUT, `${ep.id}${DRAFT ? '-draft' : ''}.mp4`), 'Video panjang');
+      metadata(tl); console.log(`✓ Kartu upload: output/${ep.id}/kartu-upload.txt`);
+    }
     if ((!ONLY || ONLY === 'shorts') && ep.shorts) for (const [i, sh] of ep.shorts.entries()) {
       const stl = timeline(sh.adegan);
       if (stl.total > 180) console.log(`! Shorts ${i + 1} berdurasi ${fmt(stl.total)}; batas Shorts 3 menit, kurangi adegannya.`);
