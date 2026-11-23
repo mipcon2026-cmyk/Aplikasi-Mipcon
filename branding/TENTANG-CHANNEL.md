@@ -29,3 +29,17 @@ keuangan pribadi, mengatur gaji, cara menabung, dana darurat, investasi pemula, 
 - Watermark branding (Penyesuaian → Branding → Watermark video): pakai `logo.png`, tampil "Seluruh video".
 - Video trailer channel (untuk pengunjung yang belum subscribe): k001.
 - Playlist awal: "Atur Gaji & Budget", "Utang & Cicilan", "Investasi Pemula", "Bisnis & UMKM", "Waspada Penipuan".
+
+## Jadwal tayang (WIB)
+Produksi otomatis: Selasa & Sabtu 13:34 → video siap ±14:30, lalu upload & jadwalkan (Schedule) sekaligus.
+
+| Hari | Jam | Konten |
+|---|---|---|
+| Selasa | 19:00 | Video panjang episode baru |
+| Rabu | 12:00 | Shorts 1 |
+| Kamis | 19:00 | Shorts 2 |
+| Jumat | 12:00 | Shorts 3 |
+| Sabtu | 19:00 | Video panjang episode baru |
+| Minggu | 10:00 | Shorts 1 |
+| Senin | 19:00 | Shorts 2 |
+| Selasa | 12:00 | Shorts 3 (episode Sabtu) |
