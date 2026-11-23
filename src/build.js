@@ -186,6 +186,21 @@ function metadata(tl) {
       `[Audience]  ${anak ? '"Yes, it\'s made for kids"' : '"No, it\'s not made for kids"'}`,
       '[Related video]  pilih video panjang episode ini (jika belum bisa dipilih, isi nanti setelah video panjang tayang)',
       `[Visibility]  Schedule → ${day(air, shortSlots[i] ? shortSlots[i][0] : i + 1, shortSlots[i] ? shortSlots[i][1] : '12:00 PM')}`, '']),
+    ...(anak || !(ep.shorts || []).length ? [] : [
+      'TIKTOK + FACEBOOK/INSTAGRAM REELS  (file Shorts yang sama, tayang 1 hari setelah YouTube)', sub,
+      'TikTok: tiktok.com/upload → pilih file → tempel caption → Settings: nyalakan "AI-generated content" → Schedule',
+      'FB + IG: business.facebook.com → Create reel → pilih Facebook & Instagram → tempel caption → AI info: nyalakan jika ditanya → Schedule',
+      '',
+      ...ep.shorts.flatMap((sh, i) => {
+        const t = (sh.judul || m.judul).replace(/\s*#shorts\s*$/i, '');
+        const uniq = base => [...new Set([...base, ...(m.hashtag || []).slice(0, 2)])].join(' ');
+        const slot = shortSlots[i] || [i + 1, '12:00 PM'];
+        return [
+          `Shorts ${i + 1}  (${ep.id}-shorts-${i + 1}.mp4)  →  ${day(air, slot[0] + 1, slot[1])}`,
+          '[Caption TikTok]', `${t} 🤔 Simak sampai habis! Video lengkapnya ada di YouTube Hitung Dulu. ${uniq(['#fyp', '#keuangan', '#tipskeuangan', '#gajian', '#hitungdulu'])}`,
+          '[Caption Facebook/Instagram]', `${t} 👇\nVideo lengkap: YouTube @hitungduluid\n\n${uniq(['#keuangan', '#literasikeuangan', '#financialplanning', '#reels', '#hitungdulu'])}`,
+          ''];
+      })]),
     `SETELAH VIDEO PANJANG TAYANG (${day(air, 0, '7:00 PM')})`, sub,
     ...(m.komentar_sematan ? ['[Komentar sematan]  tulis di video → titik tiga (⋮) → Pin', m.komentar_sematan, ''] : []),
     '[Teks untuk dibagikan ke WhatsApp/Facebook]', `${m.judul} 👇`, '(tempel link video di sini)', '',
