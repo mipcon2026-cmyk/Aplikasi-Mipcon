@@ -29,7 +29,7 @@ Jalankan `node src/build.js episodes/<file>.json --ai` (tanpa `--draft`). Suara 
 proxy environment "Aplikasi-Mipcon" (header X-Goog-Api-Key ke texttospeech.googleapis.com). Rekaman manusia di
 `rekaman/<id>.m4a` atau `rekaman/<id>/001.m4a…` otomatis diutamakan jika ada.
 Lalu kirim ke pemilik (SendUserFile, display attach): `output/<id>/<id>.mp4`, semua `<id>-shorts-*.mp4`,
-`thumbnail*.png`, `metadata-youtube.txt`. Video tidak di-commit (terlalu besar). Ubah status rencana menjadi `video siap`.
+`thumbnail*.png`, `kartu-upload.txt` (isian YouTube Studio + jadwal tayang, otomatis). Video tidak di-commit (terlalu besar). Ubah status rencana menjadi `video siap`.
 
 Kompilasi: `node src/compile.js <nama> k001 k002 …`
 

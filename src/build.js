@@ -140,29 +140,59 @@ async function stage(w, h, tl, mouth) {
 }
 
 // ---------- 5. Metadata YouTube ----------
+// Tanggal tayang berikutnya (Selasa/Sabtu 19:00 WIB), bisa dipaksa dengan --tayang=YYYY-MM-DD.
+function airDate() {
+  const arg = (args.find(a => a.startsWith('--tayang=')) || '').split('=')[1];
+  if (arg) return new Date(arg + 'T00:00:00Z');
+  const now = new Date(Date.now() + 7 * 3600e3); // jam WIB dibaca dengan getter UTC
+  const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+  if ([2, 6].includes(d.getUTCDay()) && now.getUTCHours() < 17) return d;
+  do d.setUTCDate(d.getUTCDate() + 1); while (![2, 6].includes(d.getUTCDay()));
+  return d;
+}
+
+// Kartu upload: semua isian YouTube Studio (tampilan bahasa Inggris) sesuai urutan pengisian.
 function metadata(tl) {
   const chapters = tl.scenes.filter(s => s.bab).map(s => `${fmt(s.start)} ${s.bab}`);
   if (chapters.length && !chapters[0].startsWith('0:00')) chapters.unshift('0:00 Pembuka');
-  const m = ep.youtube;
-  fs.writeFileSync(path.join(OUT, 'metadata-youtube.txt'), [
-    'JUDUL:', m.judul, '',
-    ...(m.judul_alternatif ? ['JUDUL ALTERNATIF (untuk uji judul / ganti jika views sepi setelah 7 hari):', ...m.judul_alternatif.map(j => '- ' + j), ''] : []),
-    'DESKRIPSI:', m.deskripsi, '', ...(chapters.length ? ['Bab:', ...chapters, ''] : []), (m.hashtag || []).join(' '), '',
-    'TAG:', (m.tag || []).join(', '), '',
-    ...(m.komentar_sematan ? ['KOMENTAR SEMATAN (posting & pin setelah upload):', m.komentar_sematan, ''] : []),
-    ...(m.playlist ? ['PLAYLIST:', m.playlist, ''] : []),
-    ...((ep.shorts || []).some(x => x.judul) ? ['JUDUL SHORTS:', ...ep.shorts.map((x, i) => `- Shorts ${i + 1}: ${x.judul || '-'}`), ''] : []),
-    'PENGATURAN WAJIB SAAT UPLOAD:',
-    ...(TH.musik === 'ceria'
-      ? ['- Audiens: "Ya, konten ini dibuat untuk anak-anak"', '- Konten yang diubah/sintetis: "Tidak" (animasi kartun & suara asli Anda tidak perlu label ini)']
-      : ['- Audiens: "Tidak, konten ini tidak dibuat untuk anak-anak"', '- Konten yang diubah/sintetis: "Tidak" (animasi grafik & suara asli Anda tidak perlu label ini)',
-         '- Pastikan semua angka di video sudah Anda cek ulang sebelum upload']),
-    '- Kategori: Pendidikan (Education)',
-    `- Thumbnail: thumbnail.png${[].concat(ep.thumbnail).length > 1 ? ' (+ varian lain: pakai fitur "Uji & bandingkan" di YouTube Studio)' : ''}`,
-    '- Layar akhir (end screen): tambahkan "Video terbaru" + tombol subscribe di 20 detik terakhir',
-    '- Shorts: di setiap Shorts, tautkan "Video terkait" ke video panjang episode ini',
-    '',
-  ].join('\n'));
+  const m = ep.youtube, anak = TH.musik === 'ceria';
+  const HARI = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+  const BLN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const day = (d, plus, jam) => { const x = new Date(d); x.setUTCDate(x.getUTCDate() + plus);
+    return `${BLN[x.getUTCMonth()]} ${x.getUTCDate()}, ${x.getUTCFullYear()}  ·  ${jam}  (${HARI[x.getUTCDay()]})`; };
+  const air = airDate(), sab = air.getUTCDay() === 6;
+  const shortSlots = sab ? [[1, '10:00 AM'], [2, '7:00 PM'], [3, '12:00 PM']] : [[1, '12:00 PM'], [2, '7:00 PM'], [3, '12:00 PM']];
+  const desc = [m.deskripsi, '', ...(chapters.length ? ['Bab:', ...chapters, ''] : []), (m.hashtag || []).join(' ')].join('\n');
+  const line = '='.repeat(64), sub = '-'.repeat(64);
+  const out = [
+    `KARTU UPLOAD ${ep.id.toUpperCase()}  ·  ${ep.channel || ''}`, line,
+    'Buka studio.youtube.com (pastikan channel yang benar) → Create → Upload videos.', '',
+    `1) VIDEO PANJANG: pilih file ${ep.id}.mp4`, sub,
+    '[Title]', m.judul, '',
+    '[Description]  (klik kotak → Ctrl+A → Delete → tempel semua teks di bawah)', desc, '',
+    `[Thumbnail]  Upload file → thumbnail.png${[].concat(ep.thumbnail).length > 1 ? '   (jika ada "Test & compare", tambahkan thumbnail-2.png)' : ''}`,
+    ...(m.playlist ? [`[Playlists]  Select → centang "${m.playlist}" (jika belum ada: Create playlist, Public) → Done`] : []),
+    `[Audience]  ${anak ? '"Yes, it\'s made for kids"' : '"No, it\'s not made for kids"'}`,
+    '[Show more]', '  Paid promotion: No   ·   Altered content (jika ada): No',
+    '  Tags:', '  ' + (m.tag || []).join(', '),
+    '→ Next', '',
+    '[Video elements]  End screen → Add → template "1 video, 1 subscribe" → video: "Best for viewer" → Save → Next',
+    '[Checks]  tunggu "No issues found" → Next',
+    `[Visibility]  Schedule → ${day(air, 0, '7:00 PM')}  ·  zona GMT+07:00 → Schedule`, '',
+    ...(ep.shorts || []).flatMap((sh, i) => [
+      `${i + 2}) SHORTS ${i + 1}: pilih file ${ep.id}-shorts-${i + 1}.mp4`, sub,
+      '[Title]', sh.judul || m.judul + ' #shorts',
+      '[Description]  biarkan isi bawaan',
+      `[Audience]  ${anak ? '"Yes, it\'s made for kids"' : '"No, it\'s not made for kids"'}`,
+      '[Related video]  pilih video panjang episode ini (jika belum bisa dipilih, isi nanti setelah video panjang tayang)',
+      `[Visibility]  Schedule → ${day(air, shortSlots[i] ? shortSlots[i][0] : i + 1, shortSlots[i] ? shortSlots[i][1] : '12:00 PM')}`, '']),
+    `SETELAH VIDEO PANJANG TAYANG (${day(air, 0, '7:00 PM')})`, sub,
+    ...(m.komentar_sematan ? ['[Komentar sematan]  tulis di video → titik tiga (⋮) → Pin', m.komentar_sematan, ''] : []),
+    '[Teks untuk dibagikan ke WhatsApp/Facebook]', `${m.judul} 👇`, '(tempel link video di sini)', '',
+    ...(m.judul_alternatif ? ['[Judul cadangan]  ganti judul jika setelah 7 hari views sepi:', ...m.judul_alternatif.map(j => '- ' + j), ''] : []),
+    ...(anak ? [] : ['Cek cepat sebelum upload: tonton sekilas, pastikan angka di layar masuk akal.']),
+  ];
+  fs.writeFileSync(path.join(OUT, 'kartu-upload.txt'), out.join('\n') + '\n');
 }
 
 (async () => {
