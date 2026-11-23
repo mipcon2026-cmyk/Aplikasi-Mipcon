@@ -31,7 +31,7 @@ keuangan pribadi, mengatur gaji, cara menabung, dana darurat, investasi pemula, 
 - Playlist awal: "Atur Gaji & Budget", "Utang & Cicilan", "Investasi Pemula", "Bisnis & UMKM", "Waspada Penipuan".
 
 ## Jadwal tayang (WIB)
-Produksi otomatis: Selasa & Sabtu 13:34 → video siap ±14:30, lalu upload & jadwalkan (Schedule) sekaligus.
+Produksi otomatis: Senin & Jumat 19:34 → video siap ±20:30, lalu upload & jadwalkan (Schedule) untuk tayang besoknya (Selasa & Sabtu 19:00).
 
 | Hari | Jam | Konten |
 |---|---|---|

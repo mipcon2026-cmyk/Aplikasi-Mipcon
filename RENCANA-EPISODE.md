@@ -12,7 +12,7 @@ Tanggal hari raya 2027 masih perkiraan.
 
 | ID | Jadwal | Judul kerja | Pilar | Poin inti | Status |
 |---|---|---|---|---|---|
-| k001 | Sab 21 Nov 2026 | Gaji 5 Juta Selalu Habis? Rumus 50/30/20 | Budget | Episode contoh | naskah siap |
+| k001 | Sen 23 Nov 2026 | Gaji 5 Juta Selalu Habis? Rumus 50/30/20 | Budget | Episode peluncuran | selesai |
 | k002 | Sel 24 Nov 2026 | Paylater: Cara Kerja & Bunga Sebenarnya | Utang | Simulasi total bayar belanja Rp1 jt pakai paylater 3/6/12 bulan; biaya layanan & denda; kapan boleh, kapan bahaya | belum |
 | k003 | Sab 28 Nov 2026 | Harbolnas 12.12: Belanja Tanpa Menyesal | Belanja cerdas | Anggaran belanja sebelum promo, aturan tunggu 24 jam, hitung diskon asli vs harga coret | belum |
 | k004 | Sel 01 Dec 2026 | Dana Darurat Disimpan di Mana? | Tabungan | Bandingkan tabungan, deposito, RDPU: likuiditas, risiko, imbal hasil (ilustrasi) | belum |
