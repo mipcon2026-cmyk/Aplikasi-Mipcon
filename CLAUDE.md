@@ -59,6 +59,7 @@ Kompilasi: `node src/compile.js <nama> k001 k002 …`
    `"hanya_shorts": true` (1 kalimat tanya ≤ 12 kata, tidak tampil di video panjang), lalu 1–2 adegan isi.
 6. **Akhir video**: adegan `penutup` diberi `"jeda_akhir": 18` (ruang layar akhir/end screen). Baris terakhir mengajak
    menonton video berikutnya + subscribe, singkat.
+   Kalimat penutup khas channel (wajib, paling akhir): **"Ingat, apa pun keputusan keuanganmu, hitung dulu."**
 7. `youtube.komentar_sematan`: 1 pertanyaan yang memancing penonton menjawab di komentar.
    `youtube.playlist`: nama playlist sesuai pilar (mis. "Atur Gaji & Budget", "Utang & Cicilan", "Bisnis & UMKM").
    150 karakter pertama `deskripsi` memuat kata kunci utama + manfaat.
@@ -66,7 +67,7 @@ Kompilasi: `node src/compile.js <nama> k001 k002 …`
 ## Skema episode (tema keuangan)
 ```json
 {
-  "id": "k002", "tema": "keuangan", "channel": "Hitung Cuan", "judul": "…", "musik_seed": 12,
+  "id": "k002", "tema": "keuangan", "channel": "Hitung Dulu", "judul": "…", "musik_seed": 12,
   "adegan": [ { "type": "…", "bab": "Nama bab (opsional, membuat chapter YouTube)", "warna": "green", "baris": [ … ] } ],
   "shorts": [ { "adegan": [0, 3, 4] } ],
   "thumbnail": [ { "baris": ["TEKS 1", { "teks": "TEKS 2", "warna": "gold" }], "sorot": "LABEL", "emojis": ["💳"], "warna": "red" }, { …varian 2… } ],

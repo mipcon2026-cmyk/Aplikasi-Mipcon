@@ -1,7 +1,7 @@
 {
   "id": "k001",
   "tema": "keuangan",
-  "channel": "Hitung Cuan",
+  "channel": "Hitung Dulu",
   "judul": "Gaji 5 Juta Selalu Habis? Atur Pakai Rumus 50/30/20",
   "musik_seed": 11,
   "adegan": [
@@ -641,7 +641,7 @@
           "teks": "Dan lima, hindari utang untuk barang konsumtif.",
           "muncul": 5
         },
-        "Kalau video ini bermanfaat, bagikan ke temanmu yang gajinya selalu habis. Lalu tonton video berikutnya di layar, dan subscribe supaya nggak ketinggalan."
+        "Kalau video ini bermanfaat, bagikan ke temanmu yang gajinya selalu habis. Tonton video berikutnya di layar, dan subscribe ya. Ingat, apa pun keputusan keuanganmu, hitung dulu."
       ],
       "jeda_akhir": 18
     },
