@@ -256,7 +256,7 @@ const SCENES = {
     if (t >= T[0]) {
       const pulse = 1 + 0.04 * Math.max(0, 1 - Math.abs(t - T[0] - (sc.durasi_hitung || 1.6)) * 4);
       ctx.save(); ctx.translate(W / 2, cy); ctx.scale(pulse, pulse);
-      text(fmt(sc.nilai * k, sc.format), 0, 0, (VERT ? 150 : 190) * U, col(sc.warna), { w: 900, maxW: B.w });
+      text(typeof sc.nilai === "number" ? fmt(sc.nilai * k, sc.format) : sc.nilai, 0, 0, (VERT ? 150 : 190) * U, col(sc.warna), { w: 900, maxW: B.w });
       ctx.restore();
     }
     if (sc.catatan && t >= T[1]) { const e = enter(t, T[1]); ctx.save(); ctx.globalAlpha = e.a; wrap(sc.catatan, W / 2, cy + 170 * U + e.dy, B.w * 0.9, 46 * U, C.text, { w: 700 }); ctx.restore(); }

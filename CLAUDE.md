@@ -89,7 +89,7 @@ Kompilasi: `node src/compile.js <nama> k001 k002 …`
 | `donut` | `judul`, `tengah`, `items: [{label, nilai, warna, sub?}]` (2–4) |
 | `batang` | `judul`, `items: [{label, nilai, warna}]` (2–6), `format`, `maks?` |
 | `garis` | `judul`, `x: [label…]`, `items: [{label, warna, data: [angka…]}]` (1–2 seri), `format`, `maks?` (angka bulat agar garis bantu rapi) |
-| `angka` | `label`, `nilai` (angka → animasi hitung naik, atau string), `format`, `catatan` (tampil di baris ber-`muncul: 2`, atau baris ke-2) |
+| `angka` | `label`, `nilai` (angka → animasi hitung naik; atau teks seperti "± 8 bulan" → tampil apa adanya), `format`, `catatan` (tampil di baris ber-`muncul: 2`, atau baris ke-2) |
 | `rumus` | `judul`, `items: [{teks, hasil, warna?}]` (maks 4) |
 | `banding` | `judul`, `kiri/kanan: {judul, ikon, warna}`, `items: [{kiri, kanan}]` (maks 4, teks pendek) |
 | `penutup` | `judul`, `items`: string checklist (maks 5) |
