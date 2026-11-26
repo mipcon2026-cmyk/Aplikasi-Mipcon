@@ -144,6 +144,12 @@ async function stage(w, h, tl, mouth) {
 function airDate() {
   const arg = (args.find(a => a.startsWith('--tayang=')) || '').split('=')[1];
   if (arg) return new Date(arg + 'T00:00:00Z');
+  // Utamakan tanggal tayang di RENCANA-EPISODE.md (mis. "| k004 | Sel 01 Dec 2026 |")
+  try {
+    const row = fs.readFileSync(path.join(ROOT, 'RENCANA-EPISODE.md'), 'utf8').split('\n').find(l => l.startsWith(`| ${ep.id} |`));
+    const m = row && row.match(/\| \w+ (\d{1,2}) (\w{3}) (\d{4}) \|/);
+    if (m) { const d = new Date(`${m[1]} ${m[2]} ${m[3]} UTC`); if (!isNaN(d)) return d; }
+  } catch {}
   const now = new Date(Date.now() + 7 * 3600e3); // jam WIB dibaca dengan getter UTC
   const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
   if ([2, 6].includes(d.getUTCDay()) && now.getUTCHours() < 17) return d;
