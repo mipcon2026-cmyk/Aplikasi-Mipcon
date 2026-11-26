@@ -57,6 +57,9 @@ Kompilasi: `node src/compile.js <nama> k001 k002 …`
    persis, 1 emoji besar, warna kontras (`red`/`gold` = masalah, `green` = solusi).
 5. **Shorts**: 3 per episode, masing-masing 30–60 detik, tiap entri `shorts` punya `"judul"` (≤ 60 karakter, diakhiri `#shorts`). Setiap Shorts diawali adegan `hook` khusus dengan
    `"hanya_shorts": true` (1 kalimat tanya ≤ 12 kata, tidak tampil di video panjang), lalu 1–2 adegan isi.
+   **Pola terbukti (data k001):** Shorts "Rp1 Juta per Bulan, 10 Tahun Jadi Berapa?" (pertanyaan → angka mengejutkan
+   terjawab di akhir) ditonton 10× lebih banyak dari Shorts lain. Setiap Shorts wajib: pertanyaan berisi angka di
+   detik pertama, lalu adegan `angka`/`garis`/`rumus` yang menjawabnya dengan angka konkret. Jawaban di akhir, bukan di awal.
 6. **Akhir video**: adegan `penutup` diberi `"jeda_akhir": 18` (ruang layar akhir/end screen). Baris terakhir mengajak
    menonton video berikutnya + subscribe, singkat.
    Kalimat penutup khas channel (wajib, paling akhir): **"Ingat, apa pun keputusan keuanganmu, hitung dulu."**
