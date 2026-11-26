@@ -1,0 +1,743 @@
+{
+  "id": "k003",
+  "tema": "keuangan",
+  "channel": "Hitung Dulu",
+  "judul": "Harbolnas 12.12: Belanja Tanpa Menyesal",
+  "musik_seed": 41,
+  "adegan": [
+    {
+      "type": "hook",
+      "warna": "red",
+      "ikon": "🏷️",
+      "items": [
+        "Rencana belanja Rp300 ribu,",
+        {
+          "teks": "checkout Rp1,2 juta?",
+          "warna": "red"
+        },
+        "Diskonnya beneran?"
+      ],
+      "baris": [
+        {
+          "teks": "Niatnya belanja tiga ratus ribu pas promo dua belas dua belas. Pas bangun besok paginya, totalnya satu koma dua juta.",
+          "muncul": 2
+        },
+        {
+          "teks": "Dan yang bikin nyesek, diskonnya belum tentu beneran.",
+          "muncul": 3
+        }
+      ]
+    },
+    {
+      "type": "poin",
+      "judul": "Yang akan kita bahas",
+      "warna": "blue",
+      "items": [
+        {
+          "ikon": "🧠",
+          "teks": "Kenapa promo bikin kalap"
+        },
+        {
+          "ikon": "📋",
+          "teks": "Anggaran sebelum promo"
+        },
+        {
+          "ikon": "⏳",
+          "teks": "Aturan tunggu 24 jam"
+        },
+        {
+          "ikon": "🧮",
+          "teks": "Hitung diskon asli"
+        },
+        {
+          "ikon": "🎟️",
+          "teks": "1 trik voucher yang bikin bayar lebih"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Kita bahas kenapa promo bikin kalap,",
+          "muncul": 1
+        },
+        {
+          "teks": "cara bikin anggaran,",
+          "muncul": 2
+        },
+        {
+          "teks": "aturan tunggu dua puluh empat jam,",
+          "muncul": 3
+        },
+        {
+          "teks": "dan cara hitung diskon asli.",
+          "muncul": 4
+        },
+        {
+          "teks": "Di akhir, ada satu trik voucher yang justru bikin kamu bayar lebih mahal.",
+          "muncul": 5
+        }
+      ]
+    },
+    {
+      "type": "judul",
+      "bab": "Kenapa promo bikin kalap",
+      "nomor": "BAGIAN 1",
+      "judul_besar": "Kenapa promo bikin kalap?",
+      "ikon": "🧠",
+      "warna": "red",
+      "baris": [
+        "Bagian pertama. Kenapa sih, tiap ada promo besar, kita gampang banget kalap?"
+      ]
+    },
+    {
+      "type": "poin",
+      "judul": "4 pemicu belanja impulsif",
+      "warna": "red",
+      "items": [
+        {
+          "ikon": "⏱️",
+          "teks": "Hitung mundur & flash sale"
+        },
+        {
+          "ikon": "🏷️",
+          "teks": "Harga coret yang besar"
+        },
+        {
+          "ikon": "🚚",
+          "teks": "Gratis ongkir minimal belanja"
+        },
+        {
+          "ikon": "🔥",
+          "teks": "\"Stok tinggal sedikit!\""
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Ada empat pemicu yang sering banget dipakai. Pertama, hitung mundur dan flash sale. Waktu yang mepet bikin kita mutusin cepat, tanpa sempat mikir.",
+          "muncul": 1
+        },
+        {
+          "teks": "Kedua, harga coret yang besar. Otak kita langsung bandingin sama angka yang dicoret, bukan sama harga wajarnya.",
+          "muncul": 2
+        },
+        {
+          "teks": "Ketiga, gratis ongkir dengan minimal belanja. Akhirnya kita nambah barang cuma biar ongkirnya gratis.",
+          "muncul": 3
+        },
+        {
+          "teks": "Dan keempat, tulisan stok tinggal sedikit. Rasa takut ketinggalan bikin kita checkout duluan, mikir belakangan.",
+          "muncul": 4
+        },
+        "Semua ini wajar dipakai penjual, dan nggak ada yang salah dengan promo. Tugas kita cuma satu: sadar kalau lagi dipancing, dan tetap pegang rencana sendiri."
+      ]
+    },
+    {
+      "type": "angka",
+      "label": "Rp300 ribu × 12 tanggal kembar setahun",
+      "nilai": 3600000,
+      "format": "rp",
+      "warna": "gold",
+      "catatan": "Dari 1.1 sampai 12.12, promo datang tiap bulan.",
+      "baris": [
+        "Sekarang coba hitung. Promo tanggal kembar itu bukan cuma dua belas dua belas. Ada satu satu, dua dua, sampai dua belas dua belas. Artinya, ada dua belas kali promo besar dalam setahun.",
+        {
+          "teks": "Kalau tiap promo kamu belanja impulsif tiga ratus ribu aja, setahun totalnya tiga koma enam juta rupiah. Itu bisa jadi dana darurat lebih dari setengah bulan gaji lima juta.",
+          "muncul": 2
+        },
+        "Padahal, kebanyakan barang impulsif itu cuma kepakai beberapa kali, terus nganggur di lemari. Jadi masalahnya bukan di satu kali belanja, tapi di kebiasaan yang terulang tiap bulan."
+      ]
+    },
+    {
+      "type": "judul",
+      "bab": "Anggaran sebelum promo",
+      "nomor": "BAGIAN 2",
+      "judul_besar": "Anggaran sebelum promo",
+      "ikon": "📋",
+      "warna": "blue",
+      "baris": [
+        "Bagian kedua. Bikin anggaran sebelum promo dimulai, bukan pas lagi scroll."
+      ]
+    },
+    {
+      "type": "donut",
+      "judul": "Pos keinginan gaji Rp5 juta (30%)",
+      "tengah": "Rp1,5 jt",
+      "warna": "blue",
+      "items": [
+        {
+          "label": "Anggaran 12.12",
+          "nilai": 500000,
+          "warna": "gold",
+          "sub": "Rp500 rb"
+        },
+        {
+          "label": "Hiburan & nongkrong bulan ini",
+          "nilai": 1000000,
+          "warna": "blue",
+          "sub": "Rp1 jt"
+        }
+      ],
+      "baris": [
+        "Pakai contoh gaji lima juta dan rumus lima puluh, tiga puluh, dua puluh dari video sebelumnya. Pos keinginanmu tiga puluh persen, yaitu satu setengah juta rupiah sebulan.",
+        "Dari situ, tentukan anggaran dua belas dua belas, misalnya lima ratus ribu rupiah. Sisanya satu juta tetap buat hiburan dan nongkrong bulan ini.",
+        "Kuncinya, anggaran ini diambil dari pos keinginan. Jangan dari tabungan, jangan dari dana darurat, dan jangan pakai cicilan.",
+        "Kalau gajimu beda, tinggal sesuaikan. Patokannya sederhana: anggaran promo harus muat di pos keinginan, dan tetap ada sisa buat kebutuhan senang-senang lain sampai gajian berikutnya."
+      ]
+    },
+    {
+      "type": "poin",
+      "judul": "Daftar belanja (anggaran Rp500 ribu)",
+      "format": "rp",
+      "warna": "green",
+      "items": [
+        {
+          "ikon": "👟",
+          "teks": "Sepatu kerja (yang lama rusak)",
+          "nilai": 250000,
+          "warna": "green"
+        },
+        {
+          "ikon": "🧴",
+          "teks": "Stok sabun & kebutuhan rumah",
+          "nilai": 150000,
+          "warna": "green"
+        },
+        {
+          "ikon": "🎧",
+          "teks": "Headset baru (nanti dulu)",
+          "nilai": 300000,
+          "warna": "red"
+        }
+      ],
+      "total": {
+        "teks": "Total yang dibeli",
+        "nilai": 400000
+      },
+      "baris": [
+        {
+          "teks": "Lalu tulis daftar belanja dari sekarang. Contohnya, sepatu kerja karena yang lama udah rusak, kira-kira dua ratus lima puluh ribu.",
+          "muncul": 1
+        },
+        {
+          "teks": "Stok sabun dan kebutuhan rumah yang memang rutin dibeli, seratus lima puluh ribu.",
+          "muncul": 2
+        },
+        {
+          "teks": "Terus ada headset baru, tiga ratus ribu. Headset lama masih jalan, jadi ini masuk daftar nanti dulu.",
+          "muncul": 3
+        },
+        {
+          "teks": "Total yang dibeli empat ratus ribu. Sisa seratus ribu buat ongkir dan biaya lain. Barang yang nggak ada di daftar, nggak dibeli, semurah apa pun.",
+          "muncul": 4
+        }
+      ]
+    },
+    {
+      "type": "angka",
+      "label": "Belanja Rp500 ribu dicicil 12 bulan, total bayar",
+      "nilai": 685000,
+      "format": "rp",
+      "warna": "red",
+      "catatan": "Bunga flat 3%/bulan × 12 + biaya layanan 1% = Rp185.000 ekstra",
+      "catatan_kecil": "Ilustrasi, sama seperti simulasi paylater di video sebelumnya. Tarif sebenarnya berbeda tiap penyedia.",
+      "baris": [
+        "Terus, gimana kalau anggarannya kurang, terus kepikiran pakai paylater atau cicilan? Kita hitung pakai angka ilustrasi dari video sebelumnya: bunga flat tiga persen sebulan, ditambah biaya layanan satu persen.",
+        {
+          "teks": "Belanja lima ratus ribu dicicil dua belas bulan, total bayarnya enam ratus delapan puluh lima ribu rupiah. Ada tambahan seratus delapan puluh lima ribu, cuma buat barang promo. Diskonnya habis dimakan bunga. Jadi, kalau uangnya belum ada, tunggu promo berikutnya aja. Promo pasti datang lagi bulan depan.",
+          "muncul": 2
+        }
+      ]
+    },
+    {
+      "type": "judul",
+      "bab": "Aturan tunggu 24 jam",
+      "nomor": "BAGIAN 3",
+      "judul_besar": "Aturan tunggu 24 jam",
+      "ikon": "⏳",
+      "warna": "gold",
+      "baris": [
+        "Bagian ketiga. Aturan tunggu dua puluh empat jam."
+      ]
+    },
+    {
+      "type": "poin",
+      "judul": "Cara pakai aturan 24 jam",
+      "warna": "gold",
+      "items": [
+        {
+          "ikon": "🛒",
+          "teks": "Isi keranjang 1–2 hari sebelum promo"
+        },
+        {
+          "ikon": "⏳",
+          "teks": "Diamkan minimal 24 jam"
+        },
+        {
+          "ikon": "🗑️",
+          "teks": "Hapus yang sudah tidak diinginkan"
+        },
+        {
+          "ikon": "✅",
+          "teks": "Hari promo: checkout sesuai daftar"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Promo dua belas dua belas biasanya cuma sehari, jadi tunggunya dilakukan sebelum hari promo. Isi keranjang satu atau dua hari sebelumnya.",
+          "muncul": 1
+        },
+        {
+          "teks": "Diamkan minimal dua puluh empat jam. Jangan dibuka-buka terus.",
+          "muncul": 2
+        },
+        {
+          "teks": "Besoknya, buka lagi dengan kepala dingin, terus hapus barang yang ternyata udah nggak kamu pengin. Biasanya, banyak yang hilang sendiri.",
+          "muncul": 3
+        },
+        {
+          "teks": "Pas hari promo, tinggal checkout yang masih bertahan di keranjang dan ada di daftar. Nggak perlu begadang sambil scroll tengah malam.",
+          "muncul": 4
+        },
+        "Satu tips tambahan: matikan dulu notifikasi promo selama beberapa hari. Makin jarang kamu lihat iklan diskon, makin kecil godaan buat nambah barang di luar daftar."
+      ]
+    },
+    {
+      "type": "rumus",
+      "judul": "Biaya per pemakaian",
+      "warna": "gold",
+      "items": [
+        {
+          "teks": "Jaket pesta Rp400.000 ÷ dipakai 2 kali",
+          "hasil": "Rp200.000/pakai",
+          "warna": "red"
+        },
+        {
+          "teks": "Sepatu kerja Rp250.000 ÷ dipakai 200 kali",
+          "hasil": "Rp1.250/pakai",
+          "warna": "green"
+        }
+      ],
+      "baris": [
+        "Satu alat bantu biar keputusanmu makin jernih: hitung biaya per pemakaian.",
+        {
+          "teks": "Jaket pesta empat ratus ribu yang cuma dipakai dua kali setahun, biayanya dua ratus ribu rupiah sekali pakai.",
+          "muncul": 1
+        },
+        {
+          "teks": "Sepatu kerja dua ratus lima puluh ribu yang dipakai dua ratus kali, cuma seribu dua ratus lima puluh rupiah sekali pakai. Yang lebih murah itu bukan yang harganya kecil, tapi yang paling sering kepakai.",
+          "muncul": 2
+        },
+        "Jadi sebelum checkout, tanya ke diri sendiri: barang ini bakal kepakai berapa kali? Kalau jawabannya cuma sekali dua kali, pikir ulang, atau cari alternatif pinjam atau sewa."
+      ]
+    },
+    {
+      "type": "judul",
+      "bab": "Hitung diskon asli",
+      "nomor": "BAGIAN 4",
+      "judul_besar": "Hitung diskon asli",
+      "ikon": "🧮",
+      "warna": "green",
+      "baris": [
+        "Bagian keempat. Cara menghitung diskon yang asli."
+      ]
+    },
+    {
+      "type": "rumus",
+      "judul": "Diskon 60%: beneran?",
+      "warna": "green",
+      "catatan_kecil": "Contoh ilustrasi. Bandingkan dengan harga barang yang sama sebelum masa promo.",
+      "items": [
+        {
+          "teks": "Harga coret",
+          "hasil": "Rp500.000",
+          "warna": "red"
+        },
+        {
+          "teks": "Harga promo (\"diskon 60%\")",
+          "hasil": "Rp200.000"
+        },
+        {
+          "teks": "Harga biasa sebulan lalu",
+          "hasil": "Rp230.000"
+        },
+        {
+          "teks": "Diskon asli: Rp30.000 ÷ Rp230.000",
+          "hasil": "± 13%",
+          "warna": "gold"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Misalnya ada sepatu, harga coretnya lima ratus ribu rupiah.",
+          "muncul": 1
+        },
+        {
+          "teks": "Harga promonya dua ratus ribu. Tulisannya diskon enam puluh persen. Wah, kelihatannya murah banget.",
+          "muncul": 2
+        },
+        {
+          "teks": "Tapi waktu kamu cek, sebulan lalu sepatu yang sama dijual dua ratus tiga puluh ribu.",
+          "muncul": 3
+        },
+        {
+          "teks": "Jadi hematnya cuma tiga puluh ribu. Tiga puluh ribu dibagi dua ratus tiga puluh ribu, diskon aslinya cuma sekitar tiga belas persen, bukan enam puluh persen.",
+          "muncul": 4
+        }
+      ]
+    },
+    {
+      "type": "batang",
+      "judul": "Harga akhir sepatu yang sama",
+      "format": "rp",
+      "warna": "blue",
+      "maks": 250000,
+      "catatan_kecil": "Ilustrasi. Harga akhir = harga barang + ongkir + biaya layanan.",
+      "items": [
+        {
+          "label": "Toko A \"diskon 60%\"",
+          "nilai": 225000,
+          "warna": "red"
+        },
+        {
+          "label": "Toko B tanpa diskon",
+          "nilai": 215000,
+          "warna": "green"
+        },
+        {
+          "label": "Toko offline",
+          "nilai": 230000,
+          "warna": "blue"
+        }
+      ],
+      "baris": [
+        "Dan jangan lupa, bandingkan harga akhirnya, bukan harga barangnya aja. Toko A yang diskon enam puluh persen, ditambah ongkir dua puluh ribu dan biaya layanan lima ribu, jadinya dua ratus dua puluh lima ribu.",
+        "Toko B nggak pasang diskon sama sekali, harganya dua ratus lima belas ribu, sudah gratis ongkir. Ternyata justru lebih murah.",
+        "Toko offline dua ratus tiga puluh ribu, tapi kamu bisa cobain ukurannya langsung. Jadi, yang tulisan diskonnya paling besar, belum tentu yang paling murah."
+      ]
+    },
+    {
+      "type": "poin",
+      "judul": "Cek sebelum hari promo",
+      "warna": "blue",
+      "items": [
+        {
+          "ikon": "📸",
+          "teks": "Screenshot harga 1–2 minggu sebelumnya"
+        },
+        {
+          "ikon": "🔍",
+          "teks": "Bandingkan 2–3 toko"
+        },
+        {
+          "ikon": "⭐",
+          "teks": "Cek ulasan & penjual terpercaya"
+        },
+        {
+          "ikon": "↩️",
+          "teks": "Baca kebijakan retur"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Biar nggak ketipu harga coret, siapkan dari jauh hari. Satu, screenshot harga barang incaranmu satu atau dua minggu sebelum promo. Jadi kamu punya pembanding yang jelas.",
+          "muncul": 1
+        },
+        {
+          "teks": "Dua, bandingkan dua sampai tiga toko untuk barang yang sama persis, termasuk ongkirnya.",
+          "muncul": 2
+        },
+        {
+          "teks": "Tiga, cek ulasan pembeli dan pastikan penjualnya terpercaya. Harga murah dari toko abal-abal bisa berakhir barang palsu atau nggak dikirim.",
+          "muncul": 3
+        },
+        {
+          "teks": "Dan empat, baca kebijakan retur. Kalau ukurannya salah atau barangnya rusak, kamu tahu harus ngapain, dan uangmu nggak hangus.",
+          "muncul": 4
+        }
+      ]
+    },
+    {
+      "type": "banding",
+      "judul": "Ciri diskon: hati-hati vs wajar",
+      "kiri": {
+        "judul": "Hati-hati",
+        "ikon": "🚩",
+        "warna": "red"
+      },
+      "kanan": {
+        "judul": "Lebih wajar",
+        "ikon": "✅",
+        "warna": "green"
+      },
+      "items": [
+        {
+          "kiri": "Harga coret naik jelang promo",
+          "kanan": "Harga stabil sebelum promo"
+        },
+        {
+          "kiri": "Diskon besar, ongkir mahal",
+          "kanan": "Harga akhir paling murah"
+        },
+        {
+          "kiri": "Hanya lihat persen diskon",
+          "kanan": "Bandingkan 2–3 toko"
+        },
+        {
+          "kiri": "Barang tidak ada di daftar",
+          "kanan": "Barang memang dibutuhkan"
+        }
+      ],
+      "baris": [
+        "Supaya gampang, ini ciri-cirinya. Hati-hati kalau harga coretnya kelihatan naik menjelang promo. Lebih wajar kalau harganya stabil sebelum promo dan baru turun pas hari promo.",
+        "Hati-hati kalau diskonnya besar tapi ongkirnya mahal. Yang penting harga akhirnya.",
+        "Jangan cuma lihat persen diskon. Biasakan bandingkan dua sampai tiga toko untuk barang yang sama.",
+        "Dan yang paling penting: barang yang nggak ada di daftar, sebesar apa pun diskonnya, tetap bukan penghematan.",
+        "Kalau keempat ciri di sisi kanan terpenuhi, silakan checkout dengan tenang. Promo memang bisa bikin hemat, asal kamu yang pegang kendali."
+      ]
+    },
+    {
+      "type": "hook",
+      "warna": "gold",
+      "ikon": "💸",
+      "items": [
+        "\"Hemat Rp400 ribu\"",
+        {
+          "teks": "= tetap keluar Rp600 ribu",
+          "warna": "gold"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Ingat satu kalimat ini. Belanja satu juta dengan diskon empat ratus ribu itu bukan hemat empat ratus ribu.",
+          "muncul": 1
+        },
+        {
+          "teks": "Uangmu tetap keluar enam ratus ribu. Kamu baru benar-benar hemat kalau barangnya memang mau kamu beli juga, dengan atau tanpa promo.",
+          "muncul": 2
+        },
+        "Jadi pertanyaannya bukan, berapa yang aku hemat? Tapi, kalau nggak ada promo pun, apa aku tetap beli barang ini? Kalau jawabannya nggak, berarti itu bukan hemat, itu pengeluaran tambahan."
+      ]
+    },
+    {
+      "type": "rumus",
+      "bab": "Jebakan voucher",
+      "judul": "Voucher Rp50 ribu, min. belanja Rp300 ribu",
+      "warna": "red",
+      "catatan_kecil": "Ilustrasi. Syarat voucher berbeda tiap toko.",
+      "items": [
+        {
+          "teks": "Keranjang sesuai daftar",
+          "hasil": "Rp220.000"
+        },
+        {
+          "teks": "Tambah barang biar lolos syarat",
+          "hasil": "+ Rp90.000",
+          "warna": "red"
+        },
+        {
+          "teks": "Rp310.000 − voucher Rp50.000",
+          "hasil": "Rp260.000"
+        },
+        {
+          "teks": "Bayar lebih dari rencana",
+          "hasil": "+ Rp40.000",
+          "warna": "red"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Nah, ini trik voucher yang dijanjikan di awal. Kamu dapat voucher diskon lima puluh ribu, dengan syarat minimal belanja tiga ratus ribu. Keranjangmu sesuai daftar cuma dua ratus dua puluh ribu.",
+          "muncul": 1
+        },
+        {
+          "teks": "Biar vouchernya kepakai, kamu tambah barang sembilan puluh ribu yang tadinya nggak direncanakan.",
+          "muncul": 2
+        },
+        {
+          "teks": "Totalnya tiga ratus sepuluh ribu, dikurangi voucher lima puluh ribu, jadi dua ratus enam puluh ribu.",
+          "muncul": 3
+        },
+        {
+          "teks": "Artinya, kamu bayar empat puluh ribu lebih banyak dari rencana, buat barang yang sebenarnya nggak kamu butuhkan. Voucher itu cuma hemat kalau belanjaanmu memang udah lewat syaratnya tanpa ditambah-tambah.",
+          "muncul": 4
+        }
+      ]
+    },
+    {
+      "type": "penutup",
+      "bab": "Ringkasan",
+      "judul": "Ringkasan",
+      "warna": "green",
+      "jeda_akhir": 18,
+      "catatan_kecil": "Konten edukasi, bukan ajakan berbelanja atau rekomendasi toko tertentu. Angka harga hanya ilustrasi.",
+      "items": [
+        "Tetapkan anggaran dari pos keinginan",
+        "Tulis daftar belanja sebelum promo",
+        "Tunggu 24 jam sebelum checkout",
+        "Hitung diskon asli & harga akhir",
+        "Jangan tambah barang demi voucher"
+      ],
+      "baris": [
+        {
+          "teks": "Kita ringkas. Satu, tetapkan anggaran dari pos keinginan, bukan dari tabungan.",
+          "muncul": 1
+        },
+        {
+          "teks": "Dua, tulis daftar belanja sebelum promo dimulai.",
+          "muncul": 2
+        },
+        {
+          "teks": "Tiga, tunggu dua puluh empat jam sebelum checkout.",
+          "muncul": 3
+        },
+        {
+          "teks": "Empat, hitung diskon asli dan harga akhirnya, termasuk ongkir.",
+          "muncul": 4
+        },
+        {
+          "teks": "Dan lima, jangan tambah barang cuma demi voucher.",
+          "muncul": 5
+        },
+        "Kalau kamu pengin tahu di mana sebaiknya dana darurat disimpan, tonton video berikutnya, dan subscribe biar nggak ketinggalan.",
+        "Ingat, apa pun keputusan keuanganmu, hitung dulu."
+      ]
+    },
+    {
+      "type": "hook",
+      "hanya_shorts": true,
+      "warna": "red",
+      "ikon": "🏷️",
+      "items": [
+        {
+          "teks": "Diskon 60%,",
+          "warna": "red"
+        },
+        "aslinya hemat berapa?"
+      ],
+      "baris": [
+        {
+          "teks": "Tulisannya diskon enam puluh persen. Aslinya hemat berapa, sih?",
+          "muncul": 2
+        }
+      ]
+    },
+    {
+      "type": "hook",
+      "hanya_shorts": true,
+      "warna": "gold",
+      "ikon": "📅",
+      "items": [
+        "Rp300 ribu tiap tanggal kembar,",
+        {
+          "teks": "setahun habis berapa?",
+          "warna": "gold"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Tiga ratus ribu tiap promo tanggal kembar, setahun habis berapa?",
+          "muncul": 2
+        }
+      ]
+    },
+    {
+      "type": "hook",
+      "hanya_shorts": true,
+      "warna": "red",
+      "ikon": "🎟️",
+      "items": [
+        "Voucher Rp50 ribu,",
+        {
+          "teks": "kok bayar lebih mahal?",
+          "warna": "red"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Pakai voucher lima puluh ribu, kok malah bayar lebih mahal?",
+          "muncul": 2
+        }
+      ]
+    }
+  ],
+  "shorts": [
+    {
+      "adegan": [
+        20,
+        13
+      ],
+      "judul": "Diskon 60%, Aslinya Hemat Berapa? #shorts"
+    },
+    {
+      "adegan": [
+        21,
+        4
+      ],
+      "judul": "Rp300 Ribu Tiap Tanggal Kembar, Setahun Jadi? #shorts"
+    },
+    {
+      "adegan": [
+        22,
+        18
+      ],
+      "judul": "Voucher Rp50 Ribu Bikin Bayar Lebih Mahal? #shorts"
+    }
+  ],
+  "thumbnail": [
+    {
+      "baris": [
+        "DISKON 60%",
+        {
+          "teks": "BOHONGAN?",
+          "warna": "gold"
+        }
+      ],
+      "sorot": "HARBOLNAS 12.12",
+      "emojis": [
+        "🏷️"
+      ],
+      "warna": "red"
+    },
+    {
+      "baris": [
+        "BELANJA 12.12",
+        {
+          "teks": "TANPA NYESEL",
+          "warna": "green"
+        }
+      ],
+      "sorot": "HITUNG DISKON ASLI",
+      "emojis": [
+        "🛒"
+      ],
+      "warna": "green"
+    }
+  ],
+  "youtube": {
+    "judul": "Harbolnas 12.12: Cara Cek Diskon Asli Biar Nggak Nyesel",
+    "judul_alternatif": [
+      "Diskon 60% Tapi Cuma Hemat 13%? Cek Sebelum Checkout 12.12",
+      "Anggaran Belanja 12.12: Aturan 24 Jam & Daftar Belanja"
+    ],
+    "deskripsi": "Harbolnas 12.12: cara cek diskon asli, bikin anggaran belanja, dan aturan tunggu 24 jam supaya belanja promo tanpa menyesal.\n\nDi video ini kita bahas 4 pemicu belanja impulsif saat promo, berapa yang bisa habis kalau belanja impulsif di setiap tanggal kembar, cara menetapkan anggaran 12.12 dari pos keinginan, contoh daftar belanja Rp500 ribu, aturan tunggu 24 jam, biaya per pemakaian, cara menghitung diskon asli dibanding harga coret, membandingkan harga akhir termasuk ongkir, dan jebakan voucher minimal belanja.\n\nDisclaimer: Video ini adalah konten edukasi keuangan, bukan ajakan berbelanja atau rekomendasi toko/platform tertentu. Semua angka harga dan diskon hanya ilustrasi. Jika menggunakan fasilitas kredit atau paylater, pastikan penyedianya terdaftar dan diawasi OJK.",
+    "hashtag": [
+      "#harbolnas",
+      "#1212",
+      "#belanjacerdas"
+    ],
+    "tag": [
+      "harbolnas 12.12",
+      "promo 12.12",
+      "diskon palsu",
+      "harga coret",
+      "cara cek diskon asli",
+      "belanja online hemat",
+      "anggaran belanja",
+      "aturan 24 jam",
+      "belanja impulsif",
+      "voucher minimal belanja",
+      "keuangan pribadi"
+    ],
+    "komentar_sematan": "Jujur, tahun lalu kamu belanja 12.12 lebih banyak atau lebih sedikit dari rencana? Berapa selisihnya? Tulis di komentar 👇",
+    "playlist": "Belanja Cerdas"
+  }
+}
