@@ -1,0 +1,702 @@
+{
+  "id": "k004",
+  "tema": "keuangan",
+  "channel": "Hitung Dulu",
+  "judul": "Dana Darurat Disimpan di Mana?",
+  "musik_seed": 53,
+  "adegan": [
+    {
+      "type": "hook",
+      "warna": "red",
+      "ikon": "🛟",
+      "items": [
+        "Dana darurat Rp18 juta,",
+        "taruh di rekening gaji?",
+        {
+          "teks": "Setahun bisa berkurang.",
+          "warna": "red"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Kamu udah susah payah ngumpulin dana darurat delapan belas juta rupiah. Terus disimpan di rekening gaji.",
+          "muncul": 2
+        },
+        {
+          "teks": "Masalahnya, di tempat yang salah, uang itu bisa kepakai, atau malah pelan-pelan berkurang.",
+          "muncul": 3
+        }
+      ]
+    },
+    {
+      "type": "poin",
+      "judul": "Yang akan kita bahas",
+      "warna": "blue",
+      "items": [
+        {
+          "ikon": "🎯",
+          "teks": "Berapa dana darurat idealmu"
+        },
+        {
+          "ikon": "✅",
+          "teks": "4 syarat tempat dana darurat"
+        },
+        {
+          "ikon": "🏦",
+          "teks": "Tabungan vs deposito vs RDPU"
+        },
+        {
+          "ikon": "🧱",
+          "teks": "Strategi 3 lapis"
+        },
+        {
+          "ikon": "❓",
+          "teks": "1 tempat \"aman\" yang bikin menyusut"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Kita hitung dulu berapa dana daruratmu,",
+          "muncul": 1
+        },
+        {
+          "teks": "syarat tempat menyimpannya,",
+          "muncul": 2
+        },
+        {
+          "teks": "bandingkan tabungan, deposito, dan reksa dana pasar uang,",
+          "muncul": 3
+        },
+        {
+          "teks": "lalu strategi tiga lapis.",
+          "muncul": 4
+        },
+        {
+          "teks": "Di akhir, ada satu tempat yang kelihatannya paling aman, tapi diam-diam bikin dana daruratmu menyusut.",
+          "muncul": 5
+        }
+      ]
+    },
+    {
+      "type": "judul",
+      "bab": "Berapa dana darurat idealmu",
+      "nomor": "BAGIAN 1",
+      "judul_besar": "Berapa dana darurat idealmu?",
+      "ikon": "🎯",
+      "warna": "blue",
+      "baris": [
+        "Bagian pertama. Sebelum mikirin tempatnya, kita hitung dulu, sebenarnya kamu butuh berapa?"
+      ]
+    },
+    {
+      "type": "rumus",
+      "judul": "Pengeluaran wajib Rp3 juta/bulan",
+      "warna": "blue",
+      "catatan_kecil": "Patokan umum. Sesuaikan dengan kondisi pekerjaan dan tanggungan.",
+      "items": [
+        {
+          "teks": "Lajang, gaji tetap: × 3 bulan",
+          "hasil": "Rp9 jt"
+        },
+        {
+          "teks": "Menikah / punya tanggungan: × 6 bulan",
+          "hasil": "Rp18 jt",
+          "warna": "gold"
+        },
+        {
+          "teks": "Pekerja lepas / usaha sendiri: × 12 bulan",
+          "hasil": "Rp36 jt",
+          "warna": "green"
+        }
+      ],
+      "baris": [
+        "Rumusnya simpel: pengeluaran wajib per bulan, dikali jumlah bulan. Pengeluaran wajib itu yang tetap harus dibayar walaupun kamu kehilangan penghasilan: makan, kos atau cicilan rumah, listrik, transportasi, pulsa. Misalnya totalnya tiga juta rupiah sebulan.",
+        {
+          "teks": "Kalau kamu masih lajang dan gajimu tetap, patokan umumnya tiga bulan. Jadi sembilan juta rupiah.",
+          "muncul": 1
+        },
+        {
+          "teks": "Kalau udah menikah atau punya tanggungan, enam bulan. Jadi delapan belas juta.",
+          "muncul": 2
+        },
+        {
+          "teks": "Dan kalau kamu pekerja lepas atau punya usaha sendiri, yang penghasilannya naik turun, lebih aman dua belas bulan. Tiga puluh enam juta rupiah.",
+          "muncul": 3
+        },
+        "Di video ini kita pakai contoh tengah-tengah: delapan belas juta rupiah."
+      ]
+    },
+    {
+      "type": "poin",
+      "judul": "Dana darurat itu untuk…",
+      "warna": "blue",
+      "items": [
+        {
+          "ikon": "💼",
+          "teks": "Kena PHK / kehilangan penghasilan"
+        },
+        {
+          "ikon": "🏥",
+          "teks": "Sakit atau kecelakaan"
+        },
+        {
+          "ikon": "🛵",
+          "teks": "Kendaraan kerja rusak berat"
+        },
+        {
+          "ikon": "🚫",
+          "teks": "BUKAN untuk promo, liburan, gadget"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Biar jelas, dana darurat itu buat kejadian yang nggak bisa ditunda. Misalnya kena PHK atau penghasilan tiba-tiba berhenti.",
+          "muncul": 1
+        },
+        {
+          "teks": "Sakit atau kecelakaan yang biayanya nggak ketutup asuransi.",
+          "muncul": 2
+        },
+        {
+          "teks": "Atau motor yang kamu pakai buat kerja rusak berat.",
+          "muncul": 3
+        },
+        {
+          "teks": "Promo dua belas dua belas, liburan, atau HP baru, itu bukan darurat. Dan justru karena godaan kayak gini, tempat menyimpannya jadi penting banget.",
+          "muncul": 4
+        },
+        "Tips kecil: tulis daftar kejadian darurat versimu sendiri di catatan HP. Jadi waktu tergoda ambil uangnya, kamu tinggal cek, ini masuk daftar atau nggak?"
+      ]
+    },
+    {
+      "type": "judul",
+      "bab": "4 syarat tempat dana darurat",
+      "nomor": "BAGIAN 2",
+      "judul_besar": "4 syarat tempat dana darurat",
+      "ikon": "✅",
+      "warna": "green",
+      "baris": [
+        "Bagian kedua. Empat syarat tempat menyimpan dana darurat."
+      ]
+    },
+    {
+      "type": "poin",
+      "judul": "Urutan prioritas",
+      "warna": "green",
+      "items": [
+        {
+          "ikon": "🛡️",
+          "teks": "1. Aman: nilai pokok stabil"
+        },
+        {
+          "ikon": "⚡",
+          "teks": "2. Likuid: cair dalam hitungan hari"
+        },
+        {
+          "ikon": "🚪",
+          "teks": "3. Terpisah dari uang harian"
+        },
+        {
+          "ikon": "📈",
+          "teks": "4. Imbal hasil: bonus, bukan tujuan"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Syarat pertama, aman. Nilai pokoknya harus stabil. Delapan belas juta hari ini, ya minimal tetap delapan belas juta waktu kamu butuh. Itu sebabnya saham atau kripto nggak cocok buat dana darurat, karena bisa aja pas kamu butuh, harganya lagi turun dua puluh persen.",
+          "muncul": 1
+        },
+        {
+          "teks": "Kedua, likuid. Bisa dicairkan dalam hitungan hari, bukan minggu atau bulan.",
+          "muncul": 2
+        },
+        {
+          "teks": "Ketiga, terpisah dari uang harian. Kalau dana darurat ada di rekening yang sama dengan uang jajan, pasti kepakai pelan-pelan tanpa sadar.",
+          "muncul": 3
+        },
+        {
+          "teks": "Dan keempat, baru imbal hasil. Ini bonus, bukan tujuan utama. Banyak orang kebalik: ngejar bunga paling tinggi, tapi lupa syarat aman dan likuid.",
+          "muncul": 4
+        }
+      ]
+    },
+    {
+      "type": "banding",
+      "judul": "Cocok vs tidak cocok",
+      "kiri": {
+        "judul": "Kurang cocok",
+        "ikon": "🚫",
+        "warna": "red"
+      },
+      "kanan": {
+        "judul": "Lebih cocok",
+        "ikon": "✅",
+        "warna": "green"
+      },
+      "items": [
+        {
+          "kiri": "Saham, kripto",
+          "kanan": "Tabungan terpisah"
+        },
+        {
+          "kiri": "Emas (selisih jual-beli)",
+          "kanan": "Deposito tenor pendek"
+        },
+        {
+          "kiri": "Dipinjamkan ke teman",
+          "kanan": "Reksa dana pasar uang"
+        },
+        {
+          "kiri": "Rekening gaji",
+          "kanan": "Diawasi OJK / dijamin LPS"
+        }
+      ],
+      "baris": [
+        "Jadi, yang kurang cocok: saham dan kripto, karena harganya naik turun. Yang lebih cocok: tabungan khusus yang terpisah.",
+        "Emas juga kurang pas, karena ada selisih harga jual dan beli. Kalau baru beli terus harus dijual cepat, biasanya rugi. Deposito tenor pendek lebih cocok.",
+        "Dipinjamkan ke teman? Jangan. Pas kamu butuh, belum tentu dia bisa balikin. Reksa dana pasar uang lebih masuk akal.",
+        "Dan rekening gaji, terlalu gampang kepakai. Pilih tempat yang terdaftar dan diawasi OJK, dan untuk simpanan bank, yang dijamin LPS.",
+        "Intinya, dana darurat itu bukan tempat buat cari untung besar. Ini kayak ban serep. Nggak dipakai tiap hari, tapi harus siap dan dalam kondisi baik waktu dibutuhkan."
+      ]
+    },
+    {
+      "type": "judul",
+      "bab": "Tabungan vs deposito vs RDPU",
+      "nomor": "BAGIAN 3",
+      "judul_besar": "Tabungan vs deposito vs RDPU",
+      "ikon": "🏦",
+      "warna": "gold",
+      "baris": [
+        "Bagian ketiga. Kita bandingkan tiga pilihan utama: tabungan, deposito, dan reksa dana pasar uang."
+      ]
+    },
+    {
+      "type": "poin",
+      "judul": "Kenali tiga pilihan",
+      "warna": "gold",
+      "catatan_kecil": "Simpanan bank dijamin LPS hingga Rp2 miliar per nasabah per bank, dengan syarat. Cek lps.go.id.",
+      "items": [
+        {
+          "ikon": "🏦",
+          "teks": "Tabungan: cair kapan saja, bunga kecil"
+        },
+        {
+          "ikon": "🔒",
+          "teks": "Deposito: bunga lebih tinggi, ada jatuh tempo"
+        },
+        {
+          "ikon": "📊",
+          "teks": "RDPU: cair ± 1–2 hari kerja, tidak dijamin LPS"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Tabungan, bisa diambil kapan aja, tapi bunganya kecil, dan sering ada biaya admin bulanan.",
+          "muncul": 1
+        },
+        {
+          "teks": "Deposito, bunganya lebih tinggi, tapi uangnya dikunci sampai jatuh tempo, misalnya satu atau tiga bulan. Kalau dicairkan sebelum waktunya, biasanya kena penalti.",
+          "muncul": 2
+        },
+        {
+          "teks": "Reksa dana pasar uang, atau RDPU, dananya ditaruh di instrumen jangka pendek kayak deposito dan surat utang yang jatuh temponya dekat. Pencairannya biasanya sekitar satu sampai dua hari kerja. Risikonya rendah, tapi nggak dijamin LPS, dan nilainya bisa naik turun sedikit.",
+          "muncul": 3
+        },
+        "Tabungan dan deposito di bank dijamin LPS sampai dua miliar rupiah per nasabah per bank, dengan syarat tertentu, misalnya bunganya nggak melebihi tingkat bunga penjaminan LPS. Jadi untuk dana darurat, ketiganya bisa dipakai. Tinggal gimana ngaturnya.",
+        "Satu lagi: apa pun pilihannya, pastikan kamu bisa cek saldonya dengan mudah, tapi nggak bisa belanja langsung dari situ. Semakin ribet dipakai buat jajan, semakin aman dana daruratmu."
+      ]
+    },
+    {
+      "type": "batang",
+      "judul": "Rp18 juta, hasil bersih 1 tahun (ilustrasi)",
+      "format": "rp",
+      "warna": "gold",
+      "maks": 800000,
+      "catatan_kecil": "Ilustrasi, bukan jaminan: deposito 3,5%/thn dipotong pajak 20%; RDPU 4%/thn (bisa naik turun).",
+      "items": [
+        {
+          "label": "Deposito 3,5%",
+          "nilai": 504000,
+          "warna": "blue"
+        },
+        {
+          "label": "RDPU 4%",
+          "nilai": 720000,
+          "warna": "green"
+        }
+      ],
+      "baris": [
+        "Sekarang kita hitung pakai angka ilustrasi, ya. Bukan jaminan, dan beda-beda tiap produk. Delapan belas juta di deposito dengan bunga tiga setengah persen setahun, dapat bunga enam ratus tiga puluh ribu. Tapi bunga deposito dipotong pajak dua puluh persen, jadi bersihnya lima ratus empat ribu rupiah.",
+        "Di reksa dana pasar uang, dengan ilustrasi imbal hasil empat persen setahun, jadi sekitar tujuh ratus dua puluh ribu. Tapi ingat, angka RDPU ini nggak pasti, bisa sedikit lebih tinggi atau lebih rendah."
+      ]
+    },
+    {
+      "type": "angka",
+      "label": "Inflasi 2,5%: Rp18 juta perlu tumbuh",
+      "nilai": 450000,
+      "format": "rp",
+      "warna": "red",
+      "catatan": "per tahun, cuma untuk menjaga daya beli",
+      "catatan_kecil": "Inflasi 2,5% adalah asumsi ilustrasi, bukan prediksi.",
+      "baris": [
+        "Kenapa imbal hasil tetap perlu dipikirin walaupun cuma bonus? Karena ada inflasi. Kalau harga barang naik dua setengah persen setahun, ini angka ilustrasi,",
+        {
+          "teks": "maka delapan belas juta rupiah kamu perlu tumbuh empat ratus lima puluh ribu setahun, cuma supaya daya belinya tetap sama. Kalau tumbuhnya di bawah itu, nilainya sebenarnya turun.",
+          "muncul": 2
+        },
+        "Makanya, nyimpen semua dana darurat di tempat yang bunganya hampir nol, apalagi kena biaya admin, itu sama aja pelan-pelan ngurangin bantalan pengamanmu sendiri."
+      ]
+    },
+    {
+      "type": "judul",
+      "bab": "Strategi 3 lapis",
+      "nomor": "BAGIAN 4",
+      "judul_besar": "Strategi 3 lapis",
+      "ikon": "🧱",
+      "warna": "green",
+      "baris": [
+        "Bagian keempat. Daripada pilih salah satu, kenapa nggak dibagi? Ini strategi tiga lapis."
+      ]
+    },
+    {
+      "type": "donut",
+      "judul": "Dana darurat Rp18 juta dibagi 3 lapis",
+      "tengah": "Rp18 jt",
+      "warna": "green",
+      "items": [
+        {
+          "label": "Lapis 1: tabungan terpisah",
+          "nilai": 3000000,
+          "warna": "blue",
+          "sub": "1 bulan · cair hari itu juga"
+        },
+        {
+          "label": "Lapis 2: RDPU",
+          "nilai": 6000000,
+          "warna": "green",
+          "sub": "2 bulan · cair ± 1–2 hari kerja"
+        },
+        {
+          "label": "Lapis 3: deposito",
+          "nilai": 9000000,
+          "warna": "gold",
+          "sub": "3 bulan · tenor 1–3 bulan"
+        }
+      ],
+      "baris": [
+        "Lapis pertama, tiga juta rupiah, atau satu bulan pengeluaran, di tabungan khusus yang terpisah dari rekening gaji. Ini buat kejadian yang butuh uang hari itu juga, misalnya ke rumah sakit.",
+        "Lapis kedua, enam juta rupiah, di reksa dana pasar uang. Cairnya sekitar satu sampai dua hari kerja, dan imbal hasilnya biasanya lebih baik dari tabungan.",
+        "Lapis ketiga, sembilan juta rupiah, di deposito tenor satu sampai tiga bulan dengan perpanjangan otomatis. Ini lapis terakhir, yang baru disentuh kalau masalahnya panjang, misalnya kena PHK dan butuh waktu cari kerja.",
+        "Dengan cara ini, kalau ada kejadian kecil, cukup ambil dari lapis satu. Kalau kejadiannya besar, kamu punya waktu beberapa hari buat mencairkan lapis dua, dan lapis tiga tetap jadi cadangan terakhir."
+      ]
+    },
+    {
+      "type": "rumus",
+      "judul": "Hasil bersih 3 lapis, 1 tahun (ilustrasi)",
+      "warna": "green",
+      "catatan_kecil": "Ilustrasi, bukan jaminan. Tabungan 0,5%, RDPU 4%, deposito 3,5% dipotong pajak 20%. Lapis 1 tanpa biaya admin.",
+      "items": [
+        {
+          "teks": "Lapis 1: Rp3 jt × 0,5%",
+          "hasil": "Rp15.000"
+        },
+        {
+          "teks": "Lapis 2: Rp6 jt × 4%",
+          "hasil": "Rp240.000"
+        },
+        {
+          "teks": "Lapis 3: Rp9 jt × 3,5% − pajak 20%",
+          "hasil": "Rp252.000"
+        },
+        {
+          "teks": "Total setahun",
+          "hasil": "Rp507.000",
+          "warna": "green"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Kita hitung hasilnya, masih pakai angka ilustrasi. Lapis satu, tiga juta di tabungan dengan bunga setengah persen, cuma lima belas ribu setahun. Kecil, tapi bukan itu tugasnya. Tugasnya siaga.",
+          "muncul": 1
+        },
+        {
+          "teks": "Lapis dua, enam juta di RDPU, sekitar dua ratus empat puluh ribu.",
+          "muncul": 2
+        },
+        {
+          "teks": "Lapis tiga, sembilan juta di deposito, setelah dipotong pajak, dua ratus lima puluh dua ribu.",
+          "muncul": 3
+        },
+        {
+          "teks": "Totalnya sekitar lima ratus tujuh ribu rupiah setahun. Uangnya tetap aman, tetap bisa diambil bertahap, dan kamu nggak harus pilih antara cepat cair atau dapat imbal hasil.",
+          "muncul": 4
+        }
+      ]
+    },
+    {
+      "type": "poin",
+      "judul": "Cara membangunnya pelan-pelan",
+      "warna": "green",
+      "items": [
+        {
+          "ikon": "1️⃣",
+          "teks": "Isi lapis 1 dulu sampai penuh"
+        },
+        {
+          "ikon": "2️⃣",
+          "teks": "Lalu lapis 2, setoran rutin tiap gajian"
+        },
+        {
+          "ikon": "3️⃣",
+          "teks": "Terakhir lapis 3"
+        },
+        {
+          "ikon": "🔁",
+          "teks": "Terpakai? Isi ulang dari lapis 1"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Belum punya delapan belas juta? Santai aja. Mulai dari lapis satu dulu sampai penuh, tiga juta rupiah. Kalau kamu nabung lima ratus ribu sebulan, enam bulan udah penuh.",
+          "muncul": 1
+        },
+        {
+          "teks": "Setelah itu, lanjut isi lapis dua dengan setoran rutin tiap gajian.",
+          "muncul": 2
+        },
+        {
+          "teks": "Terakhir, lapis tiga.",
+          "muncul": 3
+        },
+        {
+          "teks": "Dan kalau suatu saat dana daruratnya kepakai, itu memang fungsinya. Nggak usah merasa gagal. Isi ulang lagi pelan-pelan, mulai dari lapis satu.",
+          "muncul": 4
+        }
+      ]
+    },
+    {
+      "type": "rumus",
+      "bab": "Tempat \"aman\" yang bikin menyusut",
+      "judul": "Rp18 jt di tabungan biasa, 1 tahun",
+      "warna": "red",
+      "catatan_kecil": "Ilustrasi: bunga 0,5%/thn, pajak bunga 20% (saldo > Rp7,5 jt), biaya admin Rp12.500/bulan. Cek ketentuan bankmu.",
+      "items": [
+        {
+          "teks": "Bunga 0,5% setahun",
+          "hasil": "+ Rp90.000",
+          "warna": "green"
+        },
+        {
+          "teks": "Pajak bunga 20%",
+          "hasil": "− Rp18.000",
+          "warna": "red"
+        },
+        {
+          "teks": "Biaya admin Rp12.500 × 12",
+          "hasil": "− Rp150.000",
+          "warna": "red"
+        },
+        {
+          "teks": "Saldo akhir",
+          "hasil": "Rp17.922.000",
+          "warna": "red"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Nah, ini tempat yang dijanjikan di awal: tabungan biasa yang ada biaya admin bulanannya. Kelihatannya paling aman, kan? Coba hitung. Delapan belas juta, bunga setengah persen setahun, dapat sembilan puluh ribu.",
+          "muncul": 1
+        },
+        {
+          "teks": "Karena saldonya di atas tujuh setengah juta, bunganya dipotong pajak dua puluh persen, delapan belas ribu.",
+          "muncul": 2
+        },
+        {
+          "teks": "Terus biaya admin, misalnya dua belas ribu lima ratus sebulan. Setahun seratus lima puluh ribu.",
+          "muncul": 3
+        },
+        {
+          "teks": "Hasilnya, saldo akhirmu tujuh belas juta sembilan ratus dua puluh dua ribu. Dana daruratmu berkurang tujuh puluh delapan ribu rupiah, padahal nggak kamu sentuh sama sekali. Belum lagi kena inflasi. Jadi, kalau pakai tabungan, pilih yang biaya adminnya kecil atau nol, dan cukup simpan lapis satu aja di situ.",
+          "muncul": 4
+        }
+      ]
+    },
+    {
+      "type": "penutup",
+      "bab": "Ringkasan",
+      "judul": "Ringkasan",
+      "warna": "green",
+      "jeda_akhir": 18,
+      "catatan_kecil": "Konten edukasi, bukan ajakan membeli produk keuangan tertentu. Imbal hasil hanya ilustrasi, bukan jaminan.",
+      "items": [
+        "Target: 3–12 × pengeluaran wajib",
+        "Prioritas: aman, likuid, terpisah, baru imbal hasil",
+        "Bagi 3 lapis: tabungan, RDPU, deposito",
+        "Pilih yang diawasi OJK / dijamin LPS",
+        "Hindari biaya admin yang menggerus saldo"
+      ],
+      "baris": [
+        {
+          "teks": "Kita ringkas. Satu, target dana darurat tiga sampai dua belas kali pengeluaran wajib, tergantung kondisimu.",
+          "muncul": 1
+        },
+        {
+          "teks": "Dua, prioritasnya aman, likuid, terpisah, baru imbal hasil.",
+          "muncul": 2
+        },
+        {
+          "teks": "Tiga, bagi jadi tiga lapis: tabungan, reksa dana pasar uang, dan deposito.",
+          "muncul": 3
+        },
+        {
+          "teks": "Empat, pilih tempat yang terdaftar dan diawasi OJK, dan untuk simpanan bank, yang dijamin LPS.",
+          "muncul": 4
+        },
+        {
+          "teks": "Dan lima, hindari biaya admin yang diam-diam menggerus saldo.",
+          "muncul": 5
+        },
+        "Kalau kamu pengin lihat kenapa mulai investasi di umur dua puluhan itu penting banget, tonton video berikutnya, dan subscribe biar nggak ketinggalan.",
+        "Ingat, apa pun keputusan keuanganmu, hitung dulu."
+      ]
+    },
+    {
+      "type": "hook",
+      "hanya_shorts": true,
+      "warna": "red",
+      "ikon": "🏦",
+      "items": [
+        "Rp18 juta di tabungan biasa,",
+        {
+          "teks": "setahun jadi berapa?",
+          "warna": "red"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Delapan belas juta di tabungan biasa, setahun jadi berapa?",
+          "muncul": 2
+        }
+      ]
+    },
+    {
+      "type": "hook",
+      "hanya_shorts": true,
+      "warna": "green",
+      "ikon": "🧱",
+      "items": [
+        "Dana darurat Rp18 juta dibagi 3,",
+        {
+          "teks": "hasilnya berapa?",
+          "warna": "green"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Dana darurat delapan belas juta dibagi tiga, setahun hasilnya berapa?",
+          "muncul": 2
+        }
+      ]
+    },
+    {
+      "type": "hook",
+      "hanya_shorts": true,
+      "warna": "gold",
+      "ikon": "🎯",
+      "items": [
+        "Pengeluaran Rp3 juta,",
+        {
+          "teks": "dana darurat berapa?",
+          "warna": "gold"
+        }
+      ],
+      "baris": [
+        {
+          "teks": "Pengeluaran tiga juta sebulan, dana daruratmu harusnya berapa?",
+          "muncul": 2
+        }
+      ]
+    }
+  ],
+  "shorts": [
+    {
+      "adegan": [
+        18,
+        16
+      ],
+      "judul": "Rp18 Juta di Tabungan Biasa, Setahun Jadi Berapa? #shorts"
+    },
+    {
+      "adegan": [
+        19,
+        14
+      ],
+      "judul": "Dana Darurat Rp18 Juta Dibagi 3, Hasilnya? #shorts"
+    },
+    {
+      "adegan": [
+        20,
+        3
+      ],
+      "judul": "Pengeluaran Rp3 Juta, Dana Darurat Berapa? #shorts"
+    }
+  ],
+  "thumbnail": [
+    {
+      "baris": [
+        "DANA DARURAT",
+        {
+          "teks": "MALAH BERKURANG?",
+          "warna": "gold"
+        }
+      ],
+      "sorot": "RP18 JUTA, 1 TAHUN",
+      "emojis": [
+        "🛟"
+      ],
+      "warna": "red"
+    },
+    {
+      "baris": [
+        "SIMPAN DI MANA?",
+        {
+          "teks": "STRATEGI 3 LAPIS",
+          "warna": "green"
+        }
+      ],
+      "sorot": "TABUNGAN · DEPOSITO · RDPU",
+      "emojis": [
+        "🧱"
+      ],
+      "warna": "green"
+    }
+  ],
+  "youtube": {
+    "judul": "Dana Darurat Disimpan di Mana? Tabungan, Deposito, RDPU",
+    "judul_alternatif": [
+      "Rp18 Juta di Tabungan Biasa, Setahun Malah Berkurang?",
+      "Strategi 3 Lapis Dana Darurat: Aman, Cepat Cair, Tetap Tumbuh"
+    ],
+    "deskripsi": "Dana darurat disimpan di mana? Bandingkan tabungan, deposito, dan reksa dana pasar uang (RDPU), plus strategi 3 lapis agar aman, cepat cair, dan tetap tumbuh.\n\nDi video ini kita hitung berapa dana darurat yang kamu butuhkan (3, 6, atau 12 bulan pengeluaran wajib), 4 syarat tempat menyimpan dana darurat, tempat yang kurang cocok (saham, kripto, emas, rekening gaji), perbandingan hasil bersih tabungan, deposito, dan RDPU (ilustrasi), pengaruh inflasi, strategi 3 lapis untuk dana Rp18 juta, cara membangunnya pelan-pelan, dan kenapa tabungan biasa dengan biaya admin bisa bikin saldo menyusut.\n\nDisclaimer: Video ini adalah konten edukasi keuangan, bukan ajakan membeli produk keuangan tertentu. Angka bunga, imbal hasil, dan inflasi hanya ilustrasi, bukan jaminan. Pilih produk yang terdaftar dan diawasi OJK; simpanan bank dijamin LPS sesuai ketentuan yang berlaku (cek lps.go.id). Ketentuan pajak bunga bisa berubah.",
+    "hashtag": [
+      "#danadarurat",
+      "#keuangan",
+      "#menabung"
+    ],
+    "tag": [
+      "dana darurat",
+      "dana darurat disimpan di mana",
+      "tabungan vs deposito",
+      "reksa dana pasar uang",
+      "RDPU",
+      "deposito",
+      "LPS",
+      "pajak bunga deposito",
+      "cara menabung",
+      "keuangan pribadi",
+      "financial planning indonesia"
+    ],
+    "komentar_sematan": "Dana daruratmu sekarang udah berapa bulan pengeluaran? Belum ada, 1–3 bulan, atau lebih dari 6 bulan? Tulis di komentar 👇",
+    "playlist": "Tabungan & Dana Darurat"
+  }
+}
